@@ -8,10 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol TutorialViewControllerDelegate;
+
 @interface TutorialViewController : UIViewController <UIScrollViewDelegate> {
     IBOutlet UIScrollView *tutorialScrollView;
     IBOutlet UIPageControl *pageControl;
     IBOutlet UIImageView *backgroundImageView;
 }
 
+@property (nonatomic, assign) id <TutorialViewControllerDelegate> delegate;
+
 @end
+
+#pragma mark - Delegate definition
+
+@protocol TutorialViewControllerDelegate
+@required
+- (void)closeTutorial;
+@end
+

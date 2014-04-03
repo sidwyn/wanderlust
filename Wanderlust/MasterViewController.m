@@ -9,7 +9,6 @@
 #import "MasterViewController.h"
 
 #import "DetailViewController.h"
-#import "TutorialViewController.h"
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
@@ -27,14 +26,24 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+//    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
+    UIBarButtonItem *rightBBI = [[UIBarButtonItem alloc] initWithTitle:@"Skip" style:UIBarButtonItemStylePlain target:self action:@selector(skip)];
+    self.navigationItem.rightBarButtonItem = rightBBI;
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     TutorialViewController *tvc = (TutorialViewController *)[sb instantiateViewControllerWithIdentifier:@"TutorialViewController"];
-    [self presentViewController:tvc animated:NO completion:nil];
+    tvc.delegate = self;
+//    [self presentViewController:tvc animated:NO completion:nil];
+    
+    self.title = @"Pick Theme";
+    
+    if (!_objects) {
+        _objects = [[NSMutableArray alloc] init];
+    }
+    [_objects addObject:@{@"image":@"theme-nature.jpg", @"title":@"Nature"}];
+    [_objects addObject:@{@"image":@"theme-city.jpg", @"title":@"City"}];
+    [_objects addObject:@{@"image":@"theme-adventure.jpg", @"title":@"Adventure"}];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,14 +52,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender
-{
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
-    }
-    [_objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+- (void)closeTutorial {
+    NSLog(@"Close tutorial");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)skip {
+    DetailViewController *dvc = [[DetailViewController alloc] init];
+    [self.navigationController pushViewController:dvc animated:YES];
 }
 
 #pragma mark - Table View
@@ -65,29 +74,48 @@
     return _objects.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 168;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    cell.textLabel.text = @"";
+    cell.accessoryType = UITableViewCellAccessoryNone;
+    
+    UIImageView *pictureView;
+    if (![cell.contentView viewWithTag:100]) {
+        pictureView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 168)];
+        pictureView.tag = 100;
+        [cell.contentView addSubview:pictureView];
+    }
+    else {
+        pictureView = (UIImageView *)[cell.contentView viewWithTag:100];
+    }
+    
+    UILabel *themeLabel;
+    if (![cell.contentView viewWithTag:101]) {
+        themeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 120, 310, 40)];
+        themeLabel.textAlignment = NSTextAlignmentRight;
+        themeLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:30];
+        themeLabel.textColor = [UIColor whiteColor];
+        themeLabel.tag = 101;
+        [cell.contentView addSubview:themeLabel];
+    }
+    else {
+        themeLabel = (UILabel *)[cell.contentView viewWithTag:101];
+    }
+    
+    pictureView.image = [UIImage imageNamed:[[_objects objectAtIndex:indexPath.row] objectForKey:@"image"]];
+    themeLabel.text = [[_objects objectAtIndex:indexPath.row] objectForKey:@"title"];
     return cell;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
+    return NO;
 }
 
 /*

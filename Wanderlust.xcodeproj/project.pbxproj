@@ -14,6 +14,9 @@
 		8F16CF2418EDFFCF0022F439 /* theme.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F16CF2318EDFFCF0022F439 /* theme.png */; };
 		8F16CF2618EDFFEA0022F439 /* friends.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F16CF2518EDFFEA0022F439 /* friends.png */; };
 		8F16CF2818EE00DD0022F439 /* car.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F16CF2718EE00DD0022F439 /* car.png */; };
+		8F16CF2C18EE11A50022F439 /* theme-nature.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F16CF2918EE11A50022F439 /* theme-nature.jpg */; };
+		8F16CF2D18EE11A50022F439 /* theme-adventure.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F16CF2A18EE11A50022F439 /* theme-adventure.jpg */; };
+		8F16CF2E18EE11A50022F439 /* theme-city.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F16CF2B18EE11A50022F439 /* theme-city.jpg */; };
 		8F2C4C4A18EDF34600A86D7D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2C4C4918EDF34600A86D7D /* Foundation.framework */; };
 		8F2C4C4C18EDF34600A86D7D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2C4C4B18EDF34600A86D7D /* CoreGraphics.framework */; };
 		8F2C4C4E18EDF34600A86D7D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2C4C4D18EDF34600A86D7D /* UIKit.framework */; };
@@ -52,6 +55,9 @@
 		8F16CF2318EDFFCF0022F439 /* theme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = theme.png; sourceTree = "<group>"; };
 		8F16CF2518EDFFEA0022F439 /* friends.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = friends.png; sourceTree = "<group>"; };
 		8F16CF2718EE00DD0022F439 /* car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car.png; sourceTree = "<group>"; };
+		8F16CF2918EE11A50022F439 /* theme-nature.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "theme-nature.jpg"; sourceTree = "<group>"; };
+		8F16CF2A18EE11A50022F439 /* theme-adventure.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "theme-adventure.jpg"; sourceTree = "<group>"; };
+		8F16CF2B18EE11A50022F439 /* theme-city.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "theme-city.jpg"; sourceTree = "<group>"; };
 		8F2C4C4618EDF34600A86D7D /* Wanderlust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wanderlust.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F2C4C4918EDF34600A86D7D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8F2C4C4B18EDF34600A86D7D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -151,6 +157,9 @@
 				8F16CF2318EDFFCF0022F439 /* theme.png */,
 				8F16CF2518EDFFEA0022F439 /* friends.png */,
 				8F16CF2718EE00DD0022F439 /* car.png */,
+				8F16CF2918EE11A50022F439 /* theme-nature.jpg */,
+				8F16CF2A18EE11A50022F439 /* theme-adventure.jpg */,
+				8F16CF2B18EE11A50022F439 /* theme-city.jpg */,
 				8F2C4C6418EDF34600A86D7D /* Images.xcassets */,
 				8F2C4C5018EDF34600A86D7D /* Supporting Files */,
 			);
@@ -264,14 +273,17 @@
 			files = (
 				8F16CF2418EDFFCF0022F439 /* theme.png in Resources */,
 				8F16CF2018EDFCAD0022F439 /* Roboto-Thin.ttf in Resources */,
+				8F16CF2E18EE11A50022F439 /* theme-city.jpg in Resources */,
 				8F16CF2818EE00DD0022F439 /* car.png in Resources */,
 				8F16CF1F18EDFCAD0022F439 /* Roboto-Regular.ttf in Resources */,
 				8F2C4C6518EDF34600A86D7D /* Images.xcassets in Resources */,
 				8F2C4C8318EDF42300A86D7D /* Background.jpg in Resources */,
+				8F16CF2C18EE11A50022F439 /* theme-nature.jpg in Resources */,
 				8F16CF2218EDFF380022F439 /* preferences.png in Resources */,
 				8F2C4C5418EDF34600A86D7D /* InfoPlist.strings in Resources */,
 				8F16CF2618EDFFEA0022F439 /* friends.png in Resources */,
 				8F2C4C8418EDF42300A86D7D /* EiffelNightLargeBlur.jpg in Resources */,
+				8F16CF2D18EE11A50022F439 /* theme-adventure.jpg in Resources */,
 				8F2C4C5D18EDF34600A86D7D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

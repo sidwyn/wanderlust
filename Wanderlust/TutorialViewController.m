@@ -95,8 +95,12 @@
     doneButton.layer.cornerRadius = 2;
     doneButton.layer.borderWidth = 1;
     doneButton.layer.borderColor = [UIColor cyanColor].CGColor;
+    if (self.delegate) {
+        [doneButton addTarget:self.delegate action:@selector(closeTutorial) forControlEvents:UIControlEventTouchUpInside];
+    }
     [tutorialScrollView addSubview:doneButton];
 }
+
 
 - (void)viewDidLoad
 {
@@ -113,20 +117,13 @@
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
     CGFloat pageWidth = sender.frame.size.width;
     int page = floor((sender.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-    switch (page) {
-        case 0:
-            [self transitionImageView:@"EiffelNightLargeBlur.jpg"];
-            break;
-        case 1:
-        case 2:
-            [self transitionImageView:@"Background.jpg"];
-            break;
-    }
+    backgroundImageView.alpha =1 - sender.contentOffset.x/pageWidth;
     pageControl.currentPage = page;
     
 }
 
 - (void)transitionImageView:(NSString *) newImageName {
+    NSLog(@"HIHIHI");
     UIImage * toImage = [UIImage imageNamed:newImageName];
     [UIView transitionWithView:backgroundImageView
                       duration:5.0f

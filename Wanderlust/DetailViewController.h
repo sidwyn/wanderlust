@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UITableViewController {
+    NSMutableArray *_objects;
+
+}
 
 @property (strong, nonatomic) id detailItem;
 
