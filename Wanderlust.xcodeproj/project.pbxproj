@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F16CF1C18EDFBE10022F439 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F16CF1B18EDFBE10022F439 /* TutorialViewController.m */; };
+		8F16CF1F18EDFCAD0022F439 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8F16CF1D18EDFCAD0022F439 /* Roboto-Regular.ttf */; };
+		8F16CF2018EDFCAD0022F439 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8F16CF1E18EDFCAD0022F439 /* Roboto-Thin.ttf */; };
+		8F16CF2218EDFF380022F439 /* preferences.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F16CF2118EDFF380022F439 /* preferences.png */; };
+		8F16CF2418EDFFCF0022F439 /* theme.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F16CF2318EDFFCF0022F439 /* theme.png */; };
+		8F16CF2618EDFFEA0022F439 /* friends.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F16CF2518EDFFEA0022F439 /* friends.png */; };
+		8F16CF2818EE00DD0022F439 /* car.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F16CF2718EE00DD0022F439 /* car.png */; };
 		8F2C4C4A18EDF34600A86D7D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2C4C4918EDF34600A86D7D /* Foundation.framework */; };
 		8F2C4C4C18EDF34600A86D7D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2C4C4B18EDF34600A86D7D /* CoreGraphics.framework */; };
 		8F2C4C4E18EDF34600A86D7D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2C4C4D18EDF34600A86D7D /* UIKit.framework */; };
@@ -22,6 +29,8 @@
 		8F2C4C6E18EDF34600A86D7D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2C4C4D18EDF34600A86D7D /* UIKit.framework */; };
 		8F2C4C7618EDF34600A86D7D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F2C4C7418EDF34600A86D7D /* InfoPlist.strings */; };
 		8F2C4C7818EDF34600A86D7D /* WanderlustTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2C4C7718EDF34600A86D7D /* WanderlustTests.m */; };
+		8F2C4C8318EDF42300A86D7D /* Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F2C4C8118EDF42300A86D7D /* Background.jpg */; };
+		8F2C4C8418EDF42300A86D7D /* EiffelNightLargeBlur.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F2C4C8218EDF42300A86D7D /* EiffelNightLargeBlur.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +44,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F16CF1A18EDFBE10022F439 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
+		8F16CF1B18EDFBE10022F439 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
+		8F16CF1D18EDFCAD0022F439 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		8F16CF1E18EDFCAD0022F439 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		8F16CF2118EDFF380022F439 /* preferences.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = preferences.png; sourceTree = "<group>"; };
+		8F16CF2318EDFFCF0022F439 /* theme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = theme.png; sourceTree = "<group>"; };
+		8F16CF2518EDFFEA0022F439 /* friends.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = friends.png; sourceTree = "<group>"; };
+		8F16CF2718EE00DD0022F439 /* car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car.png; sourceTree = "<group>"; };
 		8F2C4C4618EDF34600A86D7D /* Wanderlust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wanderlust.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F2C4C4918EDF34600A86D7D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8F2C4C4B18EDF34600A86D7D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -56,6 +73,8 @@
 		8F2C4C7318EDF34600A86D7D /* WanderlustTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WanderlustTests-Info.plist"; sourceTree = "<group>"; };
 		8F2C4C7518EDF34600A86D7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8F2C4C7718EDF34600A86D7D /* WanderlustTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WanderlustTests.m; sourceTree = "<group>"; };
+		8F2C4C8118EDF42300A86D7D /* Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Background.jpg; sourceTree = "<group>"; };
+		8F2C4C8218EDF42300A86D7D /* EiffelNightLargeBlur.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = EiffelNightLargeBlur.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +141,16 @@
 				8F2C4C5F18EDF34600A86D7D /* MasterViewController.m */,
 				8F2C4C6118EDF34600A86D7D /* DetailViewController.h */,
 				8F2C4C6218EDF34600A86D7D /* DetailViewController.m */,
+				8F16CF1A18EDFBE10022F439 /* TutorialViewController.h */,
+				8F16CF1B18EDFBE10022F439 /* TutorialViewController.m */,
+				8F2C4C8118EDF42300A86D7D /* Background.jpg */,
+				8F2C4C8218EDF42300A86D7D /* EiffelNightLargeBlur.jpg */,
+				8F16CF1D18EDFCAD0022F439 /* Roboto-Regular.ttf */,
+				8F16CF1E18EDFCAD0022F439 /* Roboto-Thin.ttf */,
+				8F16CF2118EDFF380022F439 /* preferences.png */,
+				8F16CF2318EDFFCF0022F439 /* theme.png */,
+				8F16CF2518EDFFEA0022F439 /* friends.png */,
+				8F16CF2718EE00DD0022F439 /* car.png */,
 				8F2C4C6418EDF34600A86D7D /* Images.xcassets */,
 				8F2C4C5018EDF34600A86D7D /* Supporting Files */,
 			);
@@ -233,8 +262,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F16CF2418EDFFCF0022F439 /* theme.png in Resources */,
+				8F16CF2018EDFCAD0022F439 /* Roboto-Thin.ttf in Resources */,
+				8F16CF2818EE00DD0022F439 /* car.png in Resources */,
+				8F16CF1F18EDFCAD0022F439 /* Roboto-Regular.ttf in Resources */,
 				8F2C4C6518EDF34600A86D7D /* Images.xcassets in Resources */,
+				8F2C4C8318EDF42300A86D7D /* Background.jpg in Resources */,
+				8F16CF2218EDFF380022F439 /* preferences.png in Resources */,
 				8F2C4C5418EDF34600A86D7D /* InfoPlist.strings in Resources */,
+				8F16CF2618EDFFEA0022F439 /* friends.png in Resources */,
+				8F2C4C8418EDF42300A86D7D /* EiffelNightLargeBlur.jpg in Resources */,
 				8F2C4C5D18EDF34600A86D7D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +295,7 @@
 				8F2C4C6018EDF34600A86D7D /* MasterViewController.m in Sources */,
 				8F2C4C5618EDF34600A86D7D /* main.m in Sources */,
 				8F2C4C6318EDF34600A86D7D /* DetailViewController.m in Sources */,
+				8F16CF1C18EDFBE10022F439 /* TutorialViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +500,7 @@
 				8F2C4C7D18EDF34600A86D7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8F2C4C7E18EDF34600A86D7D /* Build configuration list for PBXNativeTarget "WanderlustTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +509,7 @@
 				8F2C4C8018EDF34600A86D7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
