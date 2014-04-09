@@ -34,7 +34,7 @@
     CGRect currentFrame = self.view.bounds;
     
     mainScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-    mainScrollView.contentSize = CGSizeMake(320, 1600);
+    mainScrollView.contentSize = CGSizeMake(320, 1200);
     
     CRMotionView *motionView = [[CRMotionView alloc] initWithFrame:self.view.bounds];
     [motionView setImage:[UIImage imageNamed:@"yosemite.jpg"]];
@@ -104,8 +104,8 @@
     [mapView addAnnotation:myAnnotation];
     
     
-    KHFlatButton *notifyButton = [KHFlatButton buttonWithFrame:CGRectMake(20, currentFrame.size.height+560, 140, 50) withTitle:@"NOTIFY ME" backgroundColor:UIColorFromRGB(0x475755)];
-    KHFlatButton *bookTripButton = [KHFlatButton buttonWithFrame:CGRectMake(170, currentFrame.size.height+560, 140, 50) withTitle:@"BOOK TRIP" backgroundColor:UIColorFromRGB(0x3cb7a3)];
+    KHFlatButton *notifyButton = [KHFlatButton buttonWithFrame:CGRectMake(20, currentFrame.size.height+565, 140, 50) withTitle:@"NOTIFY ME" backgroundColor:UIColorFromRGB(0x475755)];
+    KHFlatButton *bookTripButton = [KHFlatButton buttonWithFrame:CGRectMake(170, currentFrame.size.height+565, 140, 50) withTitle:@"BOOK TRIP" backgroundColor:UIColorFromRGB(0x3cb7a3)];
     [mainScrollView addSubview:notifyButton];
     [mainScrollView addSubview:bookTripButton];
 }
