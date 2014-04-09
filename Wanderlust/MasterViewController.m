@@ -28,13 +28,16 @@
 	// Do any additional setup after loading the view, typically from a nib.
 //    self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
+    UIBarButtonItem *backBBI = [[UIBarButtonItem alloc] initWithTitle:@"Theme" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = backBBI;
+    
     UIBarButtonItem *rightBBI = [[UIBarButtonItem alloc] initWithTitle:@"Skip" style:UIBarButtonItemStylePlain target:self action:@selector(skip)];
     self.navigationItem.rightBarButtonItem = rightBBI;
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     TutorialViewController *tvc = (TutorialViewController *)[sb instantiateViewControllerWithIdentifier:@"TutorialViewController"];
     tvc.delegate = self;
-//    [self presentViewController:tvc animated:NO completion:nil];
+    [self presentViewController:tvc animated:NO completion:nil];
     
     self.title = @"Pick Theme";
     

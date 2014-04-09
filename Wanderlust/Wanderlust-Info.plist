@@ -44,6 +44,8 @@
 	<array>
 		<string>Roboto-Regular.ttf</string>
 		<string>Roboto-Thin.ttf</string>
+		<string>Roboto-Medium.ttf</string>
+		<string>Roboto-Bold.ttf</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>

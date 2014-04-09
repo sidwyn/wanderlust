@@ -1,0 +1,1 @@
+PODS_CRMOTIONVIEW_OTHER_LDFLAGS = -framework CoreMotion -framework UIKit

@@ -1,0 +1,13 @@
+PODS:
+  - CRMotionView (0.3)
+  - KHFlatButton (1.0.0)
+
+DEPENDENCIES:
+  - CRMotionView
+  - KHFlatButton
+
+SPEC CHECKSUMS:
+  CRMotionView: 772863d59bfd672e055fe300f089d8c9dd33593a
+  KHFlatButton: dd9a4481fc6a6926c66b2ac5126e37654ff4978a
+
+COCOAPODS: 0.29.0

@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "TripBrowseViewController.h"
 
 @interface DetailViewController ()
 - (void)configureView;
@@ -40,7 +41,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
-    
     
     self.title = @"Pick No. of Travelers";
     
@@ -112,6 +112,11 @@
 {
     // Return NO if you do not want the specified item to be editable.
     return NO;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    TripBrowseViewController *tbvc = [[TripBrowseViewController alloc] init];
+    [self.navigationController pushViewController:tbvc animated:YES];
 }
 
 
