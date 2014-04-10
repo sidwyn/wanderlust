@@ -10,7 +10,7 @@
 #import "CRMotionView.h"
 #include "TargetConditionals.h"
 #import <KHFlatButton/KHFlatButton.h>
-#define METERS_PER_MILE 1609.344
+#import "TripMapViewController.h"
 @interface TripBrowseViewController ()
 
 @end
@@ -90,18 +90,21 @@
     mapView = [[MKMapView alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+380, 280, 160)];
     [mainScrollView addSubview:mapView];
     
+    UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushMapViewController)];
+    [mapView addGestureRecognizer:tgr];
+    
     CLLocationCoordinate2D zoomLocation;
     zoomLocation.latitude = 37.865101;
     zoomLocation.longitude= -119.538329;
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 40*METERS_PER_MILE, 40*METERS_PER_MILE);
     [mapView setRegion:viewRegion animated:YES];
     
     MKPointAnnotation *myAnnotation = [[MKPointAnnotation alloc]init];
     myAnnotation.coordinate = zoomLocation;
     myAnnotation.title = @"Yosemite";
     myAnnotation.subtitle = @"Yosemite Village, CA";
-    [mapView selectAnnotation:myAnnotation animated:YES];
     [mapView addAnnotation:myAnnotation];
+    [mapView selectAnnotation:myAnnotation animated:YES];
     
     
     KHFlatButton *notifyButton = [KHFlatButton buttonWithFrame:CGRectMake(20, currentFrame.size.height+565, 140, 50) withTitle:@"NOTIFY ME" backgroundColor:UIColorFromRGB(0x475755)];
@@ -124,6 +127,14 @@
 - (void) viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
+
+- (void)pushMapViewController {
+    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    TripMapViewController *tmvc = (TripMapViewController *)[sb instantiateViewControllerWithIdentifier:@"TripMapViewController"];
+    tmvc.title = @"Yosemite";
+    [self.navigationController pushViewController:tmvc animated:YES];
 }
 
 

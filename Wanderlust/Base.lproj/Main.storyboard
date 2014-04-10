@@ -149,6 +149,37 @@
             </objects>
             <point key="canvasLocation" x="837" y="64"/>
         </scene>
+        <!--Trip Map View Controller-->
+        <scene sceneID="n1G-SU-znW">
+            <objects>
+                <viewController storyboardIdentifier="TripMapViewController" id="7dt-rF-Nge" customClass="TripMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3jc-zj-8NU"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Ku-lc-rsb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OxI-aA-Fd5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="F7Q-gg-7Qr">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="7dt-rF-Nge" id="sPI-ol-cJF"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="F7Q-gg-7Qr" id="aea-Ld-OHx"/>
+                        <outlet property="view" destination="OxI-aA-Fd5" id="x2K-cn-mCD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CGg-7u-3dF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1511" y="73"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Background.jpg" width="640" height="1136"/>

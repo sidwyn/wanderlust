@@ -44,6 +44,7 @@
 		8FF7C31C18F711220054F23F /* travel-couple.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FF7C31918F711220054F23F /* travel-couple.jpg */; };
 		8FF7C31D18F711220054F23F /* family-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FF7C31A18F711220054F23F /* family-2.jpg */; };
 		8FF7C31E18F711220054F23F /* solo-travel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FF7C31B18F711220054F23F /* solo-travel.jpg */; };
+		8FF7C32118F71ADC0054F23F /* TripMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF7C32018F71ADC0054F23F /* TripMapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,8 @@
 		8FF7C31918F711220054F23F /* travel-couple.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "travel-couple.jpg"; sourceTree = "<group>"; };
 		8FF7C31A18F711220054F23F /* family-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "family-2.jpg"; sourceTree = "<group>"; };
 		8FF7C31B18F711220054F23F /* solo-travel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "solo-travel.jpg"; sourceTree = "<group>"; };
+		8FF7C31F18F71ADC0054F23F /* TripMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripMapViewController.h; sourceTree = "<group>"; };
+		8FF7C32018F71ADC0054F23F /* TripMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripMapViewController.m; sourceTree = "<group>"; };
 		D9315A61A9B94205A857ADAB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,6 +181,8 @@
 				8F16CF1B18EDFBE10022F439 /* TutorialViewController.m */,
 				8F16CF2F18EE15870022F439 /* TripBrowseViewController.h */,
 				8F16CF3018EE15870022F439 /* TripBrowseViewController.m */,
+				8FF7C31F18F71ADC0054F23F /* TripMapViewController.h */,
+				8FF7C32018F71ADC0054F23F /* TripMapViewController.m */,
 				8F2C4C8118EDF42300A86D7D /* Background.jpg */,
 				8F2C4C8218EDF42300A86D7D /* EiffelNightLargeBlur.jpg */,
 				8F16CF1D18EDFCAD0022F439 /* Roboto-Regular.ttf */,
@@ -381,6 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FF7C32118F71ADC0054F23F /* TripMapViewController.m in Sources */,
 				8F2C4C5A18EDF34600A86D7D /* AppDelegate.m in Sources */,
 				8F16CF3118EE15870022F439 /* TripBrowseViewController.m in Sources */,
 				8F2C4C6018EDF34600A86D7D /* MasterViewController.m in Sources */,
