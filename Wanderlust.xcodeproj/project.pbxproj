@@ -41,6 +41,9 @@
 		8F2C4C8318EDF42300A86D7D /* Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F2C4C8118EDF42300A86D7D /* Background.jpg */; };
 		8F2C4C8418EDF42300A86D7D /* EiffelNightLargeBlur.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F2C4C8218EDF42300A86D7D /* EiffelNightLargeBlur.jpg */; };
 		8FA5E57318F5C3040094207E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA5E57218F5C3030094207E /* MapKit.framework */; };
+		8FF7C31C18F711220054F23F /* travel-couple.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FF7C31918F711220054F23F /* travel-couple.jpg */; };
+		8FF7C31D18F711220054F23F /* family-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FF7C31A18F711220054F23F /* family-2.jpg */; };
+		8FF7C31E18F711220054F23F /* solo-travel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FF7C31B18F711220054F23F /* solo-travel.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +99,9 @@
 		8F2C4C8118EDF42300A86D7D /* Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Background.jpg; sourceTree = "<group>"; };
 		8F2C4C8218EDF42300A86D7D /* EiffelNightLargeBlur.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = EiffelNightLargeBlur.jpg; sourceTree = "<group>"; };
 		8FA5E57218F5C3030094207E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8FF7C31918F711220054F23F /* travel-couple.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "travel-couple.jpg"; sourceTree = "<group>"; };
+		8FF7C31A18F711220054F23F /* family-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "family-2.jpg"; sourceTree = "<group>"; };
+		8FF7C31B18F711220054F23F /* solo-travel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "solo-travel.jpg"; sourceTree = "<group>"; };
 		D9315A61A9B94205A857ADAB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -188,6 +194,9 @@
 				8F16CF3218EE161B0022F439 /* yosemite.jpg */,
 				8F16CF3818EE19550022F439 /* place.png */,
 				8F2C4C6418EDF34600A86D7D /* Images.xcassets */,
+				8FF7C31918F711220054F23F /* travel-couple.jpg */,
+				8FF7C31A18F711220054F23F /* family-2.jpg */,
+				8FF7C31B18F711220054F23F /* solo-travel.jpg */,
 				8F2C4C5018EDF34600A86D7D /* Supporting Files */,
 			);
 			path = Wanderlust;
@@ -304,9 +313,12 @@
 				8F16CF2418EDFFCF0022F439 /* theme.png in Resources */,
 				8F16CF2018EDFCAD0022F439 /* Roboto-Thin.ttf in Resources */,
 				8F16CF3318EE161B0022F439 /* yosemite.jpg in Resources */,
+				8FF7C31D18F711220054F23F /* family-2.jpg in Resources */,
+				8FF7C31E18F711220054F23F /* solo-travel.jpg in Resources */,
 				8F16CF2E18EE11A50022F439 /* theme-city.jpg in Resources */,
 				8F16CF2818EE00DD0022F439 /* car.png in Resources */,
 				8F16CF3718EE18600022F439 /* Roboto-Bold.ttf in Resources */,
+				8FF7C31C18F711220054F23F /* travel-couple.jpg in Resources */,
 				8F16CF1F18EDFCAD0022F439 /* Roboto-Regular.ttf in Resources */,
 				8F2C4C6518EDF34600A86D7D /* Images.xcassets in Resources */,
 				8F2C4C8318EDF42300A86D7D /* Background.jpg in Resources */,

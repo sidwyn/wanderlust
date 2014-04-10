@@ -47,9 +47,9 @@
     if (!_objects) {
         _objects = [[NSMutableArray alloc] init];
     }
-    [_objects addObject:@{@"image":@"theme-nature.jpg", @"title":@"Solo"}];
-    [_objects addObject:@{@"image":@"theme-city.jpg", @"title":@"Two"}];
-    [_objects addObject:@{@"image":@"theme-adventure.jpg", @"title":@"Group"}];
+    [_objects addObject:@{@"image":@"solo-travel.jpg", @"title":@"Solo"}];
+    [_objects addObject:@{@"image":@"travel-couple.jpg", @"title":@"Two"}];
+    [_objects addObject:@{@"image":@"family-2.jpg", @"title":@"Group"}];
 }
 
 - (void)didReceiveMemoryWarning
