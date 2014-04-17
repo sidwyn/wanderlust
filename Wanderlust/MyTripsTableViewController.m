@@ -30,27 +30,13 @@
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     self.title = @"My Trips";
-    [self.navigationController.navigationBar setTintColor:UIColorFromRGB(0xbdc3c7)];
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bluebg.jpg"] forBarMetrics:UIBarMetricsDefault];
+    
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStylePlain target:self action:@selector(closeMyTripsController)];
     self.navigationItem.leftBarButtonItem = leftButton;
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void) viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    NSDictionary * navBarTitleTextAttributes =
-    @{ NSForegroundColorAttributeName : [UIColor blackColor]};
-    
-    [[UINavigationBar appearance] setTitleTextAttributes:navBarTitleTextAttributes];
-}
-
-- (void) viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    NSDictionary * navBarTitleTextAttributes =
-    @{ NSForegroundColorAttributeName : [UIColor whiteColor]};
-    
-    [[UINavigationBar appearance] setTitleTextAttributes:navBarTitleTextAttributes];
 }
 
 - (void)closeMyTripsController {

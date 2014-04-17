@@ -29,12 +29,14 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = UIColorFromRGB(0xbdc3c7);
     
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bluebg.jpg"] forBarMetrics:UIBarMetricsDefault];
+    
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(closeController)];
     self.navigationItem.leftBarButtonItem = cancelButton;
     
     self.title = @"Payment Information";
     
-    UILabel *peopleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 80, 200, 50)];
+    UILabel *peopleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 80-64, 200, 50)];
     peopleLabel.textAlignment = NSTextAlignmentLeft;
     peopleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:16];
     peopleLabel.textColor = UIColorFromRGB(0x2c3e50);
@@ -42,11 +44,11 @@
     peopleLabel.text = @"Credit Card Details";
     [self.view addSubview:peopleLabel];
     
-    self.paymentView = [[PKView alloc] initWithFrame:CGRectMake(20, 120, 280, 55)];
+    self.paymentView = [[PKView alloc] initWithFrame:CGRectMake(20, 120-64, 280, 55)];
     self.paymentView.delegate = self;
     [self.view addSubview:self.paymentView];
     
-    doneButton = [KHFlatButton buttonWithFrame:CGRectMake(0+20, 190, 280, 50) withTitle:@"DONE" backgroundColor:[UIColor lightGrayColor]];
+    doneButton = [KHFlatButton buttonWithFrame:CGRectMake(0+20, 190-64, 280, 50) withTitle:@"DONE" backgroundColor:[UIColor lightGrayColor]];
     [doneButton addTarget:self action:@selector(closeControllerWithPayment) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:doneButton];
 }

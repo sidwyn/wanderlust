@@ -19,6 +19,10 @@
   @{ NSForegroundColorAttributeName : [UIColor whiteColor]};
     
     [[UINavigationBar appearance] setTitleTextAttributes:navBarTitleTextAttributes];
+    [[UINavigationBar appearance] setBackgroundColor:UIColorFromRGB(0x030e18)];
+//    [[UINavigationBar appearance] setAlpha:0.7];
+    
+
     
     return YES;
 }
