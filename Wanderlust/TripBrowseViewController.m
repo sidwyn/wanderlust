@@ -13,6 +13,7 @@
 
 #define SCROLL_UP_BUTTON_TAG 111
 #define SCROLL_DOWN_BUTTON_TAG 112
+#define ADJUSTOR 40
 
 @interface TripBrowseViewController ()
 
@@ -44,7 +45,7 @@
     CGRect currentFrame = self.view.bounds;
     
     mainScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-    mainScrollView.contentSize = CGSizeMake(320, 1160);
+    mainScrollView.contentSize = CGSizeMake(320, 1260);
     mainScrollView.delegate = self;
     mainScrollView.tag = 111;
     
@@ -104,14 +105,18 @@
     [scrollUpButton addTarget:self action:@selector(scrollAround:) forControlEvents:UIControlEventTouchUpInside];
     [mainScrollView addSubview:scrollUpButton];
     
-    UILabel *descriptionHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, currentFrame.size.height-25, 280, 40)];
-    descriptionHeaderLabel.textAlignment = NSTextAlignmentLeft;
+    UIView *lineView0 = [[UIView alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+10, 280, 0.3)];
+    lineView0.backgroundColor = [UIColor whiteColor];
+    [mainScrollView addSubview:lineView0];
+    
+    UILabel *descriptionHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, currentFrame.size.height-20+ADJUSTOR, 280, 40)];
+    descriptionHeaderLabel.textAlignment = NSTextAlignmentCenter;
     descriptionHeaderLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:16];
     descriptionHeaderLabel.textColor = [UIColor whiteColor];
     descriptionHeaderLabel.text = @"About";
     [mainScrollView addSubview:descriptionHeaderLabel];
     
-    UILabel *tripDescriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, currentFrame.size.height-50, 280, 200)];
+    UILabel *tripDescriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, currentFrame.size.height-40+ADJUSTOR, 280, 200)];
     tripDescriptionLabel.text = @"Yosemite Valley is the crown jewel of the Sierra Nevada mountains. Located inside Yosemite National Park, 150 miles east of San Francisco, it is surely a great place to kick back from the busy city life.";
     tripDescriptionLabel.numberOfLines = 0;
     tripDescriptionLabel.textAlignment = NSTextAlignmentJustified;
@@ -120,18 +125,18 @@
     tripDescriptionLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:13];
     [mainScrollView addSubview:tripDescriptionLabel];
     
-    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(30, currentFrame.size.height+110, 260, 0.3)];
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+130+ADJUSTOR, 280, 0.3)];
     lineView.backgroundColor = [UIColor whiteColor];
     [mainScrollView addSubview:lineView];
     
-    UILabel *detailsHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, currentFrame.size.height-15+135, 280, 40)];
-    detailsHeaderLabel.textAlignment = NSTextAlignmentLeft;
+    UILabel *detailsHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, currentFrame.size.height-15+160+ADJUSTOR, 280, 40)];
+    detailsHeaderLabel.textAlignment = NSTextAlignmentCenter;
     detailsHeaderLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:16];
     detailsHeaderLabel.textColor = [UIColor whiteColor];
     detailsHeaderLabel.text = @"Details";
     [mainScrollView addSubview:detailsHeaderLabel];
     
-    UITableView *tripTable = [[UITableView alloc] initWithFrame:CGRectMake(5, currentFrame.size.height+155, 310, 200)];
+    UITableView *tripTable = [[UITableView alloc] initWithFrame:CGRectMake(5, currentFrame.size.height+175+ADJUSTOR, 310, 200)];
     tripTable.delegate = self;
     tripTable.dataSource = self;
     tripTable.backgroundColor = [UIColor clearColor];
@@ -140,11 +145,18 @@
     tripTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     [mainScrollView addSubview:tripTable];
     
-    UIView *lineView2 = [[UIView alloc] initWithFrame:CGRectMake(30, currentFrame.size.height+295, 260, 0.3)];
+    UIView *lineView2 = [[UIView alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+320+ADJUSTOR, 280, 0.3)];
     lineView2.backgroundColor = [UIColor whiteColor];
     [mainScrollView addSubview:lineView2];
     
-    mapView = [[MKMapView alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+320, 280, 160)];
+    UILabel *mapHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+340+ADJUSTOR, 280, 40)];
+    mapHeaderLabel.textAlignment = NSTextAlignmentCenter;
+    mapHeaderLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:16];
+    mapHeaderLabel.textColor = [UIColor whiteColor];
+    mapHeaderLabel.text = @"Map";
+    [mainScrollView addSubview:mapHeaderLabel];
+    
+    mapView = [[MKMapView alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+390+ADJUSTOR, 280, 160)];
     [mainScrollView addSubview:mapView];
     
     UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushMapViewController)];
@@ -163,10 +175,10 @@
     [mapView addAnnotation:myAnnotation];
     [mapView selectAnnotation:myAnnotation animated:YES];
     
-    notifyButton = [KHFlatButton buttonWithFrame:CGRectMake(20, currentFrame.size.height+505, 135, 50) withTitle:@"NOTIFY ME" backgroundColor:UIColorFromRGB(0x475755)];
+    notifyButton = [KHFlatButton buttonWithFrame:CGRectMake(20, currentFrame.size.height+575+ADJUSTOR, 135, 50) withTitle:@"NOTIFY ME" backgroundColor:UIColorFromRGB(0x475755)];
     [notifyButton addTarget:self action:@selector(subscribeNotifications) forControlEvents:UIControlEventTouchUpInside];
     
-    KHFlatButton *bookTripButton = [KHFlatButton buttonWithFrame:CGRectMake(165, currentFrame.size.height+505, 135, 50) withTitle:@"BOOK TRIP" backgroundColor:UIColorFromRGB(0x3cb7a3)];
+    KHFlatButton *bookTripButton = [KHFlatButton buttonWithFrame:CGRectMake(165, currentFrame.size.height+575+ADJUSTOR, 135, 50) withTitle:@"BOOK TRIP" backgroundColor:UIColorFromRGB(0x3cb7a3)];
     [bookTripButton addTarget:self action:@selector(pushBookTripController) forControlEvents:UIControlEventTouchUpInside];
     [mainScrollView addSubview:notifyButton];
     [mainScrollView addSubview:bookTripButton];
