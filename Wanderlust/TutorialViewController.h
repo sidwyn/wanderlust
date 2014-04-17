@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BackgroundButton.h"
 
 @protocol TutorialViewControllerDelegate;
 
@@ -14,6 +15,7 @@
     IBOutlet UIScrollView *tutorialScrollView;
     IBOutlet UIPageControl *pageControl;
     IBOutlet UIImageView *backgroundImageView;
+    UIButton *doneButton;
 }
 
 @property (nonatomic, assign) id <TutorialViewControllerDelegate> delegate;

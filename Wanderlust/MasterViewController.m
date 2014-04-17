@@ -7,8 +7,9 @@
 //
 
 #import "MasterViewController.h"
-
 #import "DetailViewController.h"
+#import "TripBrowseViewController.h"
+#import "TutorialViewController.h"
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
@@ -31,13 +32,16 @@
     UIBarButtonItem *backBBI = [[UIBarButtonItem alloc] initWithTitle:@"Theme" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.backBarButtonItem = backBBI;
     
+    UIBarButtonItem *leftBBI = [[UIBarButtonItem alloc] initWithTitle:@"Tutorial" style:UIBarButtonItemStylePlain target:self action:@selector(showTutorial)];
+    self.navigationItem.leftBarButtonItem = leftBBI;
+    
     UIBarButtonItem *rightBBI = [[UIBarButtonItem alloc] initWithTitle:@"Skip" style:UIBarButtonItemStylePlain target:self action:@selector(skip)];
     self.navigationItem.rightBarButtonItem = rightBBI;
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     TutorialViewController *tvc = (TutorialViewController *)[sb instantiateViewControllerWithIdentifier:@"TutorialViewController"];
     tvc.delegate = self;
-    [self presentViewController:tvc animated:NO completion:nil];
+//    [self presentViewController:tvc animated:NO completion:nil];
     
     self.title = @"Pick Theme";
     
@@ -55,13 +59,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)showTutorial {
+    NSLog(@"Show tutorial");
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    TutorialViewController *tvc = (TutorialViewController *)[sb instantiateViewControllerWithIdentifier:@"TutorialViewController"];
+    tvc.delegate = self;
+    [self presentViewController:tvc animated:YES completion:nil];
+}
+
 - (void)closeTutorial {
     NSLog(@"Close tutorial");
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)skip {
-    DetailViewController *dvc = [[DetailViewController alloc] init];
+    TripBrowseViewController *dvc = [[TripBrowseViewController alloc] init];
     [self.navigationController pushViewController:dvc animated:YES];
 }
 

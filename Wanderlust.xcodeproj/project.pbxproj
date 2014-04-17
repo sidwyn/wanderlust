@@ -40,11 +40,21 @@
 		8F2C4C7818EDF34600A86D7D /* WanderlustTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2C4C7718EDF34600A86D7D /* WanderlustTests.m */; };
 		8F2C4C8318EDF42300A86D7D /* Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F2C4C8118EDF42300A86D7D /* Background.jpg */; };
 		8F2C4C8418EDF42300A86D7D /* EiffelNightLargeBlur.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F2C4C8218EDF42300A86D7D /* EiffelNightLargeBlur.jpg */; };
+		8F58229B1900266C00B1404E /* arrowdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F58229A1900266C00B1404E /* arrowdown.png */; };
+		8F58229D1900274D00B1404E /* arrowup.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F58229C1900274D00B1404E /* arrowup.png */; };
+		8F5822A019002AD700B1404E /* BookTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F58229F19002AD700B1404E /* BookTripViewController.m */; };
+		8F5822A219002D4100B1404E /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F5822A119002D4100B1404E /* calendar.png */; };
+		8F5822A419002DAF00B1404E /* placemark.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F5822A319002DAF00B1404E /* placemark.png */; };
+		8F5822A619002DFF00B1404E /* man.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F5822A519002DFF00B1404E /* man.png */; };
+		8F5822A81900314600B1404E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F5822A71900314600B1404E /* QuartzCore.framework */; };
+		8F5822AB1900315400B1404E /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5822AA1900315400B1404E /* PaymentViewController.m */; };
 		8FA5E57318F5C3040094207E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA5E57218F5C3030094207E /* MapKit.framework */; };
 		8FF7C31C18F711220054F23F /* travel-couple.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FF7C31918F711220054F23F /* travel-couple.jpg */; };
 		8FF7C31D18F711220054F23F /* family-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FF7C31A18F711220054F23F /* family-2.jpg */; };
 		8FF7C31E18F711220054F23F /* solo-travel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FF7C31B18F711220054F23F /* solo-travel.jpg */; };
 		8FF7C32118F71ADC0054F23F /* TripMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF7C32018F71ADC0054F23F /* TripMapViewController.m */; };
+		8FF7C32418F7222E0054F23F /* BackgroundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF7C32318F7222E0054F23F /* BackgroundButton.m */; };
+		8FF7C32618F728BF0054F23F /* yosemite2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FF7C32518F728BF0054F23F /* yosemite2.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,12 +109,25 @@
 		8F2C4C7718EDF34600A86D7D /* WanderlustTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WanderlustTests.m; sourceTree = "<group>"; };
 		8F2C4C8118EDF42300A86D7D /* Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Background.jpg; sourceTree = "<group>"; };
 		8F2C4C8218EDF42300A86D7D /* EiffelNightLargeBlur.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = EiffelNightLargeBlur.jpg; sourceTree = "<group>"; };
+		8F58229A1900266C00B1404E /* arrowdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowdown.png; sourceTree = "<group>"; };
+		8F58229C1900274D00B1404E /* arrowup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowup.png; sourceTree = "<group>"; };
+		8F58229E19002AD700B1404E /* BookTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookTripViewController.h; sourceTree = "<group>"; };
+		8F58229F19002AD700B1404E /* BookTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookTripViewController.m; sourceTree = "<group>"; };
+		8F5822A119002D4100B1404E /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
+		8F5822A319002DAF00B1404E /* placemark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placemark.png; sourceTree = "<group>"; };
+		8F5822A519002DFF00B1404E /* man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = man.png; sourceTree = "<group>"; };
+		8F5822A71900314600B1404E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8F5822A91900315400B1404E /* PaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentViewController.h; sourceTree = "<group>"; };
+		8F5822AA1900315400B1404E /* PaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentViewController.m; sourceTree = "<group>"; };
 		8FA5E57218F5C3030094207E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8FF7C31918F711220054F23F /* travel-couple.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "travel-couple.jpg"; sourceTree = "<group>"; };
 		8FF7C31A18F711220054F23F /* family-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "family-2.jpg"; sourceTree = "<group>"; };
 		8FF7C31B18F711220054F23F /* solo-travel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "solo-travel.jpg"; sourceTree = "<group>"; };
 		8FF7C31F18F71ADC0054F23F /* TripMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripMapViewController.h; sourceTree = "<group>"; };
 		8FF7C32018F71ADC0054F23F /* TripMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripMapViewController.m; sourceTree = "<group>"; };
+		8FF7C32218F7222E0054F23F /* BackgroundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundButton.h; sourceTree = "<group>"; };
+		8FF7C32318F7222E0054F23F /* BackgroundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundButton.m; sourceTree = "<group>"; };
+		8FF7C32518F728BF0054F23F /* yosemite2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yosemite2.jpg; sourceTree = "<group>"; };
 		D9315A61A9B94205A857ADAB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F5822A81900314600B1404E /* QuartzCore.framework in Frameworks */,
 				8FA5E57318F5C3040094207E /* MapKit.framework in Frameworks */,
 				8F2C4C4C18EDF34600A86D7D /* CoreGraphics.framework in Frameworks */,
 				8F2C4C4E18EDF34600A86D7D /* UIKit.framework in Frameworks */,
@@ -157,6 +181,7 @@
 		8F2C4C4818EDF34600A86D7D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8F5822A71900314600B1404E /* QuartzCore.framework */,
 				8FA5E57218F5C3030094207E /* MapKit.framework */,
 				8F2C4C4918EDF34600A86D7D /* Foundation.framework */,
 				8F2C4C4B18EDF34600A86D7D /* CoreGraphics.framework */,
@@ -183,6 +208,12 @@
 				8F16CF3018EE15870022F439 /* TripBrowseViewController.m */,
 				8FF7C31F18F71ADC0054F23F /* TripMapViewController.h */,
 				8FF7C32018F71ADC0054F23F /* TripMapViewController.m */,
+				8F58229E19002AD700B1404E /* BookTripViewController.h */,
+				8F58229F19002AD700B1404E /* BookTripViewController.m */,
+				8F5822A91900315400B1404E /* PaymentViewController.h */,
+				8F5822AA1900315400B1404E /* PaymentViewController.m */,
+				8FF7C32218F7222E0054F23F /* BackgroundButton.h */,
+				8FF7C32318F7222E0054F23F /* BackgroundButton.m */,
 				8F2C4C8118EDF42300A86D7D /* Background.jpg */,
 				8F2C4C8218EDF42300A86D7D /* EiffelNightLargeBlur.jpg */,
 				8F16CF1D18EDFCAD0022F439 /* Roboto-Regular.ttf */,
@@ -197,11 +228,17 @@
 				8F16CF2A18EE11A50022F439 /* theme-adventure.jpg */,
 				8F16CF2B18EE11A50022F439 /* theme-city.jpg */,
 				8F16CF3218EE161B0022F439 /* yosemite.jpg */,
+				8FF7C32518F728BF0054F23F /* yosemite2.jpg */,
 				8F16CF3818EE19550022F439 /* place.png */,
+				8F5822A119002D4100B1404E /* calendar.png */,
+				8F5822A319002DAF00B1404E /* placemark.png */,
+				8F5822A519002DFF00B1404E /* man.png */,
 				8F2C4C6418EDF34600A86D7D /* Images.xcassets */,
 				8FF7C31918F711220054F23F /* travel-couple.jpg */,
 				8FF7C31A18F711220054F23F /* family-2.jpg */,
 				8FF7C31B18F711220054F23F /* solo-travel.jpg */,
+				8F58229A1900266C00B1404E /* arrowdown.png */,
+				8F58229C1900274D00B1404E /* arrowup.png */,
 				8F2C4C5018EDF34600A86D7D /* Supporting Files */,
 			);
 			path = Wanderlust;
@@ -246,8 +283,8 @@
 				7C24EC0367A14AD38BDD4351 /* Check Pods Manifest.lock */,
 				8F2C4C4218EDF34600A86D7D /* Sources */,
 				8F2C4C4318EDF34600A86D7D /* Frameworks */,
-				8F2C4C4418EDF34600A86D7D /* Resources */,
 				715FC1C18B5C4B3B9EF1587D /* Copy Pods Resources */,
+				8F2C4C4418EDF34600A86D7D /* Resources */,
 			);
 			buildRules = (
 			);
@@ -314,6 +351,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F5822A419002DAF00B1404E /* placemark.png in Resources */,
 				8F16CF3518EE185B0022F439 /* Roboto-Medium.ttf in Resources */,
 				8F16CF2418EDFFCF0022F439 /* theme.png in Resources */,
 				8F16CF2018EDFCAD0022F439 /* Roboto-Thin.ttf in Resources */,
@@ -323,16 +361,21 @@
 				8F16CF2E18EE11A50022F439 /* theme-city.jpg in Resources */,
 				8F16CF2818EE00DD0022F439 /* car.png in Resources */,
 				8F16CF3718EE18600022F439 /* Roboto-Bold.ttf in Resources */,
+				8F58229B1900266C00B1404E /* arrowdown.png in Resources */,
 				8FF7C31C18F711220054F23F /* travel-couple.jpg in Resources */,
 				8F16CF1F18EDFCAD0022F439 /* Roboto-Regular.ttf in Resources */,
 				8F2C4C6518EDF34600A86D7D /* Images.xcassets in Resources */,
 				8F2C4C8318EDF42300A86D7D /* Background.jpg in Resources */,
+				8F58229D1900274D00B1404E /* arrowup.png in Resources */,
 				8F16CF2C18EE11A50022F439 /* theme-nature.jpg in Resources */,
 				8F16CF2218EDFF380022F439 /* preferences.png in Resources */,
+				8F5822A219002D4100B1404E /* calendar.png in Resources */,
 				8F2C4C5418EDF34600A86D7D /* InfoPlist.strings in Resources */,
 				8F16CF2618EDFFEA0022F439 /* friends.png in Resources */,
+				8F5822A619002DFF00B1404E /* man.png in Resources */,
 				8F2C4C8418EDF42300A86D7D /* EiffelNightLargeBlur.jpg in Resources */,
 				8F16CF2D18EE11A50022F439 /* theme-adventure.jpg in Resources */,
+				8FF7C32618F728BF0054F23F /* yosemite2.jpg in Resources */,
 				8F16CF3918EE19550022F439 /* place.png in Resources */,
 				8F2C4C5D18EDF34600A86D7D /* Main.storyboard in Resources */,
 			);
@@ -387,9 +430,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FF7C32118F71ADC0054F23F /* TripMapViewController.m in Sources */,
+				8FF7C32418F7222E0054F23F /* BackgroundButton.m in Sources */,
 				8F2C4C5A18EDF34600A86D7D /* AppDelegate.m in Sources */,
+				8F5822AB1900315400B1404E /* PaymentViewController.m in Sources */,
 				8F16CF3118EE15870022F439 /* TripBrowseViewController.m in Sources */,
 				8F2C4C6018EDF34600A86D7D /* MasterViewController.m in Sources */,
+				8F5822A019002AD700B1404E /* BookTripViewController.m in Sources */,
 				8F2C4C5618EDF34600A86D7D /* main.m in Sources */,
 				8F2C4C6318EDF34600A86D7D /* DetailViewController.m in Sources */,
 				8F16CF1C18EDFBE10022F439 /* TutorialViewController.m in Sources */,
@@ -518,10 +564,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sidwyn Koh (4G4RRN54K8)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wanderlust/Wanderlust-Prefix.pch";
 				INFOPLIST_FILE = "Wanderlust/Wanderlust-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "37B6D672-003B-44CB-9AFA-8373B777332E";
+				SDKROOT = iphoneos7.1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -532,10 +582,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sidwyn Koh (4G4RRN54K8)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wanderlust/Wanderlust-Prefix.pch";
 				INFOPLIST_FILE = "Wanderlust/Wanderlust-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "37B6D672-003B-44CB-9AFA-8373B777332E";
+				SDKROOT = iphoneos7.1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

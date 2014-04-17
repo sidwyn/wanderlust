@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0500"
+   LastUpgradeVersion = "0510"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "55D38496875740A791367411"
+               BlueprintIdentifier = "B582165324A2411FABB57098"
                BuildableName = "libPods-CRMotionView.a"
                BlueprintName = "Pods-CRMotionView"
                ReferencedContainer = "container:Pods.xcodeproj">

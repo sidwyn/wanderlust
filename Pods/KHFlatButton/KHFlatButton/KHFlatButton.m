@@ -72,6 +72,8 @@ static CGFloat const kHighlightDelta = 0.2;
     
     CGFloat fontSize = floorf(CGRectGetHeight(self.bounds) / 2.5);
     self.titleLabel.font = [UIFont boldSystemFontOfSize:14];
+    self.titleLabel.numberOfLines = 0;
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
     
     [self setBackgroundColor:backgroundColor];
     [self addTarget:self action:@selector(wasPressed) forControlEvents:UIControlEventTouchDown];

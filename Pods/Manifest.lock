@@ -1,13 +1,16 @@
 PODS:
   - CRMotionView (0.3)
   - KHFlatButton (1.0.0)
+  - PaymentKit (1.0.5)
 
 DEPENDENCIES:
   - CRMotionView
   - KHFlatButton
+  - PaymentKit
 
 SPEC CHECKSUMS:
   CRMotionView: 772863d59bfd672e055fe300f089d8c9dd33593a
   KHFlatButton: dd9a4481fc6a6926c66b2ac5126e37654ff4978a
+  PaymentKit: 92df7c2fb4fb3b4e0c3f5fb8c8e75cc528025126
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.32.1

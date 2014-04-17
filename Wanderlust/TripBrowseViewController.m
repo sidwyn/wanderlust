@@ -7,10 +7,13 @@
 //
 
 #import "TripBrowseViewController.h"
-#import "CRMotionView.h"
 #include "TargetConditionals.h"
-#import <KHFlatButton/KHFlatButton.h>
 #import "TripMapViewController.h"
+#import "BookTripViewController.h"
+
+#define SCROLL_UP_BUTTON_TAG 111
+#define SCROLL_DOWN_BUTTON_TAG 112
+
 @interface TripBrowseViewController ()
 
 @end
@@ -31,12 +34,27 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    UIBarButtonItem *bookNowBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Book Now" style:UIBarButtonItemStylePlain target:self action:@selector(pushBookTripController)];
+    self.navigationItem.rightBarButtonItem = bookNowBarButton;
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = backButton;
+    
+    
     CGRect currentFrame = self.view.bounds;
     
     mainScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-    mainScrollView.contentSize = CGSizeMake(320, 1200);
+    mainScrollView.contentSize = CGSizeMake(320, 1160);
+    mainScrollView.delegate = self;
+    mainScrollView.tag = 111;
     
-    CRMotionView *motionView = [[CRMotionView alloc] initWithFrame:self.view.bounds];
+//    mainScrollView.canCancelContentTouches = NO;
+    mainScrollView.delaysContentTouches = NO;
+    
+    CGRect motionFrame = currentFrame;
+    motionFrame.size.height -= 64;
+    
+    motionView = [[CRMotionView alloc] initWithFrame:motionFrame];
     [motionView setImage:[UIImage imageNamed:@"yosemite.jpg"]];
     [self.view addSubview:motionView];
 #if TARGET_IPHONE_SIMULATOR
@@ -45,6 +63,7 @@
     
     [mainScrollView addSubview:motionView];
     
+    self.title = @"Yosemite";
     
     UILabel *s1welcomeLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 360, 300, 40)];
     s1welcomeLabel.textAlignment = NSTextAlignmentLeft;
@@ -73,21 +92,59 @@
     
     [self.view addSubview:mainScrollView];
     
-    UILabel *tripDescriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(25, currentFrame.size.height+0, 280, 200)];
+    UIButton *scrollDownButton = [[UIButton alloc] initWithFrame:CGRectMake(currentFrame.size.width/2-20, currentFrame.size.height-40-94, 40, 40)];
+    [scrollDownButton setImage:[UIImage imageNamed:@"arrowdown.png"] forState:UIControlStateNormal];
+    scrollDownButton.tag = SCROLL_DOWN_BUTTON_TAG;
+    [scrollDownButton addTarget:self action:@selector(scrollAround:) forControlEvents:UIControlEventTouchUpInside];
+    [mainScrollView addSubview:scrollDownButton];
+    
+    UIButton *scrollUpButton = [[UIButton alloc] initWithFrame:CGRectMake(currentFrame.size.width/2-20, currentFrame.size.height-50, 40, 40)];
+    [scrollUpButton setImage:[UIImage imageNamed:@"arrowup.png"] forState:UIControlStateNormal];
+    scrollUpButton.tag = SCROLL_UP_BUTTON_TAG;
+    [scrollUpButton addTarget:self action:@selector(scrollAround:) forControlEvents:UIControlEventTouchUpInside];
+    [mainScrollView addSubview:scrollUpButton];
+    
+    UILabel *descriptionHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, currentFrame.size.height-25, 280, 40)];
+    descriptionHeaderLabel.textAlignment = NSTextAlignmentLeft;
+    descriptionHeaderLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:16];
+    descriptionHeaderLabel.textColor = [UIColor whiteColor];
+    descriptionHeaderLabel.text = @"About";
+    [mainScrollView addSubview:descriptionHeaderLabel];
+    
+    UILabel *tripDescriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, currentFrame.size.height-50, 280, 200)];
     tripDescriptionLabel.text = @"Yosemite Valley is the crown jewel of the Sierra Nevada mountains. Located inside Yosemite National Park, 150 miles east of San Francisco, it is surely a great place to kick back from the busy city life.";
     tripDescriptionLabel.numberOfLines = 0;
+    tripDescriptionLabel.textAlignment = NSTextAlignmentJustified;
     tripDescriptionLabel.backgroundColor = [UIColor clearColor];
     tripDescriptionLabel.textColor = [UIColor whiteColor];
+    tripDescriptionLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:13];
     [mainScrollView addSubview:tripDescriptionLabel];
     
-    UITableView *tripTable = [[UITableView alloc] initWithFrame:CGRectMake(10, currentFrame.size.height+170, 300, 200)];
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(30, currentFrame.size.height+110, 260, 0.3)];
+    lineView.backgroundColor = [UIColor whiteColor];
+    [mainScrollView addSubview:lineView];
+    
+    UILabel *detailsHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, currentFrame.size.height-15+135, 280, 40)];
+    detailsHeaderLabel.textAlignment = NSTextAlignmentLeft;
+    detailsHeaderLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:16];
+    detailsHeaderLabel.textColor = [UIColor whiteColor];
+    detailsHeaderLabel.text = @"Details";
+    [mainScrollView addSubview:detailsHeaderLabel];
+    
+    UITableView *tripTable = [[UITableView alloc] initWithFrame:CGRectMake(5, currentFrame.size.height+155, 310, 200)];
     tripTable.delegate = self;
     tripTable.dataSource = self;
     tripTable.backgroundColor = [UIColor clearColor];
     tripTable.scrollEnabled = NO;
+    tripTable.allowsSelection = NO;
+    tripTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     [mainScrollView addSubview:tripTable];
     
-    mapView = [[MKMapView alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+380, 280, 160)];
+    UIView *lineView2 = [[UIView alloc] initWithFrame:CGRectMake(30, currentFrame.size.height+295, 260, 0.3)];
+    lineView2.backgroundColor = [UIColor whiteColor];
+    [mainScrollView addSubview:lineView2];
+    
+    mapView = [[MKMapView alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+320, 280, 160)];
     [mainScrollView addSubview:mapView];
     
     UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushMapViewController)];
@@ -106,11 +163,18 @@
     [mapView addAnnotation:myAnnotation];
     [mapView selectAnnotation:myAnnotation animated:YES];
     
+    notifyButton = [KHFlatButton buttonWithFrame:CGRectMake(20, currentFrame.size.height+505, 135, 50) withTitle:@"NOTIFY ME" backgroundColor:UIColorFromRGB(0x475755)];
+    [notifyButton addTarget:self action:@selector(subscribeNotifications) forControlEvents:UIControlEventTouchUpInside];
     
-    KHFlatButton *notifyButton = [KHFlatButton buttonWithFrame:CGRectMake(20, currentFrame.size.height+565, 140, 50) withTitle:@"NOTIFY ME" backgroundColor:UIColorFromRGB(0x475755)];
-    KHFlatButton *bookTripButton = [KHFlatButton buttonWithFrame:CGRectMake(170, currentFrame.size.height+565, 140, 50) withTitle:@"BOOK TRIP" backgroundColor:UIColorFromRGB(0x3cb7a3)];
+    KHFlatButton *bookTripButton = [KHFlatButton buttonWithFrame:CGRectMake(165, currentFrame.size.height+505, 135, 50) withTitle:@"BOOK TRIP" backgroundColor:UIColorFromRGB(0x3cb7a3)];
+    [bookTripButton addTarget:self action:@selector(pushBookTripController) forControlEvents:UIControlEventTouchUpInside];
     [mainScrollView addSubview:notifyButton];
     [mainScrollView addSubview:bookTripButton];
+    
+    UIImageView *backgroundContentView = [[UIImageView alloc] initWithFrame:CGRectMake(0, currentFrame.size.height-64, 320, 900)];
+    backgroundContentView.image = [UIImage imageNamed:@"yosemite2.jpg"];
+    [mainScrollView addSubview:backgroundContentView];
+    [mainScrollView sendSubviewToBack:backgroundContentView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -119,14 +183,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
-}
-
+//- (void) viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
+//    [self.navigationController setNavigationBarHidden:YES animated:animated];
+//}
+//
 - (void) viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [motionView setMotionEnabled:NO];
+//    [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
+
+- (void)pushBookTripController{
+    BookTripViewController *btvc = [[BookTripViewController alloc] init];
+    btvc.title = @"Book Your Trip";
+    [self.navigationController pushViewController:btvc animated:YES];
 }
 
 - (void)pushMapViewController {
@@ -137,6 +208,39 @@
     [self.navigationController pushViewController:tmvc animated:YES];
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView.tag == 111) {
+        if (scrollView.contentOffset.y <= 0) {
+            motionView.motionEnabled = YES;
+        }
+        else {
+            motionView.motionEnabled = NO;
+        }
+    }
+}
+
+- (void)scrollAround:(UIButton *)sender{
+    CGRect currentFrame = self.view.bounds;
+    
+    if (sender.tag == SCROLL_UP_BUTTON_TAG) {
+        [mainScrollView scrollRectToVisible:CGRectMake(0, 0, currentFrame.size.width, currentFrame.size.height) animated:YES];
+    }
+    else {
+        [mainScrollView scrollRectToVisible:CGRectMake(0, currentFrame.size.height-120, currentFrame.size.width, currentFrame.size.height) animated:YES];
+    }
+}
+
+- (void)subscribeNotifications {
+    if (!isSubscribed) {
+        UIAlertView *subscribeAlert = [[UIAlertView alloc] initWithTitle:@"You're Subscribed!" message:@"We'll keep you up to date with price changes for this trip." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [subscribeAlert show];
+        [notifyButton setTitle:@"CANCEL NOTIFICATIONS" forState:UIControlStateNormal];
+    }
+    else {
+        [notifyButton setTitle:@"NOTIFY ME" forState:UIControlStateNormal];
+    }
+    isSubscribed = !isSubscribed;
+}
 
 #pragma mark - Table View
 
@@ -148,6 +252,10 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 4;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 30;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

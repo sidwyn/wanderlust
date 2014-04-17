@@ -84,11 +84,17 @@
     s3readyLabel1.text = @"Ready to travel?";
     [tutorialScrollView addSubview:s3readyLabel1];
     
-    UIImageView *s3pic1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"car"]];
+    UIImageView *s3pic1 = [[UIImageView alloc] init];
     s3pic1.frame = CGRectMake(50+640, 130, 220, 220);
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            s3pic1.image = [UIImage imageNamed:@"car.png"];
+        });
+        
+    });
     [tutorialScrollView addSubview:s3pic1];
     
-    UIButton *doneButton = [[UIButton alloc] initWithFrame:CGRectMake(60+640, 340, 200, 60)];
+    doneButton = [[BackgroundButton alloc] initWithFrame:CGRectMake(60+640, 340, 200, 60)];
     [doneButton setTitle:@"I'M READY" forState:UIControlStateNormal];
     doneButton.titleLabel.font = [UIFont fontWithName:@"Roboto-Regular" size:20];
     doneButton.titleLabel.textColor = [UIColor whiteColor];
@@ -99,13 +105,26 @@
         [doneButton addTarget:self.delegate action:@selector(closeTutorial) forControlEvents:UIControlEventTouchUpInside];
     }
     [tutorialScrollView addSubview:doneButton];
+    
+    tutorialScrollView.canCancelContentTouches = NO;
+    tutorialScrollView.delaysContentTouches = NO;
 }
-
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
+
+- (void) viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 - (void)didReceiveMemoryWarning
@@ -115,6 +134,7 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
+//    NSLog(@"scroll view scroll");
     CGFloat pageWidth = sender.frame.size.width;
     int page = floor((sender.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     backgroundImageView.alpha =1 - sender.contentOffset.x/pageWidth;
