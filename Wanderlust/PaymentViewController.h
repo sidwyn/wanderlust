@@ -24,5 +24,5 @@
 
 @protocol PaymentViewControllerDelegate
 @required
-- (void)closePaymentController;
+- (void)closePaymentController:(BOOL)withPayment;
 @end

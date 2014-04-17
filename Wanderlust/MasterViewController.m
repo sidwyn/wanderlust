@@ -32,7 +32,7 @@
     UIBarButtonItem *backBBI = [[UIBarButtonItem alloc] initWithTitle:@"Theme" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.backBarButtonItem = backBBI;
     
-    UIBarButtonItem *leftBBI = [[UIBarButtonItem alloc] initWithTitle:@"Tutorial" style:UIBarButtonItemStylePlain target:self action:@selector(showTutorial)];
+    UIBarButtonItem *leftBBI = [[UIBarButtonItem alloc] initWithTitle:@"My Trips" style:UIBarButtonItemStylePlain target:self action:@selector(pushMyTripsController)];
     self.navigationItem.leftBarButtonItem = leftBBI;
     
     UIBarButtonItem *rightBBI = [[UIBarButtonItem alloc] initWithTitle:@"Skip" style:UIBarButtonItemStylePlain target:self action:@selector(skip)];
@@ -41,7 +41,7 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     TutorialViewController *tvc = (TutorialViewController *)[sb instantiateViewControllerWithIdentifier:@"TutorialViewController"];
     tvc.delegate = self;
-//    [self presentViewController:tvc animated:NO completion:nil];
+    [self presentViewController:tvc animated:NO completion:nil];
     
     self.title = @"Pick Theme";
     
@@ -70,6 +70,20 @@
 - (void)closeTutorial {
     NSLog(@"Close tutorial");
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)pushMyTripsController {
+    MyTripsTableViewController *mtvc = [[MyTripsTableViewController alloc] init];
+    mtvc.title = @"My Trips";
+    mtvc.delegate = self;
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:mtvc];
+    [nc.navigationBar setTintColor:UIColorFromRGB(0xbdc3c7)];
+    [self.navigationController presentViewController:nc animated:YES completion:nil];
+}
+
+- (void)closeMyTripsController {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 - (void)skip {

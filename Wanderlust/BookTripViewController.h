@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "PaymentViewController.h"
 
-@interface BookTripViewController : UIViewController <PaymentViewControllerDelegate>
+@interface BookTripViewController : UIViewController <PaymentViewControllerDelegate> {
+    KHFlatButton *paymentButton;
+    KHFlatButton *finalBookTripButton;
+    UIImageView *checkmarkImage;
+}
 
 @end

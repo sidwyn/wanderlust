@@ -47,7 +47,7 @@
     [self.view addSubview:self.paymentView];
     
     doneButton = [KHFlatButton buttonWithFrame:CGRectMake(0+20, 190, 280, 50) withTitle:@"DONE" backgroundColor:[UIColor lightGrayColor]];
-    [doneButton addTarget:self action:@selector(closeController) forControlEvents:UIControlEventTouchUpInside];
+    [doneButton addTarget:self action:@selector(closeControllerWithPayment) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:doneButton];
 }
 
@@ -60,9 +60,17 @@
 - (void)closeController {
     NSLog(@"Closing payments");
     if (self.delegate) {
-        [self.delegate closePaymentController];
+        [self.delegate closePaymentController:NO];
     }
 }
+
+- (void)closeControllerWithPayment {
+    NSLog(@"Closing payments");
+    if (self.delegate) {
+        [self.delegate closePaymentController:YES];
+    }
+}
+
 - (void) paymentView:(PKView*)paymentView withCard:(PKCard *)card isValid:(BOOL)valid
 {
     NSLog(@"Card number: %@", card.number);
@@ -71,7 +79,7 @@
     NSLog(@"Address zip: %@", card.addressZip);
     
     [UIView transitionWithView:doneButton
-                      duration:0.75
+                      duration:0.5
                        options:UIViewAnimationOptionCurveEaseInOut
                     animations:^{
                         doneButton.backgroundColor = UIColorFromRGB(0x3cb7a3);

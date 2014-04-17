@@ -7,6 +7,8 @@
 //
 
 #import "BookTripViewController.h"
+#import "MBProgressHUD.h"
+#import "MasterViewController.h"
 
 @interface BookTripViewController ()
 
@@ -54,7 +56,7 @@
     placemarkImage.image = [UIImage imageNamed:@"placemark"];
     [self.view addSubview:placemarkImage];
     
-    UILabel *placemarkLabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 180, 80, 50)];
+    UILabel *placemarkLabel = [[UILabel alloc] initWithFrame:CGRectMake(110, 180, 100, 50)];
     placemarkLabel.textAlignment = NSTextAlignmentCenter;
     placemarkLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
     placemarkLabel.textColor = UIColorFromRGB(0x2c3e50);
@@ -71,12 +73,22 @@
     peopleLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
     peopleLabel.textColor = UIColorFromRGB(0x2c3e50);
     peopleLabel.numberOfLines = 0;
-    peopleLabel.text = @"2 Persons";
+    peopleLabel.text = @"1 Person";
     [self.view addSubview:peopleLabel];
     
-    KHFlatButton *paymentButton = [KHFlatButton buttonWithFrame:CGRectMake(0+20, 250, 280, 50) withTitle:@"ENTER PAYMENT INFO" backgroundColor:UIColorFromRGB(0x3cb7a3)];
+    paymentButton = [KHFlatButton buttonWithFrame:CGRectMake(0+20, 250, 280, 50) withTitle:@"ENTER PAYMENT INFO" backgroundColor:UIColorFromRGB(0x3cb7a3)];
     [paymentButton addTarget:self action:@selector(pushPaymentController) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:paymentButton];
+    
+    finalBookTripButton = [KHFlatButton buttonWithFrame:CGRectMake(0+20, 320, 280, 50) withTitle:@"BOOK TRIP" backgroundColor:UIColorFromRGB(0x3cb7a3)];
+    [finalBookTripButton addTarget:self action:@selector(bookTrip) forControlEvents:UIControlEventTouchUpInside];
+    finalBookTripButton.hidden = YES;
+    [self.view addSubview:finalBookTripButton];
+    
+    checkmarkImage = [[UIImageView alloc] initWithFrame:CGRectMake(60, 15, 20, 20)];
+    checkmarkImage.image = [UIImage imageNamed:@"checkmark.png"];
+    checkmarkImage.hidden = YES;
+    [paymentButton addSubview:checkmarkImage];
 }
 
 - (void)pushPaymentController {
@@ -86,8 +98,41 @@
     [self presentViewController:nc animated:YES completion:nil];
 }
 
-- (void)closePaymentController {
+- (void)closePaymentController:(BOOL)withPayment {
     [self dismissViewControllerAnimated:YES completion:nil];
+    if (withPayment) {
+        [paymentButton setTitle:@"      PAYMENT ON FILE" forState:UIControlStateNormal];
+        checkmarkImage.hidden = NO;
+        finalBookTripButton.hidden = NO;
+        paymentButton.alpha = 0.5;
+    }
+    
+}
+
+- (void)bookTrip {
+    // replace right bar button 'refresh' with spinner
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    // how we stop refresh from freezing the main UI thread
+    dispatch_queue_t downloadQueue = dispatch_queue_create("downloader", NULL);
+    dispatch_async(downloadQueue, ^{
+        
+        // do our long running process here
+        [NSThread sleepForTimeInterval:2];
+        
+        // do any UI stuff on the main UI thread
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            NSArray *viewControllers = self.navigationController.viewControllers;
+            MasterViewController *rootViewController = (MasterViewController *) [viewControllers objectAtIndex:0];
+            [rootViewController performSelector:@selector(pushMyTripsController) withObject:nil afterDelay:1.0];
+            [self.navigationController popToRootViewControllerAnimated:YES];
+
+        });
+        
+    });
+
+    
 }
 
 - (void)didReceiveMemoryWarning

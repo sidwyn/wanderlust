@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "93CE27E46E0F46A6AE12AFF6"
-               BuildableName = "libPods-PaymentKit.a"
-               BlueprintName = "Pods-PaymentKit"
+               BlueprintIdentifier = "583F9635E6B2490F8EB4BE5D"
+               BuildableName = "libPods-MBProgressHUD.a"
+               BlueprintName = "Pods-MBProgressHUD"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

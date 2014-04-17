@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "TutorialViewController.h"
+#import "MyTripsTableViewController.h"
 
-@interface MasterViewController : UITableViewController <TutorialViewControllerDelegate>
-
+@interface MasterViewController : UITableViewController <TutorialViewControllerDelegate, MyTripsTableViewControllerDelegate>
+- (void)pushMyTripsController;
 @end

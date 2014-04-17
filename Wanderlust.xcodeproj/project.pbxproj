@@ -48,6 +48,8 @@
 		8F5822A619002DFF00B1404E /* man.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F5822A519002DFF00B1404E /* man.png */; };
 		8F5822A81900314600B1404E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F5822A71900314600B1404E /* QuartzCore.framework */; };
 		8F5822AB1900315400B1404E /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5822AA1900315400B1404E /* PaymentViewController.m */; };
+		8F5822AD19003F6A00B1404E /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F5822AC19003F6A00B1404E /* checkmark.png */; };
+		8F5822B01900453D00B1404E /* MyTripsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5822AF1900453D00B1404E /* MyTripsTableViewController.m */; };
 		8FA5E57318F5C3040094207E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA5E57218F5C3030094207E /* MapKit.framework */; };
 		8FF7C31C18F711220054F23F /* travel-couple.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FF7C31918F711220054F23F /* travel-couple.jpg */; };
 		8FF7C31D18F711220054F23F /* family-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FF7C31A18F711220054F23F /* family-2.jpg */; };
@@ -119,6 +121,9 @@
 		8F5822A71900314600B1404E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8F5822A91900315400B1404E /* PaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentViewController.h; sourceTree = "<group>"; };
 		8F5822AA1900315400B1404E /* PaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentViewController.m; sourceTree = "<group>"; };
+		8F5822AC19003F6A00B1404E /* checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark.png; sourceTree = "<group>"; };
+		8F5822AE1900453D00B1404E /* MyTripsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTripsTableViewController.h; sourceTree = "<group>"; };
+		8F5822AF1900453D00B1404E /* MyTripsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTripsTableViewController.m; sourceTree = "<group>"; };
 		8FA5E57218F5C3030094207E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8FF7C31918F711220054F23F /* travel-couple.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "travel-couple.jpg"; sourceTree = "<group>"; };
 		8FF7C31A18F711220054F23F /* family-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "family-2.jpg"; sourceTree = "<group>"; };
@@ -212,6 +217,8 @@
 				8F58229F19002AD700B1404E /* BookTripViewController.m */,
 				8F5822A91900315400B1404E /* PaymentViewController.h */,
 				8F5822AA1900315400B1404E /* PaymentViewController.m */,
+				8F5822AE1900453D00B1404E /* MyTripsTableViewController.h */,
+				8F5822AF1900453D00B1404E /* MyTripsTableViewController.m */,
 				8FF7C32218F7222E0054F23F /* BackgroundButton.h */,
 				8FF7C32318F7222E0054F23F /* BackgroundButton.m */,
 				8F2C4C8118EDF42300A86D7D /* Background.jpg */,
@@ -233,6 +240,7 @@
 				8F5822A119002D4100B1404E /* calendar.png */,
 				8F5822A319002DAF00B1404E /* placemark.png */,
 				8F5822A519002DFF00B1404E /* man.png */,
+				8F5822AC19003F6A00B1404E /* checkmark.png */,
 				8F2C4C6418EDF34600A86D7D /* Images.xcassets */,
 				8FF7C31918F711220054F23F /* travel-couple.jpg */,
 				8FF7C31A18F711220054F23F /* family-2.jpg */,
@@ -368,6 +376,7 @@
 				8F2C4C8318EDF42300A86D7D /* Background.jpg in Resources */,
 				8F58229D1900274D00B1404E /* arrowup.png in Resources */,
 				8F16CF2C18EE11A50022F439 /* theme-nature.jpg in Resources */,
+				8F5822AD19003F6A00B1404E /* checkmark.png in Resources */,
 				8F16CF2218EDFF380022F439 /* preferences.png in Resources */,
 				8F5822A219002D4100B1404E /* calendar.png in Resources */,
 				8F2C4C5418EDF34600A86D7D /* InfoPlist.strings in Resources */,
@@ -437,6 +446,7 @@
 				8F2C4C6018EDF34600A86D7D /* MasterViewController.m in Sources */,
 				8F5822A019002AD700B1404E /* BookTripViewController.m in Sources */,
 				8F2C4C5618EDF34600A86D7D /* main.m in Sources */,
+				8F5822B01900453D00B1404E /* MyTripsTableViewController.m in Sources */,
 				8F2C4C6318EDF34600A86D7D /* DetailViewController.m in Sources */,
 				8F16CF1C18EDFBE10022F439 /* TutorialViewController.m in Sources */,
 			);
