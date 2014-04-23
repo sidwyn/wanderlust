@@ -28,8 +28,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    zoomLocation.latitude = 37.865101;
-    zoomLocation.longitude= -119.538329;
+    zoomLocation.latitude = self.latitude;
+    zoomLocation.longitude= self.longitude;
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 40*METERS_PER_MILE, 40*METERS_PER_MILE);
     [mapView setRegion:viewRegion animated:YES];
     
@@ -37,8 +37,22 @@
     
     myAnnotation = [[MKPointAnnotation alloc]init];
     myAnnotation.coordinate = zoomLocation;
-    myAnnotation.title = @"Yosemite";
-    myAnnotation.subtitle = @"Yosemite Village, CA";
+    switch (self.index) {
+        case 0:
+            myAnnotation.title = @"Yosemite";
+            myAnnotation.subtitle = @"Yosemite Village, CA";
+            break;
+        case 1:
+            myAnnotation.title = @"Carmel";
+            myAnnotation.subtitle = @"Carmel-by-the-sea, CA";
+            break;
+        case 2:
+            myAnnotation.title = @"Napa Valley";
+            myAnnotation.subtitle = @"Napa County, CA";
+            break;
+        default:
+            break;
+    }
     [mapView addAnnotation:myAnnotation];
     [mapView selectAnnotation:myAnnotation animated:YES];
 }

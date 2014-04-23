@@ -14,7 +14,13 @@
     
     MKPointAnnotation *myAnnotation;
     CLLocationCoordinate2D zoomLocation;
+    
+    
 }
 
+
+@property (nonatomic, assign) float latitude;
+@property (nonatomic, assign) float longitude;
+@property (nonatomic, assign) int index;
 
 @end

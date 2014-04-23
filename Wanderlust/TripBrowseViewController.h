@@ -10,13 +10,19 @@
 #import <MapKit/MapKit.h>
 #import "CRMotionView.h"
 #import <KHFlatButton/KHFlatButton.h>
+#import <EBPhotoPages/EBPhotoPagesController.h>
 
-@interface TripBrowseViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate> {
+@interface TripBrowseViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, EBPhotoPagesDataSource, EBPhotoPagesDelegate> {
     UIScrollView *mainScrollView;
     MKMapView *mapView;
     CRMotionView *motionView;
     KHFlatButton *notifyButton;
     BOOL isSubscribed;
+    float latitude;
+    float longitude;
+    NSString *mainPlaceText;
 }
+
+@property (nonatomic, assign) int index;
 
 @end

@@ -14,5 +14,6 @@
     KHFlatButton *finalBookTripButton;
     UIImageView *checkmarkImage;
 }
+@property (nonatomic, strong) NSString *destination;
 
 @end

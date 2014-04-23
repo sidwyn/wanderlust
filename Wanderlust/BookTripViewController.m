@@ -49,7 +49,7 @@
     calendarLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
     calendarLabel.textColor = UIColorFromRGB(0x2c3e50);
     calendarLabel.numberOfLines = 0;
-    calendarLabel.text = @"April 16 - 27";
+    calendarLabel.text = @"May 2 - 4";
     [self.view addSubview:calendarLabel];
     
     UIImageView *placemarkImage = [[UIImageView alloc] initWithFrame:CGRectMake(100+30, 130, 60, 60)];
@@ -61,7 +61,7 @@
     placemarkLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
     placemarkLabel.textColor = UIColorFromRGB(0x2c3e50);
     placemarkLabel.numberOfLines = 0;
-    placemarkLabel.text = @"Yosemite, CA";
+    placemarkLabel.text = self.destination;
     [self.view addSubview:placemarkLabel];
     
     UIImageView *peopleImage = [[UIImageView alloc] initWithFrame:CGRectMake(200+30, 130, 60, 60)];

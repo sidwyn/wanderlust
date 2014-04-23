@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "TripBrowseViewController.h"
+#import "TripPageViewController.h"
 
 @interface DetailViewController ()
 - (void)configureView;
@@ -47,9 +48,10 @@
     if (!_objects) {
         _objects = [[NSMutableArray alloc] init];
     }
-    [_objects addObject:@{@"image":@"solo-travel.jpg", @"title":@"Solo"}];
-    [_objects addObject:@{@"image":@"travel-couple.jpg", @"title":@"Two"}];
-    [_objects addObject:@{@"image":@"family-2.jpg", @"title":@"Group"}];
+    [_objects addObject:@{@"image":@"group-solo.jpg", @"title":@"Solo"}];
+    [_objects addObject:@{@"image":@"group-couple.jpg", @"title":@"Two"}];
+    [_objects addObject:@{@"image":@"group-family.jpg", @"title":@"Family"}];
+    [_objects addObject:@{@"image":@"group-friends.jpg", @"title":@"Friends"}];
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,11 +69,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return 4;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 168;
+    return 126;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -82,7 +84,7 @@
     
     UIImageView *pictureView;
     if (![cell.contentView viewWithTag:100]) {
-        pictureView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 168)];
+        pictureView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 126)];
         pictureView.tag = 100;
         [cell.contentView addSubview:pictureView];
     }
@@ -92,7 +94,7 @@
     
     UILabel *themeLabel;
     if (![cell.contentView viewWithTag:101]) {
-        themeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 120, 310, 40)];
+        themeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 78, 310, 40)];
         themeLabel.textAlignment = NSTextAlignmentRight;
         themeLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:30];
         themeLabel.textColor = [UIColor whiteColor];
@@ -115,7 +117,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    TripBrowseViewController *tbvc = [[TripBrowseViewController alloc] init];
+    TripPageViewController *tbvc = [[TripPageViewController alloc] init];
     [self.navigationController pushViewController:tbvc animated:YES];
 }
 

@@ -36,12 +36,12 @@
     self.navigationItem.leftBarButtonItem = leftBBI;
     
     UIBarButtonItem *rightBBI = [[UIBarButtonItem alloc] initWithTitle:@"Skip" style:UIBarButtonItemStylePlain target:self action:@selector(skip)];
-    self.navigationItem.rightBarButtonItem = rightBBI;
+//    self.navigationItem.rightBarButtonItem = rightBBI;
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     TutorialViewController *tvc = (TutorialViewController *)[sb instantiateViewControllerWithIdentifier:@"TutorialViewController"];
     tvc.delegate = self;
-    [self presentViewController:tvc animated:NO completion:nil];
+//    [self presentViewController:tvc animated:NO completion:nil];
     
     self.title = @"Pick Theme";
     

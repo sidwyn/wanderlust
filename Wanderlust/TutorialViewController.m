@@ -27,20 +27,25 @@
     [super loadView];
     NSLog(@"Hi");
     tutorialScrollView.contentSize = CGSizeMake(320*3, 568);
-    UILabel *s1welcomeLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 120, 300, 40)];
+    
+    UIImageView *logo = [[UIImageView alloc] initWithFrame:CGRectMake(50, 100, 220, 40)];
+    [logo setImage:[UIImage imageNamed:@"wanderlust_logo"]];
+    [tutorialScrollView addSubview:logo];
+    
+    UILabel *s1welcomeLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 270, 300, 40)];
     s1welcomeLabel.textAlignment = NSTextAlignmentCenter;
-    s1welcomeLabel.font = [UIFont fontWithName:@"Roboto-Regular" size:32];
+    s1welcomeLabel.font = [UIFont fontWithName:@"Roboto-Regular" size:24];
     s1welcomeLabel.textColor = [UIColor whiteColor];
     s1welcomeLabel.text = @"Welcome, traveller.";
     [tutorialScrollView addSubview:s1welcomeLabel];
     
     
-    UILabel *s1welcomeLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(10, 160, 300, 300)];
+    UILabel *s1welcomeLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(10, 220, 300, 300)];
     s1welcomeLabel2.textAlignment = NSTextAlignmentCenter;
     s1welcomeLabel2.font = [UIFont fontWithName:@"Roboto-Thin" size:24];
     s1welcomeLabel2.textColor = [UIColor whiteColor];
     s1welcomeLabel2.numberOfLines = 3;
-    s1welcomeLabel2.text = @"Wanderlust helps you\n plan weekend getaways\n with your friends.";
+    s1welcomeLabel2.text = @"Wanderlust helps you\n plan weekend getaways.";
     [tutorialScrollView addSubview:s1welcomeLabel2];
     
     
@@ -70,10 +75,10 @@
     s2bookLabel3.textAlignment = NSTextAlignmentCenter;
     s2bookLabel3.font = [UIFont fontWithName:@"Roboto-Thin" size:24];
     s2bookLabel3.textColor = [UIColor whiteColor];
-    s2bookLabel3.text = @"3. Book a trip with friends!";
+    s2bookLabel3.text = @"3. Book your getaway!";
     [tutorialScrollView addSubview:s2bookLabel3];
     
-    UIImageView *s2pic3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"friends"]];
+    UIImageView *s2pic3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"road"]];
     s2pic3.frame = CGRectMake(130+320, 420, 70, 70);
     [tutorialScrollView addSubview:s2pic3];
     
@@ -96,7 +101,7 @@
     
     doneButton = [[BackgroundButton alloc] initWithFrame:CGRectMake(60+640, 340, 200, 60)];
     [doneButton setTitle:@"I'M READY" forState:UIControlStateNormal];
-    doneButton.titleLabel.font = [UIFont fontWithName:@"Roboto-Regular" size:20];
+    doneButton.titleLabel.font = [UIFont fontWithName:@"Roboto-Regular" size:26];
     doneButton.titleLabel.textColor = [UIColor whiteColor];
     doneButton.layer.cornerRadius = 2;
     doneButton.layer.borderWidth = 1;

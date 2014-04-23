@@ -44,9 +44,8 @@
     
     
     CGRect currentFrame = self.view.bounds;
-    
     mainScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-    mainScrollView.contentSize = CGSizeMake(320, 1260);
+    mainScrollView.contentSize = CGSizeMake(320, 1360);
     mainScrollView.delegate = self;
     mainScrollView.tag = 111;
     
@@ -56,8 +55,49 @@
     CGRect motionFrame = currentFrame;
     motionFrame.size.height -= 64;
     
+    NSString *priceLabelText;
+    NSString *placeImageText;
+    NSString *reflectionImageText;
+    NSString *venueLabelText;
+    NSString *tripDescriptionLabelText;
+    
+    switch (self.index) {
+        case 0:
+            mainPlaceText = @"Yosemite";
+            priceLabelText = @"$248";
+            placeImageText = @"yosemite.jpg";
+            reflectionImageText = @"yosemite-cut.jpg";
+            venueLabelText = @"Yosemite Village, CA";
+            tripDescriptionLabelText = @"Yosemite Valley is the crown jewel of the Sierra Nevada mountains. Located inside Yosemite National Park, 150 miles east of San Francisco, it is surely a great place to kick back from the busy city life.";
+            latitude = 37.865101;
+            longitude = -119.538329;
+            break;
+        case 1:
+            mainPlaceText = @"Carmel";
+            priceLabelText = @"$416";
+            placeImageText = @"carmel.jpg";
+            reflectionImageText = @"carmel-cut.jpg";
+            venueLabelText = @"Carmel-by-the-sea, CA";
+            tripDescriptionLabelText = @"Rated a top-10 destination in the U.S. year after year, Carmel-by-the-Sea is an amazing, European-style village nestled above a picturesque white-sand beach where everything is within walking distance from your charming hotel or inn.";
+            latitude = 36.479900;
+            longitude = -121.732796;
+            break;
+        case 2:
+            mainPlaceText = @"Napa Valley";
+            priceLabelText = @"$172";
+            placeImageText = @"napavalley.jpg";
+            reflectionImageText = @"napavalley-cut.jpg";
+            venueLabelText = @"Napa County, CA";
+            tripDescriptionLabelText = @"Whether you are wine tasting, dining at renowned restaurants like the French Laundry, pampering yourself with a mud bath in Calistoga, or just enjoying your stay at quaint bed & breakfasts, hotels or resorts ... Napa Valley is your spot of heaven on earth.";
+            latitude = 38.5000;
+            longitude = -122.3200;
+            break;
+    }
+    
+    
+    
     motionView = [[CRMotionView alloc] initWithFrame:motionFrame];
-    [motionView setImage:[UIImage imageNamed:@"yosemite.jpg"]];
+    [motionView setImage:[UIImage imageNamed:placeImageText]];
     [self.view addSubview:motionView];
 #if TARGET_IPHONE_SIMULATOR
     [motionView setMotionEnabled:NO];
@@ -71,14 +111,14 @@
     s1welcomeLabel.textAlignment = NSTextAlignmentLeft;
     s1welcomeLabel.font = [UIFont fontWithName:@"Roboto-Bold" size:32];
     s1welcomeLabel.textColor = [UIColor whiteColor];
-    s1welcomeLabel.text = @"Yosemite";
+    s1welcomeLabel.text = mainPlaceText;
     [mainScrollView addSubview:s1welcomeLabel];
     
     UILabel *priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 360, 300, 40)];
     priceLabel.textAlignment = NSTextAlignmentRight;
     priceLabel.font = [UIFont fontWithName:@"Roboto-Regular" size:28];
     priceLabel.textColor = [UIColor whiteColor];
-    priceLabel.text = @"$248";
+    priceLabel.text = priceLabelText;
     [mainScrollView addSubview:priceLabel];
     
     UIImageView *placeImage = [[UIImageView alloc] initWithFrame:CGRectMake(10, 405, 13, 13)];
@@ -89,7 +129,7 @@
     venueLabel.textAlignment = NSTextAlignmentLeft;
     venueLabel.font = [UIFont fontWithName:@"Roboto-Regular" size:16];
     venueLabel.textColor = [UIColor whiteColor];
-    venueLabel.text = @"Yosemite Village, CA";
+    venueLabel.text = venueLabelText;
     [mainScrollView addSubview:venueLabel];
     
     [self.view addSubview:mainScrollView];
@@ -118,7 +158,7 @@
     [mainScrollView addSubview:descriptionHeaderLabel];
     
     UILabel *tripDescriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, currentFrame.size.height-40+ADJUSTOR, 280, 200)];
-    tripDescriptionLabel.text = @"Yosemite Valley is the crown jewel of the Sierra Nevada mountains. Located inside Yosemite National Park, 150 miles east of San Francisco, it is surely a great place to kick back from the busy city life.";
+    tripDescriptionLabel.text = tripDescriptionLabelText;
     tripDescriptionLabel.numberOfLines = 0;
     tripDescriptionLabel.textAlignment = NSTextAlignmentJustified;
     tripDescriptionLabel.backgroundColor = [UIColor clearColor];
@@ -146,46 +186,47 @@
     tripTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     [mainScrollView addSubview:tripTable];
     
-    UIView *lineView2 = [[UIView alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+320+ADJUSTOR, 280, 0.3)];
+    UIView *lineView2 = [[UIView alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+350+ADJUSTOR, 280, 0.3)];
     lineView2.backgroundColor = [UIColor whiteColor];
     [mainScrollView addSubview:lineView2];
     
-    UILabel *mapHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+340+ADJUSTOR, 280, 40)];
+    UILabel *mapHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+370+ADJUSTOR, 280, 40)];
     mapHeaderLabel.textAlignment = NSTextAlignmentCenter;
     mapHeaderLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:16];
     mapHeaderLabel.textColor = [UIColor whiteColor];
     mapHeaderLabel.text = @"Map";
     [mainScrollView addSubview:mapHeaderLabel];
     
-    mapView = [[MKMapView alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+390+ADJUSTOR, 280, 160)];
+    mapView = [[MKMapView alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+420+ADJUSTOR, 280, 160)];
     [mainScrollView addSubview:mapView];
     
     UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushMapViewController)];
     [mapView addGestureRecognizer:tgr];
     
     CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = 37.865101;
-    zoomLocation.longitude= -119.538329;
+    zoomLocation.latitude = latitude;
+    zoomLocation.longitude= longitude;
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 40*METERS_PER_MILE, 40*METERS_PER_MILE);
     [mapView setRegion:viewRegion animated:YES];
     
     MKPointAnnotation *myAnnotation = [[MKPointAnnotation alloc]init];
     myAnnotation.coordinate = zoomLocation;
-    myAnnotation.title = @"Yosemite";
-    myAnnotation.subtitle = @"Yosemite Village, CA";
+    myAnnotation.title = mainPlaceText;
+    myAnnotation.subtitle = venueLabelText;
     [mapView addAnnotation:myAnnotation];
     [mapView selectAnnotation:myAnnotation animated:YES];
     
-    notifyButton = [KHFlatButton buttonWithFrame:CGRectMake(20, currentFrame.size.height+575+ADJUSTOR, 135, 50) withTitle:@"NOTIFY ME" backgroundColor:UIColorFromRGB(0x475755)];
+    notifyButton = [KHFlatButton buttonWithFrame:CGRectMake(20, currentFrame.size.height+605+ADJUSTOR, 135, 50) withTitle:@"NOTIFY ME" backgroundColor:UIColorFromRGB(0x475755)];
     [notifyButton addTarget:self action:@selector(subscribeNotifications) forControlEvents:UIControlEventTouchUpInside];
     
-    KHFlatButton *bookTripButton = [KHFlatButton buttonWithFrame:CGRectMake(165, currentFrame.size.height+575+ADJUSTOR, 135, 50) withTitle:@"BOOK TRIP" backgroundColor:UIColorFromRGB(0x3cb7a3)];
+    KHFlatButton *bookTripButton = [KHFlatButton buttonWithFrame:CGRectMake(165, currentFrame.size.height+605+ADJUSTOR, 135, 50) withTitle:@"BOOK TRIP" backgroundColor:UIColorFromRGB(0x3cb7a3)];
     [bookTripButton addTarget:self action:@selector(pushBookTripController) forControlEvents:UIControlEventTouchUpInside];
     [mainScrollView addSubview:notifyButton];
     [mainScrollView addSubview:bookTripButton];
     
     UIImageView *backgroundContentView = [[UIImageView alloc] initWithFrame:CGRectMake(0, currentFrame.size.height-64, 320, 900)];
-    backgroundContentView.image = [UIImage imageNamed:@"yosemite2.jpg"];
+    backgroundContentView.image = [UIImage imageNamed:reflectionImageText];
+    backgroundContentView.alpha = 0.5;
     [mainScrollView addSubview:backgroundContentView];
     [mainScrollView sendSubviewToBack:backgroundContentView];
 }
@@ -208,13 +249,18 @@
 }
 
 - (void)pushBookTripController{
+    EBPhotoPagesController *photoPagesController = [[EBPhotoPagesController alloc]
+                                                    initWithDataSource:self delegate:self];
+    
+    [self presentViewController:photoPagesController animated:YES completion:nil];
+    return;
     BookTripViewController *btvc = [[BookTripViewController alloc] init];
     btvc.title = @"Book Your Trip";
+    btvc.destination = mainPlaceText;
     [self.navigationController pushViewController:btvc animated:YES];
 }
 
 - (void)pushMapViewController {
-    
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     TripMapViewController *tmvc = (TripMapViewController *)[sb instantiateViewControllerWithIdentifier:@"TripMapViewController"];
     tmvc.title = @"Yosemite";
@@ -239,7 +285,7 @@
         [mainScrollView scrollRectToVisible:CGRectMake(0, 0, currentFrame.size.width, currentFrame.size.height) animated:YES];
     }
     else {
-        [mainScrollView scrollRectToVisible:CGRectMake(0, currentFrame.size.height-120, currentFrame.size.width, currentFrame.size.height) animated:YES];
+        [mainScrollView scrollRectToVisible:CGRectMake(0, currentFrame.size.height+20, currentFrame.size.width, currentFrame.size.height) animated:YES];
     }
 }
 
@@ -255,6 +301,68 @@
     isSubscribed = !isSubscribed;
 }
 
+
+- (BOOL)photoPagesController:(EBPhotoPagesController *)photoPagesController
+    shouldExpectPhotoAtIndex:(NSInteger)index {
+    NSLog(@"Index is %i", index);
+    if (index >=0 && index < 5)
+        return YES;
+    else return NO;
+}
+
+
+- (UIImage *)photoPagesController:(EBPhotoPagesController *)controller
+                     imageAtIndex:(NSInteger)index {
+    NSLog(@"Index is %i", index);
+    NSLog(@"self.Index is %i", self.index);
+    switch (self.index) {
+        case 0: // yosemite
+            switch (index) {
+                case 0:
+                    return [UIImage imageNamed:@"yosemite.jpg"];
+                    break;
+                case 1:
+                    return [UIImage imageNamed:@"yosemite2.jpg"];
+                case 2:
+                    return [UIImage imageNamed:@"yosemite3.jpg"];
+                case 3:
+                    return [UIImage imageNamed:@"yosemite4.jpg"];
+                case 4:
+                    return [UIImage imageNamed:@"yosemite5.jpg"];
+            }
+            break;
+        case 1: // carmel
+            switch (index) {
+                case 0:
+                    return [UIImage imageNamed:@"carmel.jpg"];
+                case 1:
+                    return [UIImage imageNamed:@"carmel2.jpg"];
+                case 2:
+                    return [UIImage imageNamed:@"carmel3.jpg"];
+                case 3:
+                    return [UIImage imageNamed:@"carmel4.jpg"];
+                case 4:
+                    return [UIImage imageNamed:@"carmel5.jpg"];
+            }
+            break;
+        case 2: // napa
+            switch (index) {
+                case 0:
+                    return [UIImage imageNamed:@"napavalley.jpg"];
+                case 1:
+                    return [UIImage imageNamed:@"napa2.jpg"];
+                case 2:
+                    return [UIImage imageNamed:@"napa3.jpg"];
+                case 3:
+                    return [UIImage imageNamed:@"napa4.jpg"];
+                case 4:
+                    return [UIImage imageNamed:@"napa5.jpg"];
+            }
+            break;
+    }
+    return [UIImage imageNamed:@"yosemite.jpg"];
+}
+
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -264,7 +372,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return 5;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -283,22 +391,57 @@
         cell.detailTextLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
     }
     cell.backgroundColor = [UIColor clearColor];
+    
+    NSString *durationText;
+    NSString *activitiesText;
+    NSString *distanceText;
+    NSString *travelTimeText;
+    NSString *lodgingText;
+    
+    switch (self.index) {
+        case 0:
+            durationText = @"3 days";
+            activitiesText = @"Hiking, horseriding, tours";
+            distanceText = @"198 miles";
+            travelTimeText = @"4 hours by car";
+            lodgingText = @"Yosemite Lodge at the Falls";
+            break;
+        case 1:
+            durationText = @"2 days";
+            activitiesText = @"Shopping, beaches, golf";
+            distanceText = @"198 miles";
+            travelTimeText = @"2 hours by car";
+            lodgingText = @"Carmel California Inn";
+            break;
+        case 2:
+            durationText = @"3 days";
+            activitiesText = @"Vineyards, mud baths";
+            distanceText = @"230 miles";
+            travelTimeText = @"3 hours by car";
+            lodgingText = @"Napa River Inn";
+            break;
+    }
+    
     switch (indexPath.row) {
         case 0:
             cell.textLabel.text = @"Duration";
-            cell.detailTextLabel.text = @"3 days";
+            cell.detailTextLabel.text = durationText;
             break;
         case 1:
             cell.textLabel.text = @"Activities";
-            cell.detailTextLabel.text = @"Hiking, horseriding, tours";
+            cell.detailTextLabel.text = activitiesText;
             break;
         case 2:
             cell.textLabel.text = @"Distance";
-            cell.detailTextLabel.text = @"198 miles / 240 km";
+            cell.detailTextLabel.text = distanceText;
             break;
         case 3:
             cell.textLabel.text = @"Travel Time";
-            cell.detailTextLabel.text = @"4 hours by car";
+            cell.detailTextLabel.text = travelTimeText;
+            break;
+        case 4:
+            cell.textLabel.text = @"Lodging";
+            cell.detailTextLabel.text = lodgingText;
             break;
             
         default:
