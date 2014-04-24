@@ -41,6 +41,8 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     TutorialViewController *tvc = (TutorialViewController *)[sb instantiateViewControllerWithIdentifier:@"TutorialViewController"];
     tvc.delegate = self;
+    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
 //    [self presentViewController:tvc animated:NO completion:nil];
     
     self.title = @"Pick Theme";
@@ -51,6 +53,30 @@
     [_objects addObject:@{@"image":@"theme-nature.jpg", @"title":@"Nature"}];
     [_objects addObject:@{@"image":@"theme-city.jpg", @"title":@"City"}];
     [_objects addObject:@{@"image":@"theme-adventure.jpg", @"title":@"Adventure"}];
+    
+    UIImage *image = [[UIImage imageNamed:@"menu.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(openMenu)];
+    self.navigationItem.leftBarButtonItem = button;
+}
+
+- (void)openMenu {
+    NSArray *images = @[
+                        [UIImage imageNamed:@"plus"],
+                        [UIImage imageNamed:@"profile"]
+                        ];
+    
+    RNFrostedSidebar *callout = [[RNFrostedSidebar alloc] initWithImages:images];
+    callout.delegate = self;
+    [callout show];
+}
+
+- (void)sidebar:(RNFrostedSidebar *)sidebar didTapItemAtIndex:(NSUInteger)index {
+    [sidebar dismissAnimated:YES];
+
+    if (index == 1) {
+        [self pushMyTripsController];
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,11 +104,11 @@
     mtvc.delegate = self;
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:mtvc];
     [nc.navigationBar setTintColor:UIColorFromRGB(0xbdc3c7)];
-    [self.navigationController presentViewController:nc animated:YES completion:nil];
+    [self.navigationController presentViewController:nc animated:NO completion:nil];
 }
 
 - (void)closeMyTripsController {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:NO completion:nil];
     
 }
 

@@ -14,6 +14,7 @@
 #define SCROLL_UP_BUTTON_TAG 111
 #define SCROLL_DOWN_BUTTON_TAG 112
 #define ADJUSTOR 40
+#define ADJUSTOR2 260
 
 @interface TripBrowseViewController ()
 
@@ -45,7 +46,7 @@
     
     CGRect currentFrame = self.view.bounds;
     mainScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-    mainScrollView.contentSize = CGSizeMake(320, 1360);
+    mainScrollView.contentSize = CGSizeMake(320, 1600);
     mainScrollView.delegate = self;
     mainScrollView.tag = 111;
     
@@ -166,18 +167,72 @@
     tripDescriptionLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:13];
     [mainScrollView addSubview:tripDescriptionLabel];
     
-    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+130+ADJUSTOR, 280, 0.3)];
+    UIView *lineView01 = [[UIView alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+130+ADJUSTOR, 280, 0.3)];
+    lineView01.backgroundColor = [UIColor whiteColor];
+    [mainScrollView addSubview:lineView01];
+    
+    UILabel *photoLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+140+ADJUSTOR, 280, 40)];
+    photoLabel.textAlignment = NSTextAlignmentCenter;
+    photoLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:16];
+    photoLabel.textColor = [UIColor whiteColor];
+    photoLabel.text = @"Photos";
+    [mainScrollView addSubview:photoLabel];
+    
+    UIScrollView *miniPhotoView = [[UIScrollView alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+ADJUSTOR+180, 280, 180)];
+    miniPhotoView.contentSize = CGSizeMake(280*5, 80);
+    UIImageView *firstImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 280, 180)];
+    UIImageView *secondImage = [[UIImageView alloc] initWithFrame:CGRectMake(280*1, 0, 280, 180)];
+    UIImageView *thirdImage = [[UIImageView alloc] initWithFrame:CGRectMake(280*2, 0, 280, 180)];
+    UIImageView *fourthImage = [[UIImageView alloc] initWithFrame:CGRectMake(280*3, 0, 280, 180)];
+    UIImageView *fifthImage = [[UIImageView alloc] initWithFrame:CGRectMake(280*4, 0, 280, 180)];
+    switch (self.index) {
+        case 0:
+            firstImage.image = [UIImage imageNamed:@"yosemite.jpg"];
+            secondImage.image = [UIImage imageNamed:@"yosemite2.jpg"];
+            thirdImage.image = [UIImage imageNamed:@"yosemite3.jpg"];
+            fourthImage.image = [UIImage imageNamed:@"yosemite4.jpg"];
+            fifthImage.image = [UIImage imageNamed:@"yosemite5.jpg"];
+            break;
+        case 1:
+            firstImage.image = [UIImage imageNamed:@"carmel.jpg"];
+            secondImage.image = [UIImage imageNamed:@"carmel2.jpg"];
+            thirdImage.image = [UIImage imageNamed:@"carmel3.jpg"];
+            fourthImage.image = [UIImage imageNamed:@"carmel4.jpg"];
+            fifthImage.image = [UIImage imageNamed:@"carmel5.jpg"];
+            break;
+        case 2:
+            firstImage.image = [UIImage imageNamed:@"napavalley.jpg"];
+            secondImage.image = [UIImage imageNamed:@"napa2.jpg"];
+            thirdImage.image = [UIImage imageNamed:@"napa3.jpg"];
+            fourthImage.image = [UIImage imageNamed:@"napa4.jpg"];
+            fifthImage.image = [UIImage imageNamed:@"napa5.jpg"];
+            break;
+            
+        
+    }
+    miniPhotoView.pagingEnabled = YES;
+    [miniPhotoView addSubview:firstImage];
+    [miniPhotoView addSubview:secondImage];
+    [miniPhotoView addSubview:thirdImage];
+    [miniPhotoView addSubview:fourthImage];
+    [miniPhotoView addSubview:fifthImage];
+    [mainScrollView addSubview:miniPhotoView];
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openPhotosController)];
+    [miniPhotoView addGestureRecognizer:singleTap];
+    
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+130+ADJUSTOR+ADJUSTOR2, 280, 0.3)];
     lineView.backgroundColor = [UIColor whiteColor];
     [mainScrollView addSubview:lineView];
     
-    UILabel *detailsHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, currentFrame.size.height-15+160+ADJUSTOR, 280, 40)];
+    UILabel *detailsHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, currentFrame.size.height-15+160+ADJUSTOR+ADJUSTOR2, 280, 40)];
     detailsHeaderLabel.textAlignment = NSTextAlignmentCenter;
     detailsHeaderLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:16];
     detailsHeaderLabel.textColor = [UIColor whiteColor];
     detailsHeaderLabel.text = @"Details";
     [mainScrollView addSubview:detailsHeaderLabel];
     
-    UITableView *tripTable = [[UITableView alloc] initWithFrame:CGRectMake(5, currentFrame.size.height+175+ADJUSTOR, 310, 200)];
+    UITableView *tripTable = [[UITableView alloc] initWithFrame:CGRectMake(5, currentFrame.size.height+175+ADJUSTOR+ADJUSTOR2, 310, 200)];
     tripTable.delegate = self;
     tripTable.dataSource = self;
     tripTable.backgroundColor = [UIColor clearColor];
@@ -186,18 +241,18 @@
     tripTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     [mainScrollView addSubview:tripTable];
     
-    UIView *lineView2 = [[UIView alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+350+ADJUSTOR, 280, 0.3)];
+    UIView *lineView2 = [[UIView alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+350+ADJUSTOR+ADJUSTOR2, 280, 0.3)];
     lineView2.backgroundColor = [UIColor whiteColor];
     [mainScrollView addSubview:lineView2];
     
-    UILabel *mapHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+370+ADJUSTOR, 280, 40)];
+    UILabel *mapHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+370+ADJUSTOR+ADJUSTOR2, 280, 40)];
     mapHeaderLabel.textAlignment = NSTextAlignmentCenter;
     mapHeaderLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:16];
     mapHeaderLabel.textColor = [UIColor whiteColor];
     mapHeaderLabel.text = @"Map";
     [mainScrollView addSubview:mapHeaderLabel];
     
-    mapView = [[MKMapView alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+420+ADJUSTOR, 280, 160)];
+    mapView = [[MKMapView alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+420+ADJUSTOR+ADJUSTOR2, 280, 160)];
     [mainScrollView addSubview:mapView];
     
     UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushMapViewController)];
@@ -216,19 +271,24 @@
     [mapView addAnnotation:myAnnotation];
     [mapView selectAnnotation:myAnnotation animated:YES];
     
-    notifyButton = [KHFlatButton buttonWithFrame:CGRectMake(20, currentFrame.size.height+605+ADJUSTOR, 135, 50) withTitle:@"NOTIFY ME" backgroundColor:UIColorFromRGB(0x475755)];
+    notifyButton = [KHFlatButton buttonWithFrame:CGRectMake(20, currentFrame.size.height+605+ADJUSTOR+ADJUSTOR2, 135, 50) withTitle:@"NOTIFY ME" backgroundColor:UIColorFromRGB(0x475755)];
     [notifyButton addTarget:self action:@selector(subscribeNotifications) forControlEvents:UIControlEventTouchUpInside];
     
-    KHFlatButton *bookTripButton = [KHFlatButton buttonWithFrame:CGRectMake(165, currentFrame.size.height+605+ADJUSTOR, 135, 50) withTitle:@"BOOK TRIP" backgroundColor:UIColorFromRGB(0x3cb7a3)];
+    KHFlatButton *bookTripButton = [KHFlatButton buttonWithFrame:CGRectMake(165, currentFrame.size.height+605+ADJUSTOR+ADJUSTOR2, 135, 50) withTitle:@"BOOK TRIP" backgroundColor:UIColorFromRGB(0x3cb7a3)];
     [bookTripButton addTarget:self action:@selector(pushBookTripController) forControlEvents:UIControlEventTouchUpInside];
     [mainScrollView addSubview:notifyButton];
     [mainScrollView addSubview:bookTripButton];
     
-    UIImageView *backgroundContentView = [[UIImageView alloc] initWithFrame:CGRectMake(0, currentFrame.size.height-64, 320, 900)];
+    
+    UIImageView *backgroundContentView = [[UIImageView alloc] initWithFrame:CGRectMake(0, currentFrame.size.height-64, 320, 1200)];
     backgroundContentView.image = [UIImage imageNamed:reflectionImageText];
     backgroundContentView.alpha = 0.5;
     [mainScrollView addSubview:backgroundContentView];
     [mainScrollView sendSubviewToBack:backgroundContentView];
+    UIView *blackView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 2000)];
+    blackView.backgroundColor = [UIColor blackColor];
+    [mainScrollView addSubview:blackView];
+    [mainScrollView sendSubviewToBack:blackView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -237,23 +297,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-//- (void) viewWillAppear:(BOOL)animated {
-//    [super viewWillAppear:animated];
-//    [self.navigationController setNavigationBarHidden:YES animated:animated];
-//}
-//
 - (void) viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [motionView setMotionEnabled:NO];
 //    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
-- (void)pushBookTripController{
+- (void)openPhotosController {
+    
     EBPhotoPagesController *photoPagesController = [[EBPhotoPagesController alloc]
                                                     initWithDataSource:self delegate:self];
     
     [self presentViewController:photoPagesController animated:YES completion:nil];
-    return;
+}
+
+- (void)pushBookTripController{
     BookTripViewController *btvc = [[BookTripViewController alloc] init];
     btvc.title = @"Book Your Trip";
     btvc.destination = mainPlaceText;
@@ -263,7 +321,10 @@
 - (void)pushMapViewController {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     TripMapViewController *tmvc = (TripMapViewController *)[sb instantiateViewControllerWithIdentifier:@"TripMapViewController"];
-    tmvc.title = @"Yosemite";
+    tmvc.title = @"Map";
+    tmvc.latitude = latitude;
+    tmvc.longitude = longitude;
+    tmvc.index = self.index;
     [self.navigationController pushViewController:tmvc animated:YES];
 }
 

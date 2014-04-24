@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-RNFrostedSidebar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,32 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0E50D5FF41674D87B035F4FF</key>
+		<key>058E7DF1F4F646149528CF8A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>25BCC9D9C36A43CC81125779</key>
+		<key>5EB15365F22F4BBEA7131C51</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4988594395014E9E9DFDDB0E</key>
+		<key>B3DF7C02E0644E76A1CEF23F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>505B8966337D4350B0122061</key>
+		<key>C559B8A492154760BE406B2D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8F9A977F5E78443EBD4C6742</key>
+		<key>C6E01D59247B4BDD822CB2C0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CC4095CA28B4463B9C92368C</key>
+		<key>E9C46566933B4050B0471213</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC5901E34C5B4E3ABD8CED8C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

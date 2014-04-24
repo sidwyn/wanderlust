@@ -10,6 +10,7 @@
 #import "TutorialViewController.h"
 #import "MyTripsTableViewController.h"
 
-@interface MasterViewController : UITableViewController <TutorialViewControllerDelegate, MyTripsTableViewControllerDelegate>
+
+@interface MasterViewController : UITableViewController <TutorialViewControllerDelegate, MyTripsTableViewControllerDelegate, RNFrostedSidebarDelegate>
 - (void)pushMyTripsController;
 @end

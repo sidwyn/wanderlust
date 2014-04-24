@@ -10,7 +10,7 @@
 
 @protocol MyTripsTableViewControllerDelegate;
 
-@interface MyTripsTableViewController : UITableViewController
+@interface MyTripsTableViewController : UITableViewController <RNFrostedSidebarDelegate>
 @property (nonatomic, assign) id <MyTripsTableViewControllerDelegate> delegate;
 
 @end

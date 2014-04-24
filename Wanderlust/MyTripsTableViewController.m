@@ -30,13 +30,30 @@
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     self.title = @"My Trips";
+    UIImage *image = [[UIImage imageNamed:@"menu.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(openMenu)];
+    self.navigationItem.leftBarButtonItem = button;
     
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bluebg.jpg"] forBarMetrics:UIBarMetricsDefault];
+}
+
+- (void)openMenu {
+    NSArray *images = @[
+                        [UIImage imageNamed:@"plus"],
+                        [UIImage imageNamed:@"profile"]
+                        ];
     
-    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStylePlain target:self action:@selector(closeMyTripsController)];
-    self.navigationItem.leftBarButtonItem = leftButton;
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    RNFrostedSidebar *callout = [[RNFrostedSidebar alloc] initWithImages:images];
+    callout.delegate = self;
+    [callout show];
+}
+
+
+- (void)sidebar:(RNFrostedSidebar *)sidebar didTapItemAtIndex:(NSUInteger)index {
+    [sidebar dismissAnimated:YES];
+    if (index == 0) {
+        [self closeMyTripsController];
+        
+    }
 }
 
 - (void)closeMyTripsController {

@@ -43,6 +43,18 @@
 		8F21621619086A6500225B45 /* napa3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F21620E19086A6500225B45 /* napa3.jpg */; };
 		8F21621719086A6500225B45 /* napa4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F21620F19086A6500225B45 /* napa4.jpg */; };
 		8F21621819086A6500225B45 /* napa5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F21621019086A6500225B45 /* napa5.jpg */; };
+		8F216226190884E000225B45 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F216225190884E000225B45 /* UIViewAdditions.m */; };
+		8F21623719089E1E00225B45 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21622F19089E1E00225B45 /* gear.png */; };
+		8F21623819089E1E00225B45 /* gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21623019089E1E00225B45 /* gear@2x.png */; };
+		8F21623919089E1E00225B45 /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21623119089E1E00225B45 /* globe.png */; };
+		8F21623A19089E1E00225B45 /* globe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21623219089E1E00225B45 /* globe@2x.png */; };
+		8F21623B19089E1E00225B45 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21623319089E1E00225B45 /* profile.png */; };
+		8F21623C19089E1E00225B45 /* profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21623419089E1E00225B45 /* profile@2x.png */; };
+		8F21623D19089E1E00225B45 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21623519089E1E00225B45 /* star.png */; };
+		8F21623E19089E1E00225B45 /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21623619089E1E00225B45 /* star@2x.png */; };
+		8F21624019089E7D00225B45 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21623F19089E7D00225B45 /* plus.png */; };
+		8F2162431908A22E00225B45 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2162411908A22E00225B45 /* menu.png */; };
+		8F2162441908A22E00225B45 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2162421908A22E00225B45 /* menu@2x.png */; };
 		8F2C4C4A18EDF34600A86D7D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2C4C4918EDF34600A86D7D /* Foundation.framework */; };
 		8F2C4C4C18EDF34600A86D7D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2C4C4B18EDF34600A86D7D /* CoreGraphics.framework */; };
 		8F2C4C4E18EDF34600A86D7D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2C4C4D18EDF34600A86D7D /* UIKit.framework */; };
@@ -134,6 +146,19 @@
 		8F21620E19086A6500225B45 /* napa3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = napa3.jpg; sourceTree = "<group>"; };
 		8F21620F19086A6500225B45 /* napa4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = napa4.jpg; sourceTree = "<group>"; };
 		8F21621019086A6500225B45 /* napa5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = napa5.jpg; sourceTree = "<group>"; };
+		8F216224190884E000225B45 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
+		8F216225190884E000225B45 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
+		8F21622F19089E1E00225B45 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
+		8F21623019089E1E00225B45 /* gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear@2x.png"; sourceTree = "<group>"; };
+		8F21623119089E1E00225B45 /* globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globe.png; sourceTree = "<group>"; };
+		8F21623219089E1E00225B45 /* globe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "globe@2x.png"; sourceTree = "<group>"; };
+		8F21623319089E1E00225B45 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		8F21623419089E1E00225B45 /* profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile@2x.png"; sourceTree = "<group>"; };
+		8F21623519089E1E00225B45 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		8F21623619089E1E00225B45 /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
+		8F21623F19089E7D00225B45 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		8F2162411908A22E00225B45 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		8F2162421908A22E00225B45 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
 		8F2C4C4618EDF34600A86D7D /* Wanderlust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wanderlust.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F2C4C4918EDF34600A86D7D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8F2C4C4B18EDF34600A86D7D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -215,6 +240,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F2162191908837800225B45 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8F2C4C8118EDF42300A86D7D /* Background.jpg */,
+				8F2161ED19082E3200225B45 /* wanderlust_logo.png */,
+				8F2C4C8218EDF42300A86D7D /* EiffelNightLargeBlur.jpg */,
+				8F16CF2118EDFF380022F439 /* preferences.png */,
+				8F3641D51900684A006190DB /* group-couple.jpg */,
+				8F3641D61900684A006190DB /* group-family.jpg */,
+				8F3641D71900684A006190DB /* group-friends.jpg */,
+				8F3641D81900684A006190DB /* group-solo.jpg */,
+				8F3641D319005B4D006190DB /* bluebg.jpg */,
+				8F16CF2318EDFFCF0022F439 /* theme.png */,
+				8F16CF2518EDFFEA0022F439 /* friends.png */,
+				8F3641DD19006A94006190DB /* road.png */,
+				8F16CF2718EE00DD0022F439 /* car.png */,
+				8F16CF2918EE11A50022F439 /* theme-nature.jpg */,
+				8F16CF2A18EE11A50022F439 /* theme-adventure.jpg */,
+				8F16CF2B18EE11A50022F439 /* theme-city.jpg */,
+				8F16CF3218EE161B0022F439 /* yosemite.jpg */,
+				8F2161FF1908697600225B45 /* yosemite-cut.jpg */,
+				8F2162011908698800225B45 /* yosemite2.jpg */,
+				8F2162021908698800225B45 /* yosemite3.jpg */,
+				8F2162031908698800225B45 /* yosemite4.jpg */,
+				8F2162041908698800225B45 /* yosemite5.jpg */,
+				8F2161F919083C0D00225B45 /* napavalley-cut.jpg */,
+				8F2161FA19083C0D00225B45 /* napavalley.jpg */,
+				8F21620919086A6500225B45 /* carmel2.jpg */,
+				8F21620A19086A6500225B45 /* carmel3.jpg */,
+				8F21620B19086A6500225B45 /* carmel4.jpg */,
+				8F21620C19086A6500225B45 /* carmel5.jpg */,
+				8F21620D19086A6500225B45 /* napa2.jpg */,
+				8F21620E19086A6500225B45 /* napa3.jpg */,
+				8F21620F19086A6500225B45 /* napa4.jpg */,
+				8F21621019086A6500225B45 /* napa5.jpg */,
+				8F2161F519083A3800225B45 /* carmel.jpg */,
+				8F2161F719083A7600225B45 /* carmel-cut.jpg */,
+				8F16CF3818EE19550022F439 /* place.png */,
+				8F5822A119002D4100B1404E /* calendar.png */,
+				8F5822A319002DAF00B1404E /* placemark.png */,
+				8F5822A519002DFF00B1404E /* man.png */,
+				8F5822AC19003F6A00B1404E /* checkmark.png */,
+				8FF7C31918F711220054F23F /* travel-couple.jpg */,
+				8FF7C31A18F711220054F23F /* family-2.jpg */,
+				8FF7C31B18F711220054F23F /* solo-travel.jpg */,
+				8F58229A1900266C00B1404E /* arrowdown.png */,
+				8F58229C1900274D00B1404E /* arrowup.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		8F21621A1908838200225B45 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8F16CF1D18EDFCAD0022F439 /* Roboto-Regular.ttf */,
+				8F16CF1E18EDFCAD0022F439 /* Roboto-Thin.ttf */,
+				8F16CF3418EE185B0022F439 /* Roboto-Medium.ttf */,
+				8F16CF3618EE18600022F439 /* Roboto-Bold.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		8F2C4C3D18EDF34600A86D7D = {
 			isa = PBXGroup;
 			children = (
@@ -276,55 +363,22 @@
 				8F5822AF1900453D00B1404E /* MyTripsTableViewController.m */,
 				8FF7C32218F7222E0054F23F /* BackgroundButton.h */,
 				8FF7C32318F7222E0054F23F /* BackgroundButton.m */,
-				8F2C4C8118EDF42300A86D7D /* Background.jpg */,
-				8F2161ED19082E3200225B45 /* wanderlust_logo.png */,
-				8F2C4C8218EDF42300A86D7D /* EiffelNightLargeBlur.jpg */,
-				8F16CF1D18EDFCAD0022F439 /* Roboto-Regular.ttf */,
-				8F16CF1E18EDFCAD0022F439 /* Roboto-Thin.ttf */,
-				8F16CF3418EE185B0022F439 /* Roboto-Medium.ttf */,
-				8F16CF3618EE18600022F439 /* Roboto-Bold.ttf */,
-				8F16CF2118EDFF380022F439 /* preferences.png */,
-				8F3641D51900684A006190DB /* group-couple.jpg */,
-				8F3641D61900684A006190DB /* group-family.jpg */,
-				8F3641D71900684A006190DB /* group-friends.jpg */,
-				8F3641D81900684A006190DB /* group-solo.jpg */,
-				8F3641D319005B4D006190DB /* bluebg.jpg */,
-				8F16CF2318EDFFCF0022F439 /* theme.png */,
-				8F16CF2518EDFFEA0022F439 /* friends.png */,
-				8F3641DD19006A94006190DB /* road.png */,
-				8F16CF2718EE00DD0022F439 /* car.png */,
-				8F16CF2918EE11A50022F439 /* theme-nature.jpg */,
-				8F16CF2A18EE11A50022F439 /* theme-adventure.jpg */,
-				8F16CF2B18EE11A50022F439 /* theme-city.jpg */,
-				8F16CF3218EE161B0022F439 /* yosemite.jpg */,
-				8F2161FF1908697600225B45 /* yosemite-cut.jpg */,
-				8F2162011908698800225B45 /* yosemite2.jpg */,
-				8F2162021908698800225B45 /* yosemite3.jpg */,
-				8F2162031908698800225B45 /* yosemite4.jpg */,
-				8F2162041908698800225B45 /* yosemite5.jpg */,
-				8F2161F919083C0D00225B45 /* napavalley-cut.jpg */,
-				8F2161FA19083C0D00225B45 /* napavalley.jpg */,
-				8F21620919086A6500225B45 /* carmel2.jpg */,
-				8F21620A19086A6500225B45 /* carmel3.jpg */,
-				8F21620B19086A6500225B45 /* carmel4.jpg */,
-				8F21620C19086A6500225B45 /* carmel5.jpg */,
-				8F21620D19086A6500225B45 /* napa2.jpg */,
-				8F21620E19086A6500225B45 /* napa3.jpg */,
-				8F21620F19086A6500225B45 /* napa4.jpg */,
-				8F21621019086A6500225B45 /* napa5.jpg */,
-				8F2161F519083A3800225B45 /* carmel.jpg */,
-				8F2161F719083A7600225B45 /* carmel-cut.jpg */,
-				8F16CF3818EE19550022F439 /* place.png */,
-				8F5822A119002D4100B1404E /* calendar.png */,
-				8F5822A319002DAF00B1404E /* placemark.png */,
-				8F5822A519002DFF00B1404E /* man.png */,
-				8F5822AC19003F6A00B1404E /* checkmark.png */,
+				8F216224190884E000225B45 /* UIViewAdditions.h */,
+				8F216225190884E000225B45 /* UIViewAdditions.m */,
+				8F21623F19089E7D00225B45 /* plus.png */,
+				8F21622F19089E1E00225B45 /* gear.png */,
+				8F21623019089E1E00225B45 /* gear@2x.png */,
+				8F21623119089E1E00225B45 /* globe.png */,
+				8F21623219089E1E00225B45 /* globe@2x.png */,
+				8F21623319089E1E00225B45 /* profile.png */,
+				8F21623419089E1E00225B45 /* profile@2x.png */,
+				8F21623519089E1E00225B45 /* star.png */,
+				8F21623619089E1E00225B45 /* star@2x.png */,
+				8F2162411908A22E00225B45 /* menu.png */,
+				8F2162421908A22E00225B45 /* menu@2x.png */,
+				8F21621A1908838200225B45 /* Fonts */,
+				8F2162191908837800225B45 /* Images */,
 				8F2C4C6418EDF34600A86D7D /* Images.xcassets */,
-				8FF7C31918F711220054F23F /* travel-couple.jpg */,
-				8FF7C31A18F711220054F23F /* family-2.jpg */,
-				8FF7C31B18F711220054F23F /* solo-travel.jpg */,
-				8F58229A1900266C00B1404E /* arrowdown.png */,
-				8F58229C1900274D00B1404E /* arrowup.png */,
 				8F2C4C5018EDF34600A86D7D /* Supporting Files */,
 			);
 			path = Wanderlust;
@@ -446,21 +500,28 @@
 				8F3641D419005B4D006190DB /* bluebg.jpg in Resources */,
 				8F16CF2418EDFFCF0022F439 /* theme.png in Resources */,
 				8F16CF2018EDFCAD0022F439 /* Roboto-Thin.ttf in Resources */,
+				8F21623E19089E1E00225B45 /* star@2x.png in Resources */,
 				8F3641DB1900684A006190DB /* group-friends.jpg in Resources */,
 				8F16CF3318EE161B0022F439 /* yosemite.jpg in Resources */,
 				8F3641DE19006A94006190DB /* road.png in Resources */,
+				8F21623D19089E1E00225B45 /* star.png in Resources */,
 				8F2162061908698800225B45 /* yosemite3.jpg in Resources */,
 				8FF7C31D18F711220054F23F /* family-2.jpg in Resources */,
 				8FF7C31E18F711220054F23F /* solo-travel.jpg in Resources */,
 				8F16CF2E18EE11A50022F439 /* theme-city.jpg in Resources */,
+				8F21623819089E1E00225B45 /* gear@2x.png in Resources */,
 				8F3641DA1900684A006190DB /* group-family.jpg in Resources */,
 				8F16CF2818EE00DD0022F439 /* car.png in Resources */,
+				8F21623719089E1E00225B45 /* gear.png in Resources */,
 				8F16CF3718EE18600022F439 /* Roboto-Bold.ttf in Resources */,
 				8F58229B1900266C00B1404E /* arrowdown.png in Resources */,
+				8F2162441908A22E00225B45 /* menu@2x.png in Resources */,
 				8FF7C31C18F711220054F23F /* travel-couple.jpg in Resources */,
 				8F21621619086A6500225B45 /* napa3.jpg in Resources */,
+				8F2162431908A22E00225B45 /* menu.png in Resources */,
 				8F16CF1F18EDFCAD0022F439 /* Roboto-Regular.ttf in Resources */,
 				8F2C4C6518EDF34600A86D7D /* Images.xcassets in Resources */,
+				8F21623C19089E1E00225B45 /* profile@2x.png in Resources */,
 				8F2C4C8318EDF42300A86D7D /* Background.jpg in Resources */,
 				8F3641DC1900684A006190DB /* group-solo.jpg in Resources */,
 				8F21621419086A6500225B45 /* carmel5.jpg in Resources */,
@@ -468,9 +529,11 @@
 				8F2162051908698800225B45 /* yosemite2.jpg in Resources */,
 				8F16CF2C18EE11A50022F439 /* theme-nature.jpg in Resources */,
 				8F5822AD19003F6A00B1404E /* checkmark.png in Resources */,
+				8F21624019089E7D00225B45 /* plus.png in Resources */,
 				8F2162001908697600225B45 /* yosemite-cut.jpg in Resources */,
 				8F2162081908698800225B45 /* yosemite5.jpg in Resources */,
 				8F21621819086A6500225B45 /* napa5.jpg in Resources */,
+				8F21623A19089E1E00225B45 /* globe@2x.png in Resources */,
 				8F16CF2218EDFF380022F439 /* preferences.png in Resources */,
 				8F5822A219002D4100B1404E /* calendar.png in Resources */,
 				8F2161F819083A7600225B45 /* carmel-cut.jpg in Resources */,
@@ -482,8 +545,10 @@
 				8F16CF2618EDFFEA0022F439 /* friends.png in Resources */,
 				8F5822A619002DFF00B1404E /* man.png in Resources */,
 				8F2C4C8418EDF42300A86D7D /* EiffelNightLargeBlur.jpg in Resources */,
+				8F21623919089E1E00225B45 /* globe.png in Resources */,
 				8F2161F619083A3800225B45 /* carmel.jpg in Resources */,
 				8F16CF2D18EE11A50022F439 /* theme-adventure.jpg in Resources */,
+				8F21623B19089E1E00225B45 /* profile.png in Resources */,
 				8F2161FB19083C0D00225B45 /* napavalley-cut.jpg in Resources */,
 				8F21621519086A6500225B45 /* napa2.jpg in Resources */,
 				8F2161EE19082E3200225B45 /* wanderlust_logo.png in Resources */,
@@ -546,6 +611,7 @@
 				8FF7C32418F7222E0054F23F /* BackgroundButton.m in Sources */,
 				8F2161F41908312800225B45 /* TripPageViewController.m in Sources */,
 				8F2C4C5A18EDF34600A86D7D /* AppDelegate.m in Sources */,
+				8F216226190884E000225B45 /* UIViewAdditions.m in Sources */,
 				8F5822AB1900315400B1404E /* PaymentViewController.m in Sources */,
 				8F16CF3118EE15870022F439 /* TripBrowseViewController.m in Sources */,
 				8F2C4C6018EDF34600A86D7D /* MasterViewController.m in Sources */,
@@ -679,8 +745,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Sidwyn Koh (FZZX7AJEE8)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wanderlust/Wanderlust-Prefix.pch";
 				INFOPLIST_FILE = "Wanderlust/Wanderlust-Info.plist";
@@ -698,8 +764,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Sidwyn Koh (FZZX7AJEE8)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wanderlust/Wanderlust-Prefix.pch";
 				INFOPLIST_FILE = "Wanderlust/Wanderlust-Info.plist";

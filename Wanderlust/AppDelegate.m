@@ -17,11 +17,10 @@
     [[UINavigationBar appearance] setTintColor:UIColorFromRGB(0xbdc3c7)];
     NSDictionary * navBarTitleTextAttributes =
   @{ NSForegroundColorAttributeName : [UIColor whiteColor]};
-    
+//
     [[UINavigationBar appearance] setTitleTextAttributes:navBarTitleTextAttributes];
-    [[UINavigationBar appearance] setBackgroundColor:UIColorFromRGB(0x030e18)];
-//    [[UINavigationBar appearance] setAlpha:0.7];
-    
+//    [[UINavigationBar appearance] setBackgroundColor:UIColorFromRGB(0x030e18)];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bluebg.jpg"] forBarMetrics:UIBarMetricsDefault];
 
     
     return YES;
