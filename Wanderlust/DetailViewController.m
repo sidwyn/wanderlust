@@ -43,15 +43,18 @@
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
     
-    self.title = @"Pick No. of Travelers";
+    
+    self.title = @"Pick Theme";
     
     if (!_objects) {
         _objects = [[NSMutableArray alloc] init];
     }
-    [_objects addObject:@{@"image":@"group-solo.jpg", @"title":@"Solo"}];
-    [_objects addObject:@{@"image":@"group-couple.jpg", @"title":@"Two"}];
-    [_objects addObject:@{@"image":@"group-family.jpg", @"title":@"Family"}];
-    [_objects addObject:@{@"image":@"group-friends.jpg", @"title":@"Friends"}];
+    [_objects addObject:@{@"image":@"theme-nature.jpg", @"title":@"Nature"}];
+    [_objects addObject:@{@"image":@"theme-city.jpg", @"title":@"City"}];
+    [_objects addObject:@{@"image":@"theme-adventure.jpg", @"title":@"Adventure"}];
+
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+ 
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,11 +72,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return _objects.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 126;
+    return 168;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -84,7 +87,7 @@
     
     UIImageView *pictureView;
     if (![cell.contentView viewWithTag:100]) {
-        pictureView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 126)];
+        pictureView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 168)];
         pictureView.tag = 100;
         [cell.contentView addSubview:pictureView];
     }
@@ -94,7 +97,7 @@
     
     UILabel *themeLabel;
     if (![cell.contentView viewWithTag:101]) {
-        themeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 78, 310, 40)];
+        themeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 120, 310, 40)];
         themeLabel.textAlignment = NSTextAlignmentRight;
         themeLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:30];
         themeLabel.textColor = [UIColor whiteColor];

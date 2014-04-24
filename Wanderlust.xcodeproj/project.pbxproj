@@ -55,6 +55,7 @@
 		8F21624019089E7D00225B45 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21623F19089E7D00225B45 /* plus.png */; };
 		8F2162431908A22E00225B45 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2162411908A22E00225B45 /* menu.png */; };
 		8F2162441908A22E00225B45 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2162421908A22E00225B45 /* menu@2x.png */; };
+		8F2162471909A41B00225B45 /* SpecialScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2162461909A41B00225B45 /* SpecialScrollView.m */; };
 		8F2C4C4A18EDF34600A86D7D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2C4C4918EDF34600A86D7D /* Foundation.framework */; };
 		8F2C4C4C18EDF34600A86D7D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2C4C4B18EDF34600A86D7D /* CoreGraphics.framework */; };
 		8F2C4C4E18EDF34600A86D7D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2C4C4D18EDF34600A86D7D /* UIKit.framework */; };
@@ -159,6 +160,8 @@
 		8F21623F19089E7D00225B45 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		8F2162411908A22E00225B45 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		8F2162421908A22E00225B45 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
+		8F2162451909A41B00225B45 /* SpecialScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialScrollView.h; sourceTree = "<group>"; };
+		8F2162461909A41B00225B45 /* SpecialScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialScrollView.m; sourceTree = "<group>"; };
 		8F2C4C4618EDF34600A86D7D /* Wanderlust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wanderlust.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F2C4C4918EDF34600A86D7D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8F2C4C4B18EDF34600A86D7D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -353,6 +356,8 @@
 				8F2161F31908312800225B45 /* TripPageViewController.m */,
 				8F16CF2F18EE15870022F439 /* TripBrowseViewController.h */,
 				8F16CF3018EE15870022F439 /* TripBrowseViewController.m */,
+				8F2162451909A41B00225B45 /* SpecialScrollView.h */,
+				8F2162461909A41B00225B45 /* SpecialScrollView.m */,
 				8FF7C31F18F71ADC0054F23F /* TripMapViewController.h */,
 				8FF7C32018F71ADC0054F23F /* TripMapViewController.m */,
 				8F58229E19002AD700B1404E /* BookTripViewController.h */,
@@ -614,6 +619,7 @@
 				8F216226190884E000225B45 /* UIViewAdditions.m in Sources */,
 				8F5822AB1900315400B1404E /* PaymentViewController.m in Sources */,
 				8F16CF3118EE15870022F439 /* TripBrowseViewController.m in Sources */,
+				8F2162471909A41B00225B45 /* SpecialScrollView.m in Sources */,
 				8F2C4C6018EDF34600A86D7D /* MasterViewController.m in Sources */,
 				8F5822A019002AD700B1404E /* BookTripViewController.m in Sources */,
 				8F2C4C5618EDF34600A86D7D /* main.m in Sources */,

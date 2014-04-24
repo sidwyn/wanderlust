@@ -10,7 +10,9 @@
 
 @protocol MyTripsTableViewControllerDelegate;
 
-@interface MyTripsTableViewController : UITableViewController <RNFrostedSidebarDelegate>
+@interface MyTripsTableViewController : UITableViewController <RNFrostedSidebarDelegate> {
+    NSMutableArray *_objects;
+}
 @property (nonatomic, assign) id <MyTripsTableViewControllerDelegate> delegate;
 
 @end

@@ -11,6 +11,9 @@
 
 #import <UIKit/UIKit.h>
 
+FOUNDATION_EXPORT NSString *const RNFrostedLabelFont;
+FOUNDATION_EXPORT NSString *const RNFrostedLabelColor;
+
 @class RNFrostedSidebar;
 
 @protocol RNFrostedSidebarDelegate <NSObject>
@@ -59,9 +62,14 @@
 // Default 2
 @property (nonatomic, assign) NSUInteger borderWidth;
 
+// If YES, only a single item can be selected at a time, and one item is always selected
+// Default NO
+@property (nonatomic, assign) BOOL isSingleSelect;
+
 // An optional delegate to respond to interaction events
 @property (nonatomic, weak) id <RNFrostedSidebarDelegate> delegate;
 
+- (instancetype)initWithImages:(NSArray *)images selectedIndices:(NSIndexSet *)selectedIndices borderColors:(NSArray *)colors labelStrings:(NSArray*)labels;
 - (instancetype)initWithImages:(NSArray *)images selectedIndices:(NSIndexSet *)selectedIndices borderColors:(NSArray *)colors;
 - (instancetype)initWithImages:(NSArray *)images selectedIndices:(NSIndexSet *)selectedIndices;
 - (instancetype)initWithImages:(NSArray *)images;
@@ -72,5 +80,7 @@
 
 - (void)dismiss;
 - (void)dismissAnimated:(BOOL)animated;
+
+- (void)setLabelOptions:(NSDictionary*)options;
 
 @end

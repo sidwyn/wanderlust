@@ -15,6 +15,7 @@
 #define SCROLL_DOWN_BUTTON_TAG 112
 #define ADJUSTOR 40
 #define ADJUSTOR2 260
+#define ADJUSTOR3 30
 
 @interface TripBrowseViewController ()
 
@@ -45,12 +46,12 @@
     
     
     CGRect currentFrame = self.view.bounds;
-    mainScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-    mainScrollView.contentSize = CGSizeMake(320, 1600);
+    mainScrollView = [[SpecialScrollView alloc] initWithFrame:self.view.bounds];
+    mainScrollView.contentSize = CGSizeMake(320, 1630);
     mainScrollView.delegate = self;
     mainScrollView.tag = 111;
     
-//    mainScrollView.canCancelContentTouches = NO;
+    mainScrollView.canCancelContentTouches = NO;
     mainScrollView.delaysContentTouches = NO;
     
     CGRect motionFrame = currentFrame;
@@ -219,6 +220,7 @@
     [mainScrollView addSubview:miniPhotoView];
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openPhotosController)];
+    singleTap.delaysTouchesBegan = NO;
     [miniPhotoView addGestureRecognizer:singleTap];
     
     UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+130+ADJUSTOR+ADJUSTOR2, 280, 0.3)];
@@ -232,7 +234,7 @@
     detailsHeaderLabel.text = @"Details";
     [mainScrollView addSubview:detailsHeaderLabel];
     
-    UITableView *tripTable = [[UITableView alloc] initWithFrame:CGRectMake(5, currentFrame.size.height+175+ADJUSTOR+ADJUSTOR2, 310, 200)];
+    UITableView *tripTable = [[UITableView alloc] initWithFrame:CGRectMake(5, currentFrame.size.height+175+ADJUSTOR+ADJUSTOR2, 310, 230)];
     tripTable.delegate = self;
     tripTable.dataSource = self;
     tripTable.backgroundColor = [UIColor clearColor];
@@ -241,21 +243,22 @@
     tripTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     [mainScrollView addSubview:tripTable];
     
-    UIView *lineView2 = [[UIView alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+350+ADJUSTOR+ADJUSTOR2, 280, 0.3)];
+    UIView *lineView2 = [[UIView alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+350+ADJUSTOR+ADJUSTOR2+ADJUSTOR3, 280, 0.3)];
     lineView2.backgroundColor = [UIColor whiteColor];
     [mainScrollView addSubview:lineView2];
     
-    UILabel *mapHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+370+ADJUSTOR+ADJUSTOR2, 280, 40)];
+    UILabel *mapHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+370+ADJUSTOR+ADJUSTOR2+ADJUSTOR3, 280, 40)];
     mapHeaderLabel.textAlignment = NSTextAlignmentCenter;
     mapHeaderLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:16];
     mapHeaderLabel.textColor = [UIColor whiteColor];
     mapHeaderLabel.text = @"Map";
     [mainScrollView addSubview:mapHeaderLabel];
     
-    mapView = [[MKMapView alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+420+ADJUSTOR+ADJUSTOR2, 280, 160)];
+    mapView = [[MKMapView alloc] initWithFrame:CGRectMake(20, currentFrame.size.height+420+ADJUSTOR+ADJUSTOR2+ADJUSTOR3, 280, 160)];
     [mainScrollView addSubview:mapView];
     
     UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushMapViewController)];
+    tgr.delaysTouchesBegan = NO;
     [mapView addGestureRecognizer:tgr];
     
     CLLocationCoordinate2D zoomLocation;
@@ -271,10 +274,10 @@
     [mapView addAnnotation:myAnnotation];
     [mapView selectAnnotation:myAnnotation animated:YES];
     
-    notifyButton = [KHFlatButton buttonWithFrame:CGRectMake(20, currentFrame.size.height+605+ADJUSTOR+ADJUSTOR2, 135, 50) withTitle:@"NOTIFY ME" backgroundColor:UIColorFromRGB(0x475755)];
+    notifyButton = [KHFlatButton buttonWithFrame:CGRectMake(20, currentFrame.size.height+605+ADJUSTOR+ADJUSTOR2+ADJUSTOR3, 135, 50) withTitle:@"NOTIFY ME" backgroundColor:UIColorFromRGB(0x475755)];
     [notifyButton addTarget:self action:@selector(subscribeNotifications) forControlEvents:UIControlEventTouchUpInside];
     
-    KHFlatButton *bookTripButton = [KHFlatButton buttonWithFrame:CGRectMake(165, currentFrame.size.height+605+ADJUSTOR+ADJUSTOR2, 135, 50) withTitle:@"BOOK TRIP" backgroundColor:UIColorFromRGB(0x3cb7a3)];
+    KHFlatButton *bookTripButton = [KHFlatButton buttonWithFrame:CGRectMake(165, currentFrame.size.height+605+ADJUSTOR+ADJUSTOR2+ADJUSTOR3, 135, 50) withTitle:@"BOOK TRIP" backgroundColor:UIColorFromRGB(0x3cb7a3)];
     [bookTripButton addTarget:self action:@selector(pushBookTripController) forControlEvents:UIControlEventTouchUpInside];
     [mainScrollView addSubview:notifyButton];
     [mainScrollView addSubview:bookTripButton];
@@ -346,7 +349,7 @@
         [mainScrollView scrollRectToVisible:CGRectMake(0, 0, currentFrame.size.width, currentFrame.size.height) animated:YES];
     }
     else {
-        [mainScrollView scrollRectToVisible:CGRectMake(0, currentFrame.size.height+20, currentFrame.size.width, currentFrame.size.height) animated:YES];
+        [mainScrollView scrollRectToVisible:CGRectMake(0, currentFrame.size.height-118, currentFrame.size.width, currentFrame.size.height) animated:YES];
     }
 }
 
@@ -354,10 +357,10 @@
     if (!isSubscribed) {
         UIAlertView *subscribeAlert = [[UIAlertView alloc] initWithTitle:@"You're Subscribed!" message:@"We'll keep you up to date with price changes for this trip." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [subscribeAlert show];
-        [notifyButton setTitle:@"CANCEL NOTIFICATIONS" forState:UIControlStateNormal];
+        [notifyButton setTitle:@"REMOVE TRIP" forState:UIControlStateNormal];
     }
     else {
-        [notifyButton setTitle:@"NOTIFY ME" forState:UIControlStateNormal];
+        [notifyButton setTitle:@"SAVE TRIP" forState:UIControlStateNormal];
     }
     isSubscribed = !isSubscribed;
 }
@@ -433,7 +436,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 6;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -458,6 +461,7 @@
     NSString *distanceText;
     NSString *travelTimeText;
     NSString *lodgingText;
+    NSString *datesText = @"May 2nd - 4th";
     
     switch (self.index) {
         case 0:
@@ -497,17 +501,22 @@
             cell.detailTextLabel.text = distanceText;
             break;
         case 3:
-            cell.textLabel.text = @"Travel Time";
+            cell.textLabel.text = @"Driving Time";
             cell.detailTextLabel.text = travelTimeText;
             break;
         case 4:
             cell.textLabel.text = @"Lodging";
             cell.detailTextLabel.text = lodgingText;
             break;
+        case 5:
+            cell.textLabel.text = @"Dates";
+            cell.detailTextLabel.text = datesText;
+            break;
             
         default:
             break;
     }
+    
     return cell;
 }
 

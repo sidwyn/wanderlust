@@ -45,18 +45,24 @@
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
 //    [self presentViewController:tvc animated:NO completion:nil];
     
-    self.title = @"Pick Theme";
+    
+    self.title = @"Pick No. of Travelers";
     
     if (!_objects) {
         _objects = [[NSMutableArray alloc] init];
     }
-    [_objects addObject:@{@"image":@"theme-nature.jpg", @"title":@"Nature"}];
-    [_objects addObject:@{@"image":@"theme-city.jpg", @"title":@"City"}];
-    [_objects addObject:@{@"image":@"theme-adventure.jpg", @"title":@"Adventure"}];
-    
+    [_objects addObject:@{@"image":@"group-solo.jpg", @"title":@"Solo"}];
+    [_objects addObject:@{@"image":@"group-couple.jpg", @"title":@"Two"}];
+    [_objects addObject:@{@"image":@"group-family.jpg", @"title":@"Family"}];
+    [_objects addObject:@{@"image":@"group-friends.jpg", @"title":@"Friends"}];
+        
     UIImage *image = [[UIImage imageNamed:@"menu.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(openMenu)];
     self.navigationItem.leftBarButtonItem = button;
+    
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(openMenu)];
+    [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.navigationController.navigationBar addGestureRecognizer:swipeRight];
 }
 
 - (void)openMenu {
@@ -65,9 +71,15 @@
                         [UIImage imageNamed:@"profile"]
                         ];
     
-    RNFrostedSidebar *callout = [[RNFrostedSidebar alloc] initWithImages:images];
+    callout = [[RNFrostedSidebar alloc] initWithImages:images selectedIndices:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 2)] borderColors:nil labelStrings:@[@"Add Trip", @"My Trips"]];
     callout.delegate = self;
     [callout show];
+}
+
+- (void)closeMenu {
+    if (callout) {
+        [callout dismissAnimated:YES];
+    }
 }
 
 - (void)sidebar:(RNFrostedSidebar *)sidebar didTapItemAtIndex:(NSUInteger)index {
@@ -107,11 +119,6 @@
     [self.navigationController presentViewController:nc animated:NO completion:nil];
 }
 
-- (void)closeMyTripsController {
-    [self dismissViewControllerAnimated:NO completion:nil];
-    
-}
-
 - (void)skip {
     TripBrowseViewController *dvc = [[TripBrowseViewController alloc] init];
     [self.navigationController pushViewController:dvc animated:YES];
@@ -130,7 +137,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 168;
+    return 126;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -141,7 +148,7 @@
     
     UIImageView *pictureView;
     if (![cell.contentView viewWithTag:100]) {
-        pictureView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 168)];
+        pictureView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 126)];
         pictureView.tag = 100;
         [cell.contentView addSubview:pictureView];
     }
@@ -151,7 +158,7 @@
     
     UILabel *themeLabel;
     if (![cell.contentView viewWithTag:101]) {
-        themeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 120, 310, 40)];
+        themeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 78, 310, 40)];
         themeLabel.textAlignment = NSTextAlignmentRight;
         themeLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:30];
         themeLabel.textColor = [UIColor whiteColor];
@@ -189,13 +196,9 @@
 }
 */
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
-    }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    DetailViewController *dvc = [[DetailViewController alloc] init];
+    [self.navigationController pushViewController:dvc animated:YES];
 }
 
 @end

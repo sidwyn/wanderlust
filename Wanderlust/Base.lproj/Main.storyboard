@@ -7,7 +7,9 @@
         <!--Navigation Controller-->
         <scene sceneID="L1C-4x-PO9">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8wv-Xf-aYa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="MasterNavigator" definesPresentationContext="YES" id="2Ba-n3-sH2" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="kcw-E7-qYC"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BA7-ih-Fja">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.011764705882352941" green="0.054901960784313725" blue="0.094117647058823528" alpha="1" colorSpace="calibratedRGB"/>
@@ -16,7 +18,6 @@
                         <segue destination="pGg-6v-bdr" kind="relationship" relationship="rootViewController" id="8aa-az-ZLg"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8wv-Xf-aYa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="25" y="64"/>
         </scene>
@@ -90,9 +91,6 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="ihb-0j-0sc" kind="push" id="VOk-Y2-B4n"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -103,7 +101,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Master" id="tQt-TN-PWz"/>
                     <connections>
-                        <segue destination="ihb-0j-0sc" kind="push" id="8Ek-Zs-Sl1"/>
+                        <segue destination="ihb-0j-0sc" kind="push" id="oEa-qa-0HS"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
@@ -191,7 +189,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="VOk-Y2-B4n"/>
-    </inferredMetricsTieBreakers>
 </document>

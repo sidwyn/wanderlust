@@ -46,7 +46,8 @@
 
     [self addChildViewController:self.pageController];
     CGRect tempFrame = self.pageController.view.frame;
-    tempFrame.origin.y += 64;
+    tempFrame.origin.y += 0;
+    tempFrame.size.height += 64;
     self.pageController.view.frame = tempFrame;
 //    self.pageController.view.frame.ori = CGRectMake(0, 64, currentFrame.size.height-64, currentFrame.size.width);
     [[self view] addSubview:[self.pageController view]];

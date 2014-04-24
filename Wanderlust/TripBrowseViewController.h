@@ -11,9 +11,10 @@
 #import "CRMotionView.h"
 #import <KHFlatButton/KHFlatButton.h>
 #import <EBPhotoPages/EBPhotoPagesController.h>
+#import "SpecialScrollView.h"
 
 @interface TripBrowseViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, EBPhotoPagesDataSource, EBPhotoPagesDelegate> {
-    UIScrollView *mainScrollView;
+    SpecialScrollView *mainScrollView;
     MKMapView *mapView;
     CRMotionView *motionView;
     KHFlatButton *notifyButton;

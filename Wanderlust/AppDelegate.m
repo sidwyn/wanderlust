@@ -13,7 +13,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackTranslucent];
+
     [[UINavigationBar appearance] setTintColor:UIColorFromRGB(0xbdc3c7)];
     NSDictionary * navBarTitleTextAttributes =
   @{ NSForegroundColorAttributeName : [UIColor whiteColor]};

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-@interface TripMapViewController : UIViewController <MKMapViewDelegate> {
+@interface TripMapViewController : UIViewController <MKMapViewDelegate, UIActionSheetDelegate> {
     IBOutlet MKMapView *mapView;
     
     MKPointAnnotation *myAnnotation;

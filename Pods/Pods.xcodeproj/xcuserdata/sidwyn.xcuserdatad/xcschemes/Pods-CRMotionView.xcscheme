@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B3DF7C02E0644E76A1CEF23F"
+               BlueprintIdentifier = "47FB7BB71DB64F6B8345007E"
                BuildableName = "libPods-CRMotionView.a"
                BlueprintName = "Pods-CRMotionView"
                ReferencedContainer = "container:Pods.xcodeproj">

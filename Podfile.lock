@@ -12,7 +12,11 @@ DEPENDENCIES:
   - KHFlatButton
   - MBProgressHUD
   - PaymentKit
-  - RNFrostedSidebar (~> 0.2.0)
+  - RNFrostedSidebar (from `https://github.com/andreamazz/RNFrostedSidebar`)
+
+EXTERNAL SOURCES:
+  RNFrostedSidebar:
+    :git: https://github.com/andreamazz/RNFrostedSidebar
 
 SPEC CHECKSUMS:
   CRMotionView: 772863d59bfd672e055fe300f089d8c9dd33593a

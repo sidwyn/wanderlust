@@ -7,6 +7,8 @@
 //
 
 #import "MyTripsTableViewController.h"
+#import "MasterViewController.h"
+#import "TripPageViewController.h"
 
 @interface MyTripsTableViewController ()
 
@@ -34,6 +36,17 @@
     UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(openMenu)];
     self.navigationItem.leftBarButtonItem = button;
     
+    
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(openMenu)];
+    [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.navigationController.navigationBar addGestureRecognizer:swipeRight];
+    
+    if (!_objects) {
+        _objects = [[NSMutableArray alloc] init];
+    }
+    [_objects addObject:@{@"image":@"yosemite.jpg", @"title":@"Yosemite"}];
+    [_objects addObject:@{@"image":@"carmel2.jpg", @"title":@"Carmel"}];
+    [_objects addObject:@{@"image":@"napa2.jpg", @"title":@"Napa Valley"}];
 }
 
 - (void)openMenu {
@@ -42,7 +55,7 @@
                         [UIImage imageNamed:@"profile"]
                         ];
     
-    RNFrostedSidebar *callout = [[RNFrostedSidebar alloc] initWithImages:images];
+    RNFrostedSidebar *callout = [[RNFrostedSidebar alloc] initWithImages:images selectedIndices:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 2)] borderColors:nil labelStrings:@[@"Add Trip", @"My Trips"]];
     callout.delegate = self;
     [callout show];
 }
@@ -51,15 +64,12 @@
 - (void)sidebar:(RNFrostedSidebar *)sidebar didTapItemAtIndex:(NSUInteger)index {
     [sidebar dismissAnimated:YES];
     if (index == 0) {
-        [self closeMyTripsController];
-        
+        NSLog(@"Yep");
+        MasterViewController *mtvc = [[MasterViewController alloc] init];
+        mtvc.title = @"Pick Theme";
+        UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:mtvc];
+        [self.navigationController presentViewController:nc animated:NO completion:nil];
     }
-}
-
-- (void)closeMyTripsController {
-    if (self.delegate) {
-        [self.delegate closeMyTripsController];
-    };
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,30 +78,67 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+#pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return 5;
+    return _objects.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 168;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    cell.textLabel.text = @"";
+    cell.accessoryType = UITableViewCellAccessoryNone;
     
-    // Configure the cell...
-    cell.textLabel.text = @"Yosemite";
+    UIImageView *pictureView;
+    if (![cell.contentView viewWithTag:100]) {
+        pictureView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 168)];
+        pictureView.tag = 100;
+        [cell.contentView addSubview:pictureView];
+    }
+    else {
+        pictureView = (UIImageView *)[cell.contentView viewWithTag:100];
+    }
+    
+    UILabel *themeLabel;
+    if (![cell.contentView viewWithTag:101]) {
+        themeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 78, 310, 40)];
+        themeLabel.textAlignment = NSTextAlignmentRight;
+        themeLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:30];
+        themeLabel.textColor = [UIColor whiteColor];
+        themeLabel.tag = 101;
+        [cell.contentView addSubview:themeLabel];
+    }
+    else {
+        themeLabel = (UILabel *)[cell.contentView viewWithTag:101];
+    }
+    
+    pictureView.image = [UIImage imageNamed:[[_objects objectAtIndex:indexPath.row] objectForKey:@"image"]];
+    themeLabel.text = [[_objects objectAtIndex:indexPath.row] objectForKey:@"title"];
     return cell;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return NO;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    TripPageViewController *tbvc = [[TripPageViewController alloc] init];
+    [self.navigationController pushViewController:tbvc animated:YES];
+}
 
 /*
 // Override to support conditional editing of the table view.

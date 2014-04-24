@@ -11,6 +11,8 @@
 #import "MyTripsTableViewController.h"
 
 
-@interface MasterViewController : UITableViewController <TutorialViewControllerDelegate, MyTripsTableViewControllerDelegate, RNFrostedSidebarDelegate>
+@interface MasterViewController : UITableViewController <TutorialViewControllerDelegate, MyTripsTableViewControllerDelegate, RNFrostedSidebarDelegate> {
+    RNFrostedSidebar *callout;
+}
 - (void)pushMyTripsController;
 @end
