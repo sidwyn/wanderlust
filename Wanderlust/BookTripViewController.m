@@ -81,11 +81,21 @@
     peopleLabel.text = @"1 Person";
     [self.view addSubview:peopleLabel];
     
-    paymentButton = [KHFlatButton buttonWithFrame:CGRectMake(0+20, 250-SEPARATOR, 280, 50) withTitle:@"ENTER PAYMENT INFO" backgroundColor:UIColorFromRGB(0x3cb7a3)];
+    
+    
+    UILabel *priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 215-SEPARATOR, 300, 50)];
+    priceLabel.textAlignment = NSTextAlignmentCenter;
+    priceLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
+    priceLabel.textColor = UIColorFromRGB(0x2c3e50);
+    priceLabel.numberOfLines = 0;
+    priceLabel.text = @"Total Price: $248";
+    [self.view addSubview:priceLabel];
+    
+    paymentButton = [KHFlatButton buttonWithFrame:CGRectMake(0+20, 270-SEPARATOR, 280, 50) withTitle:@"ENTER PAYMENT INFO" backgroundColor:UIColorFromRGB(0x3cb7a3)];
     [paymentButton addTarget:self action:@selector(pushPaymentController) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:paymentButton];
     
-    finalBookTripButton = [KHFlatButton buttonWithFrame:CGRectMake(0+20, 320-SEPARATOR, 280, 50) withTitle:@"BOOK TRIP" backgroundColor:UIColorFromRGB(0x3cb7a3)];
+    finalBookTripButton = [KHFlatButton buttonWithFrame:CGRectMake(0+20, 340-SEPARATOR, 280, 50) withTitle:@"BOOK TRIP" backgroundColor:UIColorFromRGB(0x3cb7a3)];
     [finalBookTripButton addTarget:self action:@selector(bookTrip) forControlEvents:UIControlEventTouchUpInside];
     finalBookTripButton.hidden = YES;
     [self.view addSubview:finalBookTripButton];
