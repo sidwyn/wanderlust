@@ -34,7 +34,7 @@
     
     UILabel *s1welcomeLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 270, 300, 40)];
     s1welcomeLabel.textAlignment = NSTextAlignmentCenter;
-    s1welcomeLabel.font = [UIFont fontWithName:@"Roboto-Regular" size:24];
+    s1welcomeLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:24];
     s1welcomeLabel.textColor = [UIColor whiteColor];
     s1welcomeLabel.text = @"Welcome, traveller.";
     [tutorialScrollView addSubview:s1welcomeLabel];
@@ -42,49 +42,52 @@
     
     UILabel *s1welcomeLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(10, 220, 300, 300)];
     s1welcomeLabel2.textAlignment = NSTextAlignmentCenter;
-    s1welcomeLabel2.font = [UIFont fontWithName:@"Roboto-Thin" size:24];
+    s1welcomeLabel2.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:22];
     s1welcomeLabel2.textColor = [UIColor whiteColor];
     s1welcomeLabel2.numberOfLines = 3;
-    s1welcomeLabel2.text = @"Wanderlust helps you\n plan weekend getaways.";
+    s1welcomeLabel2.text = @"Wanderlust recommends weekend getaways near you.";
     [tutorialScrollView addSubview:s1welcomeLabel2];
     
     
     UILabel *s2enterLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(10+320, 40, 300, 60)];
     s2enterLabel1.textAlignment = NSTextAlignmentCenter;
-    s2enterLabel1.font = [UIFont fontWithName:@"Roboto-Thin" size:24];
+    s2enterLabel1.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:24];
     s2enterLabel1.textColor = [UIColor whiteColor];
     s2enterLabel1.text = @"1. Enter your preferences.";
     [tutorialScrollView addSubview:s2enterLabel1];
     
     UIImageView *s2pic1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"preferences"]];
     s2pic1.frame = CGRectMake(130+320, 100, 70, 70);
+    s2pic1.alpha = 0.8;
     [tutorialScrollView addSubview:s2pic1];
     
     UILabel *s2pickLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(10+320, 200, 300, 60)];
     s2pickLabel2.textAlignment = NSTextAlignmentCenter;
-    s2pickLabel2.font = [UIFont fontWithName:@"Roboto-Thin" size:24];
+    s2pickLabel2.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:24];
     s2pickLabel2.textColor = [UIColor whiteColor];
     s2pickLabel2.text = @"2. Pick a theme.";
     [tutorialScrollView addSubview:s2pickLabel2];
     
     UIImageView *s2pic2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"theme"]];
     s2pic2.frame = CGRectMake(130+320, 260, 70, 70);
+    s2pic2.alpha = 0.8;
     [tutorialScrollView addSubview:s2pic2];
     
     UILabel *s2bookLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(10+320, 360, 300, 60)];
     s2bookLabel3.textAlignment = NSTextAlignmentCenter;
-    s2bookLabel3.font = [UIFont fontWithName:@"Roboto-Thin" size:24];
+    s2bookLabel3.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:24];
     s2bookLabel3.textColor = [UIColor whiteColor];
     s2bookLabel3.text = @"3. Book your getaway!";
     [tutorialScrollView addSubview:s2bookLabel3];
     
     UIImageView *s2pic3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"road"]];
     s2pic3.frame = CGRectMake(130+320, 420, 70, 70);
+    s2pic3.alpha = 0.8;
     [tutorialScrollView addSubview:s2pic3];
     
     UILabel *s3readyLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(10+640, 100, 300, 60)];
     s3readyLabel1.textAlignment = NSTextAlignmentCenter;
-    s3readyLabel1.font = [UIFont fontWithName:@"Roboto-Regular" size:32];
+    s3readyLabel1.font = [UIFont fontWithName:@"HelveticaNeue" size:32];
     s3readyLabel1.textColor = [UIColor whiteColor];
     s3readyLabel1.text = @"Ready to travel?";
     [tutorialScrollView addSubview:s3readyLabel1];
@@ -99,13 +102,11 @@
     });
     [tutorialScrollView addSubview:s3pic1];
     
-    doneButton = [[BackgroundButton alloc] initWithFrame:CGRectMake(60+640, 340, 200, 60)];
+    doneButton = [KHFlatButton buttonWithFrame:CGRectMake(60+640, 340, 200, 60) withTitle:@"I'M READY" backgroundColor:UIColorFromRGB(0x3cb7a3)];
+
     [doneButton setTitle:@"I'M READY" forState:UIControlStateNormal];
     doneButton.titleLabel.font = [UIFont fontWithName:@"Roboto-Regular" size:26];
     doneButton.titleLabel.textColor = [UIColor whiteColor];
-    doneButton.layer.cornerRadius = 2;
-    doneButton.layer.borderWidth = 1;
-    doneButton.layer.borderColor = [UIColor cyanColor].CGColor;
     if (self.delegate) {
         [doneButton addTarget:self.delegate action:@selector(closeTutorial) forControlEvents:UIControlEventTouchUpInside];
     }

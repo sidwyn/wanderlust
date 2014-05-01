@@ -9,6 +9,8 @@
 #import "AMLoginViewController.h"
 #import "MasterViewController.h"
 
+#define SEPARATOR 64
+
 @interface AMLoginViewController ()
 {
     AVPlayer * avPlayer;
@@ -32,20 +34,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+//    
+//#if TARGET_IPHONE_SIMULATOR
+//    UIImageView *bigView = [[UIImageView alloc] initWithFrame:self.view.frame];
+//    bigView.image = [UIImage imageNamed:@"napa2.jpg"];
+//    bigView.alpha = 0.6;
+//    bigView.contentMode =UIViewContentModeScaleAspectFill;
+//    [self.view addSubview:bigView];
+//    [self.view bringSubviewToFront:bigView];
+//    
+//    [self setViewItems];
+////    [self.view sendSubviewToBack:bigView];
+//#endif
+//    
+//#if !TARGET_IPHONE_SIMULATOR
     
-#if TARGET_IPHONE_SIMULATOR
-    UIImageView *bigView = [[UIImageView alloc] initWithFrame:self.view.frame];
-    bigView.image = [UIImage imageNamed:@"napa2.jpg"];
-    bigView.alpha = 0.6;
-    bigView.contentMode =UIViewContentModeScaleAspectFill;
-    [self.view addSubview:bigView];
-    [self.view bringSubviewToFront:bigView];
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+        self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    [self setViewItems];
-//    [self.view sendSubviewToBack:bigView];
-#endif
-    
-#if !TARGET_IPHONE_SIMULATOR
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
 
     // ---------------------------AVPLAYER STUFF -------------------------------
@@ -115,6 +121,8 @@
     //start processing BLUR with background video
     
     [self setViewItems];
+#if !TARGET_IPHONE_SIMULATOR
+
     [self procesBlurWithBackgroundVideoOnView:_usernameView];
     [self procesBlurWithBackgroundVideoOnView:_passwordView];
 #endif
@@ -127,14 +135,17 @@
     [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
     [self.navigationController.navigationBar addGestureRecognizer:swipeRight];
 
-    self.title = @"Log In";
+    self.title = @"Sign In";
+    
+    UIBarButtonItem *signUpButton = [[UIBarButtonItem alloc] initWithTitle:@"Sign Up" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.rightBarButtonItem = signUpButton;
     
 //    [usernameTf performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:1.0];
 }
 
 
 - (void)openMenu {
-    NSString *thirdName = @"Log In";
+    NSString *thirdName = @"Sign In";
     if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"loggedIn"] boolValue]) {
         thirdName = @"Settings";
     }
@@ -224,19 +235,19 @@
 
 - (void) setViewItems
 {
-    UIImageView * loginImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 90, 300, 30)];
+    UIImageView * loginImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 95-SEPARATOR, 300, 30)];
     [loginImage setImage:[UIImage imageNamed:@"wanderlust_logo"]];
     loginImage.contentMode = UIViewContentModeScaleAspectFit;
     [self.view addSubview:loginImage];
     
-    _usernameView = [[BlurView alloc] initWithFrame:CGRectMake(35, 150, 250, 50)];
-    _passwordView = [[BlurView alloc] initWithFrame:CGRectMake(35, 200, 250, 50)];
+    _usernameView = [[BlurView alloc] initWithFrame:CGRectMake(35, 150-SEPARATOR, 250, 50)];
+    _passwordView = [[BlurView alloc] initWithFrame:CGRectMake(35, 200-SEPARATOR, 250, 50)];
     
-    _sendButtonView = [[UIView alloc] initWithFrame:CGRectMake(35, 270, 250, 50)];
+    _sendButtonView = [[UIView alloc] initWithFrame:CGRectMake(35, 270-SEPARATOR, 250, 50)];
     _sendButtonView.backgroundColor = [UIColor colorWithRed:0.925 green:0.941 blue:0.945 alpha:0.7];
     
     //BUTTON
-    KHFlatButton *sendButton = [KHFlatButton buttonWithFrame:CGRectMake(0, 0, _sendButtonView.frame.size.width, _sendButtonView.frame.size.height) withTitle:@"LOG IN" backgroundColor:UIColorFromRGB(0x3cb7a3)];
+    KHFlatButton *sendButton = [KHFlatButton buttonWithFrame:CGRectMake(0, 0, _sendButtonView.frame.size.width, _sendButtonView.frame.size.height) withTitle:@"SIGN IN" backgroundColor:UIColorFromRGB(0x3cb7a3)];
 
     [sendButton addTarget:self action:@selector(doneLoggingIn) forControlEvents:UIControlEventTouchUpInside];
     [_sendButtonView addSubview:sendButton];
@@ -252,7 +263,7 @@
     
     usernameTf = [[UITextField alloc]initWithFrame:CGRectMake(60, 10, 150, 30)];
     usernameTf.delegate = self;
-    usernameTf.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"USERNAME" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    usernameTf.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Username" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     usernameTf.returnKeyType = UIReturnKeyNext;
     usernameTf.textColor = [UIColor whiteColor];
     usernameTf.autocapitalizationType = UITextAutocapitalizationTypeNone;
@@ -267,7 +278,7 @@
     
     passwordTf = [[UITextField alloc]initWithFrame:CGRectMake(60, 10, 150, 30)];
     passwordTf.delegate = self;
-    passwordTf.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"PASSWORD" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    passwordTf.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     passwordTf.autocapitalizationType = UITextAutocapitalizationTypeNone;
     passwordTf.autocorrectionType = UITextAutocorrectionTypeNo;
     passwordTf.secureTextEntry = YES;

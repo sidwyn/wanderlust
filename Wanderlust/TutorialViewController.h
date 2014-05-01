@@ -15,7 +15,7 @@
     IBOutlet UIScrollView *tutorialScrollView;
     IBOutlet UIPageControl *pageControl;
     IBOutlet UIImageView *backgroundImageView;
-    UIButton *doneButton;
+    KHFlatButton *doneButton;
 }
 
 @property (nonatomic, assign) id <TutorialViewControllerDelegate> delegate;

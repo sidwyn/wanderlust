@@ -53,7 +53,7 @@
 
 - (void)openMenu {
     
-    NSString *thirdName = @"Log In";
+    NSString *thirdName = @"Sign In";
     if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"loggedIn"] boolValue]) {
         thirdName = @"Settings";
     }

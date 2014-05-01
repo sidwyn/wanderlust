@@ -22,9 +22,27 @@
     [[UINavigationBar appearance] setTitleTextAttributes:navBarTitleTextAttributes];
 //    [[UINavigationBar appearance] setBackgroundColor:UIColorFromRGB(0x030e18)];
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bluebg.jpg"] forBarMetrics:UIBarMetricsDefault];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 
-    
+    TutorialViewController *tvc = (TutorialViewController *)[sb instantiateViewControllerWithIdentifier:@"TutorialViewController"];
+    tvc.delegate = self;
+       [self.window makeKeyAndVisible];
+    [self.window.rootViewController presentViewController:tvc animated:NO completion:nil];
+
     return YES;
+}
+
+- (void)showTutorial {
+    NSLog(@"Show tutorial");
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    TutorialViewController *tvc = (TutorialViewController *)[sb instantiateViewControllerWithIdentifier:@"TutorialViewController"];
+    tvc.delegate = self;
+    [self.window.rootViewController presentViewController:tvc animated:YES completion:nil];
+}
+
+- (void)closeTutorial {
+    NSLog(@"Close tutorial");
+    [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

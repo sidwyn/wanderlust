@@ -56,6 +56,9 @@
 		8F2162431908A22E00225B45 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2162411908A22E00225B45 /* menu.png */; };
 		8F2162441908A22E00225B45 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2162421908A22E00225B45 /* menu@2x.png */; };
 		8F2162471909A41B00225B45 /* SpecialScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2162461909A41B00225B45 /* SpecialScrollView.m */; };
+		8F2A62BA1912A3AD00C3C0A0 /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2A62B91912A3AD00C3C0A0 /* 37x-Checkmark.png */; };
+		8F2A62BD1912A43800C3C0A0 /* arrowdown-green.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2A62BB1912A43800C3C0A0 /* arrowdown-green.png */; };
+		8F2A62BE1912A43800C3C0A0 /* arrowup-green.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2A62BC1912A43800C3C0A0 /* arrowup-green.png */; };
 		8F2C4C4A18EDF34600A86D7D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2C4C4918EDF34600A86D7D /* Foundation.framework */; };
 		8F2C4C4C18EDF34600A86D7D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2C4C4B18EDF34600A86D7D /* CoreGraphics.framework */; };
 		8F2C4C4E18EDF34600A86D7D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2C4C4D18EDF34600A86D7D /* UIKit.framework */; };
@@ -186,6 +189,9 @@
 		8F2162421908A22E00225B45 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
 		8F2162451909A41B00225B45 /* SpecialScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialScrollView.h; sourceTree = "<group>"; };
 		8F2162461909A41B00225B45 /* SpecialScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialScrollView.m; sourceTree = "<group>"; };
+		8F2A62B91912A3AD00C3C0A0 /* 37x-Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark.png"; sourceTree = "<group>"; };
+		8F2A62BB1912A43800C3C0A0 /* arrowdown-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowdown-green.png"; sourceTree = "<group>"; };
+		8F2A62BC1912A43800C3C0A0 /* arrowup-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowup-green.png"; sourceTree = "<group>"; };
 		8F2C4C4618EDF34600A86D7D /* Wanderlust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wanderlust.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F2C4C4918EDF34600A86D7D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8F2C4C4B18EDF34600A86D7D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -430,6 +436,9 @@
 				8F715E5E19122D780022FF37 /* BlurView.h */,
 				8F715E5F19122D780022FF37 /* BlurView.m */,
 				8F715E7819123E370022FF37 /* yosemitevideo3.mp4 */,
+				8F2A62B91912A3AD00C3C0A0 /* 37x-Checkmark.png */,
+				8F2A62BB1912A43800C3C0A0 /* arrowdown-green.png */,
+				8F2A62BC1912A43800C3C0A0 /* arrowup-green.png */,
 				8F21623F19089E7D00225B45 /* plus.png */,
 				8F21622F19089E1E00225B45 /* gear.png */,
 				8F715E49191227A70022FF37 /* menu-car.png */,
@@ -589,6 +598,7 @@
 				8F5822A419002DAF00B1404E /* placemark.png in Resources */,
 				8F715E7719123C620022FF37 /* lodging5.jpg in Resources */,
 				8F16CF3518EE185B0022F439 /* Roboto-Medium.ttf in Resources */,
+				8F2A62BD1912A43800C3C0A0 /* arrowdown-green.png in Resources */,
 				8F21621219086A6500225B45 /* carmel3.jpg in Resources */,
 				8F3641D419005B4D006190DB /* bluebg.jpg in Resources */,
 				8F16CF2418EDFFCF0022F439 /* theme.png in Resources */,
@@ -608,6 +618,7 @@
 				8F16CF2E18EE11A50022F439 /* theme-city.jpg in Resources */,
 				8F21623819089E1E00225B45 /* gear@2x.png in Resources */,
 				8F3641DA1900684A006190DB /* group-family.jpg in Resources */,
+				8F2A62BE1912A43800C3C0A0 /* arrowup-green.png in Resources */,
 				8F715E4C19122B180022FF37 /* menu-gear.png in Resources */,
 				8F16CF2818EE00DD0022F439 /* car.png in Resources */,
 				8F21623719089E1E00225B45 /* gear.png in Resources */,
@@ -630,6 +641,7 @@
 				8F715E7919123E370022FF37 /* yosemitevideo3.mp4 in Resources */,
 				8F2162051908698800225B45 /* yosemite2.jpg in Resources */,
 				8F16CF2C18EE11A50022F439 /* theme-nature.jpg in Resources */,
+				8F2A62BA1912A3AD00C3C0A0 /* 37x-Checkmark.png in Resources */,
 				8F5822AD19003F6A00B1404E /* checkmark.png in Resources */,
 				8F21624019089E7D00225B45 /* plus.png in Resources */,
 				8F2162001908697600225B45 /* yosemite-cut.jpg in Resources */,

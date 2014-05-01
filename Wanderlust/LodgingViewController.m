@@ -26,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor blackColor];
     // Do any additional setup after loading the view.
     UIScrollView *miniPhotoView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 240)];
     miniPhotoView.contentSize = CGSizeMake(320*5, 80);
@@ -46,6 +47,7 @@
     [miniPhotoView addSubview:fourthImage];
     [miniPhotoView addSubview:fifthImage];
     [self.view addSubview:miniPhotoView];
+    miniPhotoView.delegate = self;
     miniPhotoView.showsHorizontalScrollIndicator = NO;
     self.title = @"Lodging";
     

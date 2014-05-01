@@ -32,7 +32,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = UIColorFromRGB(0xbdc3c7);
-    
+//    self.view.backgroundColor = [UIColor blackColor];
     
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
         self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -116,23 +116,59 @@
 
 - (void)bookTrip {
     // replace right bar button 'refresh' with spinner
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"Booking Trip";
+    [hud hide:YES afterDelay:2];
+    
     
     // how we stop refresh from freezing the main UI thread
     dispatch_queue_t downloadQueue = dispatch_queue_create("downloader", NULL);
     dispatch_async(downloadQueue, ^{
         
         // do our long running process here
+        // Set custom view mode
+//        [hud show:YES];
+        
         [NSThread sleepForTimeInterval:2];
         
+//        [hud hide:YES afterDelay:0];
         // do any UI stuff on the main UI thread
         dispatch_async(dispatch_get_main_queue(), ^{
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+            
+            MBProgressHUD *hud2 = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            
+            hud2.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
+            hud2.mode = MBProgressHUDModeCustomView;
+            hud2.labelText = @"Completed";
+            
+//            [MBProgressHUD hideHUDForView:self.view animated:YES];
+
+        });
+        
+    });
+    
+    
+    
+    // how we stop refresh from freezing the main UI thread
+    dispatch_queue_t downloadQueue2 = dispatch_queue_create("downloader2", NULL);
+    dispatch_async(downloadQueue2, ^{
+        
+        // do our long running process here
+        // Set custom view mode
+        //        [hud show:YES];
+        
+        [NSThread sleepForTimeInterval:3.5];
+        
+        //        [hud hide:YES afterDelay:0];
+        // do any UI stuff on the main UI thread
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
             NSArray *viewControllers = self.navigationController.viewControllers;
             MasterViewController *rootViewController = (MasterViewController *) [viewControllers objectAtIndex:0];
-            [rootViewController performSelector:@selector(pushMyTripsController) withObject:nil afterDelay:1.0];
+            [rootViewController performSelector:@selector(pushMyTripsController) withObject:nil afterDelay:0];
             [self.navigationController popToRootViewControllerAnimated:YES];
-
+            
         });
         
     });

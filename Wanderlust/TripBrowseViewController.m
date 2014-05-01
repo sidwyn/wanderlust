@@ -110,27 +110,32 @@
     
     self.title = @"Yosemite";
     
+    UIView *translucentView = [[UIView alloc] initWithFrame:CGRectMake(0, 350, 320, 160)];
+    translucentView.backgroundColor = [UIColor blackColor];
+    translucentView.alpha = 0.6;
+    [mainScrollView addSubview:translucentView];
+    
     UILabel *s1welcomeLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 360, 300, 40)];
     s1welcomeLabel.textAlignment = NSTextAlignmentLeft;
-    s1welcomeLabel.font = [UIFont fontWithName:@"Roboto-Bold" size:32];
+    s1welcomeLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:32];
     s1welcomeLabel.textColor = [UIColor whiteColor];
     s1welcomeLabel.text = mainPlaceText;
     [mainScrollView addSubview:s1welcomeLabel];
     
     UILabel *priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 360, 300, 40)];
     priceLabel.textAlignment = NSTextAlignmentRight;
-    priceLabel.font = [UIFont fontWithName:@"Roboto-Regular" size:28];
+    priceLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:28];
     priceLabel.textColor = [UIColor whiteColor];
     priceLabel.text = priceLabelText;
     [mainScrollView addSubview:priceLabel];
     
-    UIImageView *placeImage = [[UIImageView alloc] initWithFrame:CGRectMake(10, 405, 13, 13)];
+    UIImageView *placeImage = [[UIImageView alloc] initWithFrame:CGRectMake(10, 402, 13, 13)];
     placeImage.image = [UIImage imageNamed:@"place"];
     [mainScrollView addSubview:placeImage];
     
-    UILabel *venueLabel = [[UILabel alloc] initWithFrame:CGRectMake(26, 390, 300, 40)];
+    UILabel *venueLabel = [[UILabel alloc] initWithFrame:CGRectMake(26, 387, 300, 40)];
     venueLabel.textAlignment = NSTextAlignmentLeft;
-    venueLabel.font = [UIFont fontWithName:@"Roboto-Regular" size:16];
+    venueLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
     venueLabel.textColor = [UIColor whiteColor];
     venueLabel.text = venueLabelText;
     [mainScrollView addSubview:venueLabel];
@@ -139,12 +144,14 @@
     
     UIButton *scrollDownButton = [[UIButton alloc] initWithFrame:CGRectMake(currentFrame.size.width/2-20, currentFrame.size.height-40-94, 40, 40)];
     [scrollDownButton setImage:[UIImage imageNamed:@"arrowdown.png"] forState:UIControlStateNormal];
+    [scrollDownButton setImage:[UIImage imageNamed:@"arrowdown-green.png"] forState:UIControlStateHighlighted];
     scrollDownButton.tag = SCROLL_DOWN_BUTTON_TAG;
     [scrollDownButton addTarget:self action:@selector(scrollAround:) forControlEvents:UIControlEventTouchUpInside];
     [mainScrollView addSubview:scrollDownButton];
     
     UIButton *scrollUpButton = [[UIButton alloc] initWithFrame:CGRectMake(currentFrame.size.width/2-20, currentFrame.size.height-50, 40, 40)];
     [scrollUpButton setImage:[UIImage imageNamed:@"arrowup.png"] forState:UIControlStateNormal];
+    [scrollUpButton setImage:[UIImage imageNamed:@"arrowup-green.png"] forState:UIControlStateHighlighted];
     scrollUpButton.tag = SCROLL_UP_BUTTON_TAG;
     [scrollUpButton addTarget:self action:@selector(scrollAround:) forControlEvents:UIControlEventTouchUpInside];
     [mainScrollView addSubview:scrollUpButton];

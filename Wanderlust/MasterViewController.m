@@ -9,7 +9,6 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "TripBrowseViewController.h"
-#import "TutorialViewController.h"
 #import "AMLoginViewController.h"
 
 @interface MasterViewController () {
@@ -40,12 +39,9 @@
 //    self.navigationItem.rightBarButtonItem = rightBBI;
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    TutorialViewController *tvc = (TutorialViewController *)[sb instantiateViewControllerWithIdentifier:@"TutorialViewController"];
-    tvc.delegate = self;
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//    [self presentViewController:tvc animated:NO completion:nil];
     
     
     self.title = @"Pick No. of Travelers";
@@ -68,7 +64,7 @@
 }
 
 - (void)openMenu {
-    NSString *thirdName = @"Log In";
+    NSString *thirdName = @"Sign In";
     if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"loggedIn"] boolValue]) {
         thirdName = @"Settings";
     }
@@ -110,19 +106,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)showTutorial {
-    NSLog(@"Show tutorial");
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    TutorialViewController *tvc = (TutorialViewController *)[sb instantiateViewControllerWithIdentifier:@"TutorialViewController"];
-    tvc.delegate = self;
-    [self presentViewController:tvc animated:YES completion:nil];
-}
-
-- (void)closeTutorial {
-    NSLog(@"Close tutorial");
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)pushMyTripsController {
