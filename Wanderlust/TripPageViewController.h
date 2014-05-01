@@ -12,6 +12,7 @@
     int mainIndex;
 }
 @property (assign) int pageNumber;
+@property (assign) BOOL doNotShowBookTripButton;
 
 @property (strong, nonatomic) UIPageViewController *pageController;
 

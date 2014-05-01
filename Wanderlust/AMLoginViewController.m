@@ -51,13 +51,13 @@
     // ---------------------------AVPLAYER STUFF -------------------------------
 
     
-    NSString * resource = [[NSBundle mainBundle] pathForResource:@"yosemitevideo2" ofType:@".mp4"];
+    NSString * resource = [[NSBundle mainBundle] pathForResource:@"yosemitevideo3" ofType:@".mp4"];
     
 
     NSURL * urlPathOfVideo = [NSURL fileURLWithPath:resource];
     avPlayer = [AVPlayer playerWithURL:urlPathOfVideo];
     avPlayer.actionAtItemEnd = AVPlayerActionAtItemEndNone;
-
+    avPlayer.rate = 1.5;
     avPlayerLayer = [AVPlayerLayer playerLayerWithPlayer:avPlayer];
     avPlayerLayer.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     
@@ -129,7 +129,7 @@
 
     self.title = @"Log In";
     
-    [usernameTf performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:1.0];
+//    [usernameTf performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:1.0];
 }
 
 

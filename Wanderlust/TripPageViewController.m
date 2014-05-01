@@ -31,7 +31,8 @@
     // Do any additional setup after loading the view.
     
     UIBarButtonItem *bookNowBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Book Trip" style:UIBarButtonItemStylePlain target:self action:@selector(pushBookTripController)];
-    self.navigationItem.rightBarButtonItem = bookNowBarButton;
+    if (!self.doNotShowBookTripButton)
+        self.navigationItem.rightBarButtonItem = bookNowBarButton;
     
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
         self.edgesForExtendedLayout = UIRectEdgeNone;

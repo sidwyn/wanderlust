@@ -10,6 +10,7 @@
 #include "TargetConditionals.h"
 #import "TripMapViewController.h"
 #import "BookTripViewController.h"
+#import "LodgingViewController.h"
 
 #define SCROLL_UP_BUTTON_TAG 111
 #define SCROLL_DOWN_BUTTON_TAG 112
@@ -47,7 +48,7 @@
     
     CGRect currentFrame = self.view.bounds;
     mainScrollView = [[SpecialScrollView alloc] initWithFrame:self.view.bounds];
-    mainScrollView.contentSize = CGSizeMake(320, 1630);
+    mainScrollView.contentSize = CGSizeMake(320, 1650);
     mainScrollView.delegate = self;
     mainScrollView.tag = 111;
     
@@ -239,7 +240,7 @@
     tripTable.dataSource = self;
     tripTable.backgroundColor = [UIColor clearColor];
     tripTable.scrollEnabled = NO;
-    tripTable.allowsSelection = NO;
+//    tripTable.allowsSelection = NO;
     tripTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     [mainScrollView addSubview:tripTable];
     
@@ -454,8 +455,16 @@
         cell.detailTextLabel.textColor = [UIColor whiteColor];
         cell.detailTextLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
     }
+    if (indexPath.row == 4) {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     cell.backgroundColor = [UIColor clearColor];
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    cell.detailTextLabel.highlightedTextColor = UIColorFromRGB(0x3cb7a3);
+    cell.textLabel.highlightedTextColor = UIColorFromRGB(0x3cb7a3);
     NSString *durationText;
     NSString *activitiesText;
     NSString *distanceText;
@@ -527,8 +536,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    TripBrowseViewController *tbvc = [[TripBrowseViewController alloc] init];
-    [self.navigationController pushViewController:tbvc animated:YES];
+    if (indexPath.row != 4) return;
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    LodgingViewController *lvc = [[LodgingViewController alloc] init];
+    [self.navigationController pushViewController:lvc animated:YES];
 }
 
 @end

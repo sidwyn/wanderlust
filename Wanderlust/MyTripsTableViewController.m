@@ -162,6 +162,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     TripPageViewController *tbvc = [[TripPageViewController alloc] init];
+    tbvc.doNotShowBookTripButton = YES;
     switch (indexPath.row) {
         case 0:
             tbvc.pageNumber = YOSEMITEPAGE;
