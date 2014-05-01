@@ -94,6 +94,20 @@
 		8F715E471912258C0022FF37 /* mytrips-napa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F715E441912258C0022FF37 /* mytrips-napa.jpg */; };
 		8F715E481912258C0022FF37 /* mytrips-yosemite.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F715E451912258C0022FF37 /* mytrips-yosemite.jpg */; };
 		8F715E4A191227A70022FF37 /* menu-car.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F715E49191227A70022FF37 /* menu-car.png */; };
+		8F715E4C19122B180022FF37 /* menu-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F715E4B19122B180022FF37 /* menu-gear.png */; };
+		8F715E5419122D6B0022FF37 /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F715E4E19122D6B0022FF37 /* lock.png */; };
+		8F715E5519122D6B0022FF37 /* lock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F715E4F19122D6B0022FF37 /* lock@2x.png */; };
+		8F715E5619122D6B0022FF37 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F715E5019122D6B0022FF37 /* user.png */; };
+		8F715E5719122D6B0022FF37 /* user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F715E5119122D6B0022FF37 /* user@2x.png */; };
+		8F715E5819122D6B0022FF37 /* logoclubby.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F715E5219122D6B0022FF37 /* logoclubby.png */; };
+		8F715E5919122D6B0022FF37 /* logoclubby@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F715E5319122D6B0022FF37 /* logoclubby@2x.png */; };
+		8F715E5B19122D730022FF37 /* timeLapseMini.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 8F715E5A19122D730022FF37 /* timeLapseMini.m4v */; };
+		8F715E6019122D780022FF37 /* AMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F715E5D19122D780022FF37 /* AMLoginViewController.m */; };
+		8F715E6119122D780022FF37 /* BlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F715E5F19122D780022FF37 /* BlurView.m */; };
+		8F715E6319122D820022FF37 /* demoVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8F715E6219122D820022FF37 /* demoVideo.mp4 */; };
+		8F715E6519122DCD0022FF37 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F715E6419122DCD0022FF37 /* GPUImage.framework */; };
+		8F715E67191231CC0022FF37 /* yosemitevideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8F715E66191231CC0022FF37 /* yosemitevideo.mp4 */; };
+		8F715E6A191233B00022FF37 /* yosemitevideo2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8F715E69191233B00022FF37 /* yosemitevideo2.mp4 */; };
 		8FA5E57318F5C3040094207E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA5E57218F5C3030094207E /* MapKit.framework */; };
 		8FF7C31C18F711220054F23F /* travel-couple.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FF7C31918F711220054F23F /* travel-couple.jpg */; };
 		8FF7C31D18F711220054F23F /* family-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FF7C31A18F711220054F23F /* family-2.jpg */; };
@@ -214,6 +228,22 @@
 		8F715E441912258C0022FF37 /* mytrips-napa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mytrips-napa.jpg"; sourceTree = "<group>"; };
 		8F715E451912258C0022FF37 /* mytrips-yosemite.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mytrips-yosemite.jpg"; sourceTree = "<group>"; };
 		8F715E49191227A70022FF37 /* menu-car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-car.png"; sourceTree = "<group>"; };
+		8F715E4B19122B180022FF37 /* menu-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-gear.png"; sourceTree = "<group>"; };
+		8F715E4E19122D6B0022FF37 /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
+		8F715E4F19122D6B0022FF37 /* lock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lock@2x.png"; sourceTree = "<group>"; };
+		8F715E5019122D6B0022FF37 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
+		8F715E5119122D6B0022FF37 /* user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user@2x.png"; sourceTree = "<group>"; };
+		8F715E5219122D6B0022FF37 /* logoclubby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoclubby.png; sourceTree = "<group>"; };
+		8F715E5319122D6B0022FF37 /* logoclubby@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logoclubby@2x.png"; sourceTree = "<group>"; };
+		8F715E5A19122D730022FF37 /* timeLapseMini.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeLapseMini.m4v; sourceTree = "<group>"; };
+		8F715E5C19122D780022FF37 /* AMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMLoginViewController.h; sourceTree = "<group>"; };
+		8F715E5D19122D780022FF37 /* AMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMLoginViewController.m; sourceTree = "<group>"; };
+		8F715E5E19122D780022FF37 /* BlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlurView.h; sourceTree = "<group>"; };
+		8F715E5F19122D780022FF37 /* BlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlurView.m; sourceTree = "<group>"; };
+		8F715E6219122D820022FF37 /* demoVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = demoVideo.mp4; sourceTree = "<group>"; };
+		8F715E6419122DCD0022FF37 /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GPUImage.framework; sourceTree = "<group>"; };
+		8F715E66191231CC0022FF37 /* yosemitevideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = yosemitevideo.mp4; sourceTree = "<group>"; };
+		8F715E69191233B00022FF37 /* yosemitevideo2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = yosemitevideo2.mp4; sourceTree = "<group>"; };
 		8FA5E57218F5C3030094207E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8FF7C31918F711220054F23F /* travel-couple.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "travel-couple.jpg"; sourceTree = "<group>"; };
 		8FF7C31A18F711220054F23F /* family-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "family-2.jpg"; sourceTree = "<group>"; };
@@ -235,6 +265,7 @@
 				8FA5E57318F5C3040094207E /* MapKit.framework in Frameworks */,
 				8F2C4C4C18EDF34600A86D7D /* CoreGraphics.framework in Frameworks */,
 				8F2C4C4E18EDF34600A86D7D /* UIKit.framework in Frameworks */,
+				8F715E6519122DCD0022FF37 /* GPUImage.framework in Frameworks */,
 				8F2C4C4A18EDF34600A86D7D /* Foundation.framework in Frameworks */,
 				49630F74A7204D789DD44AAD /* libPods.a in Frameworks */,
 			);
@@ -381,9 +412,16 @@
 				8FF7C32318F7222E0054F23F /* BackgroundButton.m */,
 				8F216224190884E000225B45 /* UIViewAdditions.h */,
 				8F216225190884E000225B45 /* UIViewAdditions.m */,
+				8F715E5C19122D780022FF37 /* AMLoginViewController.h */,
+				8F715E5D19122D780022FF37 /* AMLoginViewController.m */,
+				8F715E5E19122D780022FF37 /* BlurView.h */,
+				8F715E5F19122D780022FF37 /* BlurView.m */,
+				8F715E66191231CC0022FF37 /* yosemitevideo.mp4 */,
+				8F715E69191233B00022FF37 /* yosemitevideo2.mp4 */,
 				8F21623F19089E7D00225B45 /* plus.png */,
 				8F21622F19089E1E00225B45 /* gear.png */,
 				8F715E49191227A70022FF37 /* menu-car.png */,
+				8F715E4B19122B180022FF37 /* menu-gear.png */,
 				8F21623019089E1E00225B45 /* gear@2x.png */,
 				8F21623119089E1E00225B45 /* globe.png */,
 				8F21623219089E1E00225B45 /* globe@2x.png */,
@@ -396,6 +434,8 @@
 				8F715E431912258C0022FF37 /* mytrips-carmel.jpg */,
 				8F715E441912258C0022FF37 /* mytrips-napa.jpg */,
 				8F715E451912258C0022FF37 /* mytrips-yosemite.jpg */,
+				8F715E6419122DCD0022FF37 /* GPUImage.framework */,
+				8F715E4D19122D5F0022FF37 /* Login View */,
 				8F21621A1908838200225B45 /* Fonts */,
 				8F2162191908837800225B45 /* Images */,
 				8F2C4C6418EDF34600A86D7D /* Images.xcassets */,
@@ -431,6 +471,21 @@
 				8F2C4C7418EDF34600A86D7D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8F715E4D19122D5F0022FF37 /* Login View */ = {
+			isa = PBXGroup;
+			children = (
+				8F715E6219122D820022FF37 /* demoVideo.mp4 */,
+				8F715E5A19122D730022FF37 /* timeLapseMini.m4v */,
+				8F715E4E19122D6B0022FF37 /* lock.png */,
+				8F715E4F19122D6B0022FF37 /* lock@2x.png */,
+				8F715E5019122D6B0022FF37 /* user.png */,
+				8F715E5119122D6B0022FF37 /* user@2x.png */,
+				8F715E5219122D6B0022FF37 /* logoclubby.png */,
+				8F715E5319122D6B0022FF37 /* logoclubby@2x.png */,
+			);
+			name = "Login View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -521,18 +576,25 @@
 				8F16CF2418EDFFCF0022F439 /* theme.png in Resources */,
 				8F16CF2018EDFCAD0022F439 /* Roboto-Thin.ttf in Resources */,
 				8F21623E19089E1E00225B45 /* star@2x.png in Resources */,
+				8F715E5519122D6B0022FF37 /* lock@2x.png in Resources */,
 				8F3641DB1900684A006190DB /* group-friends.jpg in Resources */,
+				8F715E5419122D6B0022FF37 /* lock.png in Resources */,
+				8F715E67191231CC0022FF37 /* yosemitevideo.mp4 in Resources */,
+				8F715E5B19122D730022FF37 /* timeLapseMini.m4v in Resources */,
 				8F16CF3318EE161B0022F439 /* yosemite.jpg in Resources */,
 				8F3641DE19006A94006190DB /* road.png in Resources */,
 				8F21623D19089E1E00225B45 /* star.png in Resources */,
 				8F2162061908698800225B45 /* yosemite3.jpg in Resources */,
 				8FF7C31D18F711220054F23F /* family-2.jpg in Resources */,
+				8F715E5719122D6B0022FF37 /* user@2x.png in Resources */,
 				8FF7C31E18F711220054F23F /* solo-travel.jpg in Resources */,
 				8F16CF2E18EE11A50022F439 /* theme-city.jpg in Resources */,
 				8F21623819089E1E00225B45 /* gear@2x.png in Resources */,
 				8F3641DA1900684A006190DB /* group-family.jpg in Resources */,
+				8F715E4C19122B180022FF37 /* menu-gear.png in Resources */,
 				8F16CF2818EE00DD0022F439 /* car.png in Resources */,
 				8F21623719089E1E00225B45 /* gear.png in Resources */,
+				8F715E5619122D6B0022FF37 /* user.png in Resources */,
 				8F16CF3718EE18600022F439 /* Roboto-Bold.ttf in Resources */,
 				8F58229B1900266C00B1404E /* arrowdown.png in Resources */,
 				8F2162441908A22E00225B45 /* menu@2x.png in Resources */,
@@ -545,6 +607,7 @@
 				8F2C4C8318EDF42300A86D7D /* Background.jpg in Resources */,
 				8F3641DC1900684A006190DB /* group-solo.jpg in Resources */,
 				8F21621419086A6500225B45 /* carmel5.jpg in Resources */,
+				8F715E5919122D6B0022FF37 /* logoclubby@2x.png in Resources */,
 				8F58229D1900274D00B1404E /* arrowup.png in Resources */,
 				8F2162051908698800225B45 /* yosemite2.jpg in Resources */,
 				8F16CF2C18EE11A50022F439 /* theme-nature.jpg in Resources */,
@@ -559,6 +622,7 @@
 				8F5822A219002D4100B1404E /* calendar.png in Resources */,
 				8F2161F819083A7600225B45 /* carmel-cut.jpg in Resources */,
 				8F2162071908698800225B45 /* yosemite4.jpg in Resources */,
+				8F715E5819122D6B0022FF37 /* logoclubby.png in Resources */,
 				8F2C4C5418EDF34600A86D7D /* InfoPlist.strings in Resources */,
 				8F21621119086A6500225B45 /* carmel2.jpg in Resources */,
 				8F21621719086A6500225B45 /* napa4.jpg in Resources */,
@@ -566,6 +630,7 @@
 				8F2161FC19083C0D00225B45 /* napavalley.jpg in Resources */,
 				8F16CF2618EDFFEA0022F439 /* friends.png in Resources */,
 				8F5822A619002DFF00B1404E /* man.png in Resources */,
+				8F715E6A191233B00022FF37 /* yosemitevideo2.mp4 in Resources */,
 				8F2C4C8418EDF42300A86D7D /* EiffelNightLargeBlur.jpg in Resources */,
 				8F21623919089E1E00225B45 /* globe.png in Resources */,
 				8F2161F619083A3800225B45 /* carmel.jpg in Resources */,
@@ -578,6 +643,7 @@
 				8F3641D91900684A006190DB /* group-couple.jpg in Resources */,
 				8F16CF3918EE19550022F439 /* place.png in Resources */,
 				8F715E471912258C0022FF37 /* mytrips-napa.jpg in Resources */,
+				8F715E6319122D820022FF37 /* demoVideo.mp4 in Resources */,
 				8F715E42191223110022FF37 /* group-pair.jpg in Resources */,
 				8F21621319086A6500225B45 /* carmel4.jpg in Resources */,
 				8F2C4C5D18EDF34600A86D7D /* Main.storyboard in Resources */,
@@ -634,8 +700,10 @@
 			files = (
 				8FF7C32118F71ADC0054F23F /* TripMapViewController.m in Sources */,
 				8FF7C32418F7222E0054F23F /* BackgroundButton.m in Sources */,
+				8F715E6019122D780022FF37 /* AMLoginViewController.m in Sources */,
 				8F2161F41908312800225B45 /* TripPageViewController.m in Sources */,
 				8F2C4C5A18EDF34600A86D7D /* AppDelegate.m in Sources */,
+				8F715E6119122D780022FF37 /* BlurView.m in Sources */,
 				8F216226190884E000225B45 /* UIViewAdditions.m in Sources */,
 				8F5822AB1900315400B1404E /* PaymentViewController.m in Sources */,
 				8F16CF3118EE15870022F439 /* TripBrowseViewController.m in Sources */,
@@ -773,12 +841,16 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Wanderlust",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wanderlust/Wanderlust-Prefix.pch";
 				INFOPLIST_FILE = "Wanderlust/Wanderlust-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "D3695024-93BE-4172-BCE3-3CE1B8954E5A";
+				PROVISIONING_PROFILE = "4875D19C-DBAB-483F-ABF4-2D54524B9337";
 				SDKROOT = iphoneos7.1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -792,12 +864,16 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Wanderlust",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wanderlust/Wanderlust-Prefix.pch";
 				INFOPLIST_FILE = "Wanderlust/Wanderlust-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "D3695024-93BE-4172-BCE3-3CE1B8954E5A";
+				PROVISIONING_PROFILE = "4875D19C-DBAB-483F-ABF4-2D54524B9337";
 				SDKROOT = iphoneos7.1;
 				WRAPPER_EXTENSION = app;
 			};

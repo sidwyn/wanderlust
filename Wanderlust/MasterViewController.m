@@ -10,6 +10,7 @@
 #import "DetailViewController.h"
 #import "TripBrowseViewController.h"
 #import "TutorialViewController.h"
+#import "AMLoginViewController.h"
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
@@ -67,12 +68,18 @@
 }
 
 - (void)openMenu {
+    NSString *thirdName = @"Log In";
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"loggedIn"] boolValue]) {
+        thirdName = @"Settings";
+    }
+
     NSArray *images = @[
                         [UIImage imageNamed:@"plus"],
-                        [UIImage imageNamed:@"menu-car"]
+                        [UIImage imageNamed:@"menu-car"],
+                        [UIImage imageNamed:@"menu-gear"]
                         ];
     
-    callout = [[RNFrostedSidebar alloc] initWithImages:images selectedIndices:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 2)] borderColors:nil labelStrings:@[@"Add Trip", @"My Trips"]];
+    callout = [[RNFrostedSidebar alloc] initWithImages:images selectedIndices:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 2)] borderColors:nil labelStrings:@[@"Add Trip", @"My Trips", thirdName]];
     callout.delegate = self;
     [callout show];
 }
@@ -86,9 +93,16 @@
 - (void)sidebar:(RNFrostedSidebar *)sidebar didTapItemAtIndex:(NSUInteger)index {
     [sidebar dismissAnimated:YES];
 
-    if (index == 1) {
+    if (index == 0) {
+        MasterViewController *mvc = [[MasterViewController alloc] init];
+        [self.navigationController pushViewController:mvc animated:NO];
+    }
+    else if (index == 1) {
         [self pushMyTripsController];
-        
+    }
+    else if (index == 2) {
+        AMLoginViewController *amlvc = [[AMLoginViewController alloc] init];
+        [self.navigationController pushViewController:amlvc animated:NO];
     }
 }
 

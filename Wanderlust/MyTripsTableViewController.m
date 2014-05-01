@@ -9,6 +9,7 @@
 #import "MyTripsTableViewController.h"
 #import "MasterViewController.h"
 #import "TripPageViewController.h"
+#import "AMLoginViewController.h"
 
 @interface MyTripsTableViewController ()
 
@@ -51,12 +52,19 @@
 }
 
 - (void)openMenu {
+    
+    NSString *thirdName = @"Log In";
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"loggedIn"] boolValue]) {
+        thirdName = @"Settings";
+    }
+    
     NSArray *images = @[
                         [UIImage imageNamed:@"plus"],
-                        [UIImage imageNamed:@"menu-car"]
+                        [UIImage imageNamed:@"menu-car"],
+                        [UIImage imageNamed:@"menu-gear"]
                         ];
     
-    RNFrostedSidebar *callout = [[RNFrostedSidebar alloc] initWithImages:images selectedIndices:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 2)] borderColors:nil labelStrings:@[@"Add Trip", @"My Trips"]];
+    callout = [[RNFrostedSidebar alloc] initWithImages:images selectedIndices:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 2)] borderColors:nil labelStrings:@[@"Add Trip", @"My Trips", thirdName]];
     callout.delegate = self;
     [callout show];
 }
@@ -71,7 +79,13 @@
         UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:mtvc];
         [self.navigationController presentViewController:nc animated:NO completion:nil];
     }
+    else if (index == 2) {
+        AMLoginViewController *amlvc = [[AMLoginViewController alloc] init];
+        [self.navigationController pushViewController:amlvc animated:NO];
+    }
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {

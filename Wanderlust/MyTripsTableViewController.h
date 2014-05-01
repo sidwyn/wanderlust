@@ -12,6 +12,7 @@
 
 @interface MyTripsTableViewController : UITableViewController <RNFrostedSidebarDelegate> {
     NSMutableArray *_objects;
+    RNFrostedSidebar *callout;
 }
 @property (nonatomic, assign) id <MyTripsTableViewControllerDelegate> delegate;
 

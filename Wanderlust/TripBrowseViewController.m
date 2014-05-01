@@ -38,7 +38,7 @@
     // Do any additional setup after loading the view.
 //    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
-    UIBarButtonItem *bookNowBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Book Now" style:UIBarButtonItemStylePlain target:self action:@selector(pushBookTripController)];
+    UIBarButtonItem *bookNowBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Book Trip" style:UIBarButtonItemStylePlain target:self action:@selector(pushBookTripController)];
     self.navigationItem.rightBarButtonItem = bookNowBarButton;
     
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
