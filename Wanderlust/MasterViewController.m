@@ -43,6 +43,7 @@
     tvc.delegate = self;
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 //    [self presentViewController:tvc animated:NO completion:nil];
     
     
@@ -51,10 +52,10 @@
     if (!_objects) {
         _objects = [[NSMutableArray alloc] init];
     }
-    [_objects addObject:@{@"image":@"group-solo.jpg", @"title":@"Solo"}];
-    [_objects addObject:@{@"image":@"group-couple.jpg", @"title":@"Two"}];
-    [_objects addObject:@{@"image":@"group-family.jpg", @"title":@"Family"}];
-    [_objects addObject:@{@"image":@"group-friends.jpg", @"title":@"Friends"}];
+    [_objects addObject:@{@"image":@"group-solo.jpg", @"title":@"SOLO"}];
+    [_objects addObject:@{@"image":@"group-pair.jpg", @"title":@"PAIR"}];
+    [_objects addObject:@{@"image":@"group-family.jpg", @"title":@"FAMILY"}];
+    [_objects addObject:@{@"image":@"group-friends.jpg", @"title":@"FRIENDS"}];
         
     UIImage *image = [[UIImage imageNamed:@"menu.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(openMenu)];
@@ -68,7 +69,7 @@
 - (void)openMenu {
     NSArray *images = @[
                         [UIImage imageNamed:@"plus"],
-                        [UIImage imageNamed:@"profile"]
+                        [UIImage imageNamed:@"menu-car"]
                         ];
     
     callout = [[RNFrostedSidebar alloc] initWithImages:images selectedIndices:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 2)] borderColors:nil labelStrings:@[@"Add Trip", @"My Trips"]];
@@ -145,11 +146,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     cell.textLabel.text = @"";
     cell.accessoryType = UITableViewCellAccessoryNone;
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     UIImageView *pictureView;
     if (![cell.contentView viewWithTag:100]) {
         pictureView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 126)];
         pictureView.tag = 100;
+        
         [cell.contentView addSubview:pictureView];
     }
     else {
@@ -158,9 +160,9 @@
     
     UILabel *themeLabel;
     if (![cell.contentView viewWithTag:101]) {
-        themeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 78, 310, 40)];
-        themeLabel.textAlignment = NSTextAlignmentRight;
-        themeLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:30];
+        themeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, 320, 80)];
+        themeLabel.textAlignment = NSTextAlignmentCenter;
+        themeLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:40];
         themeLabel.textColor = [UIColor whiteColor];
         themeLabel.tag = 101;
         [cell.contentView addSubview:themeLabel];
@@ -170,7 +172,18 @@
     }
     
     pictureView.image = [UIImage imageNamed:[[_objects objectAtIndex:indexPath.row] objectForKey:@"image"]];
-    themeLabel.text = [[_objects objectAtIndex:indexPath.row] objectForKey:@"title"];
+    
+    NSAttributedString *attributedString =
+    [[NSAttributedString alloc]
+     initWithString:[[_objects objectAtIndex:indexPath.row] objectForKey:@"title"]
+     attributes:
+     @{
+       NSFontAttributeName : [themeLabel font],
+       NSForegroundColorAttributeName : [themeLabel textColor],
+       NSKernAttributeName : @(4.0f)
+       }];
+    
+    themeLabel.attributedText = attributedString;
     return cell;
 }
 

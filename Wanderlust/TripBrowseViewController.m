@@ -349,7 +349,7 @@
         [mainScrollView scrollRectToVisible:CGRectMake(0, 0, currentFrame.size.width, currentFrame.size.height) animated:YES];
     }
     else {
-        [mainScrollView scrollRectToVisible:CGRectMake(0, currentFrame.size.height-118, currentFrame.size.width, currentFrame.size.height) animated:YES];
+        [mainScrollView scrollRectToVisible:CGRectMake(0, currentFrame.size.height+10, currentFrame.size.width, currentFrame.size.height) animated:YES];
     }
 }
 

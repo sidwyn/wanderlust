@@ -23,3 +23,8 @@
     alpha:1.0]
     #define METERS_PER_MILE 1609.344
 #endif
+
+
+#define YOSEMITEPAGE 111
+#define CARMELPAGE 112
+#define NAPAVALLEY 113

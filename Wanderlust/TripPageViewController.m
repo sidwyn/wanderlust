@@ -33,6 +33,9 @@
     UIBarButtonItem *bookNowBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Book Trip" style:UIBarButtonItemStylePlain target:self action:@selector(pushBookTripController)];
     self.navigationItem.rightBarButtonItem = bookNowBarButton;
     
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    
     self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     self.pageController.delegate = self;
     self.pageController.dataSource = self;
@@ -44,7 +47,12 @@
     
     [self.pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 
+    if (self.pageNumber > YOSEMITEPAGE) {
+        [self.pageController setViewControllers:@[[self viewControllerAtIndex:self.pageNumber-111]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    }
+    
     [self addChildViewController:self.pageController];
+    
     CGRect tempFrame = self.pageController.view.frame;
     tempFrame.origin.y += 0;
     tempFrame.size.height += 64;
@@ -52,6 +60,7 @@
 //    self.pageController.view.frame.ori = CGRectMake(0, 64, currentFrame.size.height-64, currentFrame.size.width);
     [[self view] addSubview:[self.pageController view]];
     [self.pageController didMoveToParentViewController:self];
+    
 }
 
 - (void)pushBookTripController{
@@ -78,7 +87,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     
@@ -108,7 +116,6 @@
 }
 
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
-    NSLog(@"HIHIHIHIHIHIHIHIHI");
     if (completed) {
         
         int currentIndex = [((TripBrowseViewController *)[pageViewController.viewControllers objectAtIndex:0]) index];
@@ -149,6 +156,12 @@
     childViewController.index = index;
     if (index == 0)
         self.title = @"Yosemite";
+    else if (index == 1) {
+        self.title = @"Carmel";
+    }
+    else if (index == 2) {
+        self.title = @"Napa Valley";
+    }
     return childViewController;
     
 }

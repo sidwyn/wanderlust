@@ -49,9 +49,10 @@
     if (!_objects) {
         _objects = [[NSMutableArray alloc] init];
     }
-    [_objects addObject:@{@"image":@"theme-nature.jpg", @"title":@"Nature"}];
-    [_objects addObject:@{@"image":@"theme-city.jpg", @"title":@"City"}];
-    [_objects addObject:@{@"image":@"theme-adventure.jpg", @"title":@"Adventure"}];
+    [_objects addObject:@{@"image":@"theme-nature.jpg", @"title":@"NATURE"}];
+    [_objects addObject:@{@"image":@"theme-city.jpg", @"title":@"CITY"}];
+    [_objects addObject:@{@"image":@"theme-adventure.jpg", @"title":@"ADVENTURE"}];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
  
@@ -84,7 +85,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     cell.textLabel.text = @"";
     cell.accessoryType = UITableViewCellAccessoryNone;
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     UIImageView *pictureView;
     if (![cell.contentView viewWithTag:100]) {
         pictureView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 168)];
@@ -97,9 +98,9 @@
     
     UILabel *themeLabel;
     if (![cell.contentView viewWithTag:101]) {
-        themeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 120, 310, 40)];
-        themeLabel.textAlignment = NSTextAlignmentRight;
-        themeLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:30];
+        themeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, 320, 80)];
+        themeLabel.textAlignment = NSTextAlignmentCenter;
+        themeLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:40];
         themeLabel.textColor = [UIColor whiteColor];
         themeLabel.tag = 101;
         [cell.contentView addSubview:themeLabel];
@@ -107,9 +108,17 @@
     else {
         themeLabel = (UILabel *)[cell.contentView viewWithTag:101];
     }
-    
+    NSAttributedString *attributedString =
+    [[NSAttributedString alloc]
+     initWithString:[[_objects objectAtIndex:indexPath.row] objectForKey:@"title"]
+     attributes:
+     @{
+       NSFontAttributeName : [themeLabel font],
+       NSForegroundColorAttributeName : [themeLabel textColor],
+       NSKernAttributeName : @(4.0f)
+       }];
     pictureView.image = [UIImage imageNamed:[[_objects objectAtIndex:indexPath.row] objectForKey:@"image"]];
-    themeLabel.text = [[_objects objectAtIndex:indexPath.row] objectForKey:@"title"];
+    themeLabel.attributedText = attributedString;
     return cell;
 }
 

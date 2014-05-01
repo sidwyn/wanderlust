@@ -11,6 +11,7 @@
 @interface TripPageViewController : UIViewController <UIPageViewControllerDataSource> {
     int mainIndex;
 }
+@property (assign) int pageNumber;
 
 @property (strong, nonatomic) UIPageViewController *pageController;
 

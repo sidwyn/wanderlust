@@ -8,6 +8,12 @@
 
 #define __IPHONE_OS_VERSION_SOFT_MAX_REQUIRED __IPHONE_7_0
 
+#define UIColorFromRGB(rgbValue) \
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 \
+alpha:1.0]
+
 #import "RNFrostedSidebar.h"
 #import <QuartzCore/QuartzCore.h>
 
@@ -213,10 +219,10 @@ NSString *const RNFrostedLabelColor = @"RNFrostedLabelColor";
     float darkenFactor = 0.3f;
     UIColor *darkerColor;
     if ([self.originalBackgroundColor getRed:&r green:&g blue:&b alpha:&a]) {
-        darkerColor = [UIColor colorWithRed:MAX(r - darkenFactor, 0.0) green:MAX(g - darkenFactor, 0.0) blue:MAX(b - darkenFactor, 0.0) alpha:a];
+        darkerColor = UIColorFromRGB(0x3cb7a3);
     }
     else if ([self.originalBackgroundColor getWhite:&r alpha:&a]) {
-        darkerColor = [UIColor colorWithWhite:MAX(r - darkenFactor, 0.0) alpha:a];
+        darkerColor = UIColorFromRGB(0x3cb7a3);
     }
     else {
         @throw @"Item color should be RGBA or White/Alpha in order to darken the button color.";
@@ -572,7 +578,7 @@ static RNFrostedSidebar *rn_frostedMenu;
     if (self.borderColors) {
         UIColor *stroke = self.borderColors[index];
         UIView *view = self.itemViews[index];
-        
+        view.backgroundColor = UIColorFromRGB(0x3cb7a3);
         if (didEnable) {
             if (_isSingleSelect){
                 [self.selectedIndices removeAllIndexes];
@@ -582,6 +588,7 @@ static RNFrostedSidebar *rn_frostedMenu;
                 }];
             }
             view.layer.borderColor = stroke.CGColor;
+//            view.layer.backgroundColor = UIColorFromRGB(0x3cb7a3).CGColor;
             
             CABasicAnimation *borderAnimation = [CABasicAnimation animationWithKeyPath:@"borderColor"];
             borderAnimation.fromValue = (id)[UIColor clearColor].CGColor;

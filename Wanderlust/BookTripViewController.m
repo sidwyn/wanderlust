@@ -10,6 +10,8 @@
 #import "MBProgressHUD.h"
 #import "MasterViewController.h"
 
+#define SEPARATOR 64
+
 @interface BookTripViewController ()
 
 @end
@@ -31,20 +33,23 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = UIColorFromRGB(0xbdc3c7);
     
+    
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+        self.edgesForExtendedLayout = UIRectEdgeNone;
     CGRect currentFrame = self.view.bounds;
     
-    UILabel *s1welcomeLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 80, 300, 40)];
+    UILabel *s1welcomeLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 80-SEPARATOR, 300, 40)];
     s1welcomeLabel.textAlignment = NSTextAlignmentLeft;
     s1welcomeLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:16];
     s1welcomeLabel.textColor = UIColorFromRGB(0x2c3e50);
     s1welcomeLabel.text = @"Trip Confirmation";
     [self.view addSubview:s1welcomeLabel];
     
-    UIImageView *calendarImage = [[UIImageView alloc] initWithFrame:CGRectMake(30, 130, 60, 60)];
+    UIImageView *calendarImage = [[UIImageView alloc] initWithFrame:CGRectMake(30, 130-SEPARATOR, 60, 60)];
     calendarImage.image = [UIImage imageNamed:@"calendar"];
     [self.view addSubview:calendarImage];
     
-    UILabel *calendarLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 180, 80, 50)];
+    UILabel *calendarLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 180-SEPARATOR, 80, 50)];
     calendarLabel.textAlignment = NSTextAlignmentCenter;
     calendarLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
     calendarLabel.textColor = UIColorFromRGB(0x2c3e50);
@@ -52,11 +57,11 @@
     calendarLabel.text = @"May 2 - 4";
     [self.view addSubview:calendarLabel];
     
-    UIImageView *placemarkImage = [[UIImageView alloc] initWithFrame:CGRectMake(100+30, 130, 60, 60)];
+    UIImageView *placemarkImage = [[UIImageView alloc] initWithFrame:CGRectMake(100+30, 130-SEPARATOR, 60, 60)];
     placemarkImage.image = [UIImage imageNamed:@"placemark"];
     [self.view addSubview:placemarkImage];
     
-    UILabel *placemarkLabel = [[UILabel alloc] initWithFrame:CGRectMake(110, 180, 100, 50)];
+    UILabel *placemarkLabel = [[UILabel alloc] initWithFrame:CGRectMake(110, 180-SEPARATOR, 100, 50)];
     placemarkLabel.textAlignment = NSTextAlignmentCenter;
     placemarkLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
     placemarkLabel.textColor = UIColorFromRGB(0x2c3e50);
@@ -64,11 +69,11 @@
     placemarkLabel.text = self.destination;
     [self.view addSubview:placemarkLabel];
     
-    UIImageView *peopleImage = [[UIImageView alloc] initWithFrame:CGRectMake(200+30, 130, 60, 60)];
+    UIImageView *peopleImage = [[UIImageView alloc] initWithFrame:CGRectMake(200+30, 130-SEPARATOR, 60, 60)];
     peopleImage.image = [UIImage imageNamed:@"man"];
     [self.view addSubview:peopleImage];
     
-    UILabel *peopleLabel = [[UILabel alloc] initWithFrame:CGRectMake(220, 180, 80, 50)];
+    UILabel *peopleLabel = [[UILabel alloc] initWithFrame:CGRectMake(220, 180-SEPARATOR, 80, 50)];
     peopleLabel.textAlignment = NSTextAlignmentCenter;
     peopleLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
     peopleLabel.textColor = UIColorFromRGB(0x2c3e50);
@@ -76,11 +81,11 @@
     peopleLabel.text = @"1 Person";
     [self.view addSubview:peopleLabel];
     
-    paymentButton = [KHFlatButton buttonWithFrame:CGRectMake(0+20, 250, 280, 50) withTitle:@"ENTER PAYMENT INFO" backgroundColor:UIColorFromRGB(0x3cb7a3)];
+    paymentButton = [KHFlatButton buttonWithFrame:CGRectMake(0+20, 250-SEPARATOR, 280, 50) withTitle:@"ENTER PAYMENT INFO" backgroundColor:UIColorFromRGB(0x3cb7a3)];
     [paymentButton addTarget:self action:@selector(pushPaymentController) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:paymentButton];
     
-    finalBookTripButton = [KHFlatButton buttonWithFrame:CGRectMake(0+20, 320, 280, 50) withTitle:@"BOOK TRIP" backgroundColor:UIColorFromRGB(0x3cb7a3)];
+    finalBookTripButton = [KHFlatButton buttonWithFrame:CGRectMake(0+20, 320-SEPARATOR, 280, 50) withTitle:@"BOOK TRIP" backgroundColor:UIColorFromRGB(0x3cb7a3)];
     [finalBookTripButton addTarget:self action:@selector(bookTrip) forControlEvents:UIControlEventTouchUpInside];
     finalBookTripButton.hidden = YES;
     [self.view addSubview:finalBookTripButton];

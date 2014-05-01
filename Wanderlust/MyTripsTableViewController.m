@@ -35,6 +35,7 @@
     UIImage *image = [[UIImage imageNamed:@"menu.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(openMenu)];
     self.navigationItem.leftBarButtonItem = button;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     
     UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(openMenu)];
@@ -44,15 +45,15 @@
     if (!_objects) {
         _objects = [[NSMutableArray alloc] init];
     }
-    [_objects addObject:@{@"image":@"yosemite.jpg", @"title":@"Yosemite"}];
-    [_objects addObject:@{@"image":@"carmel2.jpg", @"title":@"Carmel"}];
-    [_objects addObject:@{@"image":@"napa2.jpg", @"title":@"Napa Valley"}];
+    [_objects addObject:@{@"image":@"mytrips-yosemite.jpg", @"title":@"YOSEMITE"}];
+    [_objects addObject:@{@"image":@"mytrips-carmel.jpg", @"title":@"CARMEL"}];
+    [_objects addObject:@{@"image":@"mytrips-napa.jpg", @"title":@"NAPA VALLEY"}];
 }
 
 - (void)openMenu {
     NSArray *images = @[
                         [UIImage imageNamed:@"plus"],
-                        [UIImage imageNamed:@"profile"]
+                        [UIImage imageNamed:@"menu-car"]
                         ];
     
     RNFrostedSidebar *callout = [[RNFrostedSidebar alloc] initWithImages:images selectedIndices:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 2)] borderColors:nil labelStrings:@[@"Add Trip", @"My Trips"]];
@@ -99,7 +100,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     cell.textLabel.text = @"";
     cell.accessoryType = UITableViewCellAccessoryNone;
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     UIImageView *pictureView;
     if (![cell.contentView viewWithTag:100]) {
         pictureView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 168)];
@@ -112,9 +113,9 @@
     
     UILabel *themeLabel;
     if (![cell.contentView viewWithTag:101]) {
-        themeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 78, 310, 40)];
-        themeLabel.textAlignment = NSTextAlignmentRight;
-        themeLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:30];
+        themeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, 320, 80)];
+        themeLabel.textAlignment = NSTextAlignmentCenter;
+        themeLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:40];
         themeLabel.textColor = [UIColor whiteColor];
         themeLabel.tag = 101;
         [cell.contentView addSubview:themeLabel];
@@ -124,7 +125,17 @@
     }
     
     pictureView.image = [UIImage imageNamed:[[_objects objectAtIndex:indexPath.row] objectForKey:@"image"]];
-    themeLabel.text = [[_objects objectAtIndex:indexPath.row] objectForKey:@"title"];
+    
+    NSAttributedString *attributedString =
+    [[NSAttributedString alloc]
+     initWithString:[[_objects objectAtIndex:indexPath.row] objectForKey:@"title"]
+     attributes:
+     @{
+       NSFontAttributeName : [themeLabel font],
+       NSForegroundColorAttributeName : [themeLabel textColor],
+       NSKernAttributeName : @(4.0f)
+       }];
+    themeLabel.attributedText = attributedString;
     return cell;
 }
 
@@ -137,6 +148,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     TripPageViewController *tbvc = [[TripPageViewController alloc] init];
+    switch (indexPath.row) {
+        case 0:
+            tbvc.pageNumber = YOSEMITEPAGE;
+            break;
+        case 1:
+            tbvc.pageNumber = CARMELPAGE;
+            break;
+        case 2:
+            tbvc.pageNumber = NAPAVALLEY;
+            break;
+        default:
+            break;
+    }
     [self.navigationController pushViewController:tbvc animated:YES];
 }
 
