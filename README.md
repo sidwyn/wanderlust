@@ -2,7 +2,7 @@
 <h4>INFO 290 Project</h4>
 
 <br/>
-[![Watch video](http://f.cl.ly/items/3x02160F411g3F2c1t3w/ss.jpg)](http://youtu.be/T_8Izx_iXhw)
+[![Watch video](http://f.cl.ly/items/2U1B0k2Z0R3V2Q081t1o/ss.jpg)](http://youtu.be/T_8Izx_iXhw)
 
 
 Spent quite a number of weeks on this for a grad school project (UC Berkeley Graduate School of Information Studies), so I thought I'd have it open-sourced. Won first place in the class (slides [here](http://cl.ly/1x0Q001v122H) if you're interested). This app is design-only, there is no engineering involved nor integration with APIs / services.
